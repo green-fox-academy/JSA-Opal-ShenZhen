@@ -1,5 +1,4 @@
 const express = require('express');
-require('dotenv').config();
 
 function serverInit() {
     const server = express();
