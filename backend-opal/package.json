@@ -1,0 +1,17 @@
+{
+  "name": "backend-opal",
+  "version": "1.0.0",
+  "description": "jsa opal investment feature backend",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
+  }
+}
