@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require('express');
-const portfolio = require('./src/server/portfolio');
-
 const server = express();
 
+const getPortfolio = require('./src/server/portfolio');
+
 // wait for handlers
-portfolio.getPortfolio(server);
+server.use('/portfolio', getPortfolio);
 
 server.listen(process.env.SERVER_PORT, () => {
     console.log(`express server\'s running on PORT ${process.env.SERVER_PORT}`);

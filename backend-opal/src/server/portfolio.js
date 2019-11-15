@@ -1,34 +1,31 @@
+const router = require('express').Router();
+const authService = require('./common/authorizationService');
+
 const portfolioList = [
     {id: '1', userId: '1', symbol: 'MSFT', amount: 123}
 ]
 
-exports.getPortfolio = function (server) {
-    server.get('/portfolio', function (req, res) {
-        let authorization = req.headers.authorization;
-        if (!authorization || !authorization.startsWith('Bearer')) {
-            var response = {
-                "error": 'Authentication header is missing!'
-            };
+router.get('/', function (req, res) {
+    let authorization = req.headers.authorization;
+    if (authService.checkAuthHeader(authorization)) {
+        let response = {
+            "error": 'Authentication header is missing!'
+        };
 
-            res.statusCode = 401;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(response));
-        } else if (!authorization.includes('token')) {
-            var response = {
-                "error": 'User is not allowed to do this action!'
-            };
+        res.status(401).send(response);
+    } else if (authService.authorize(authorization)) {
+        let response = {
+            "error": 'User is not allowed to do this action!'
+        };
 
-            res.statusCode = 403;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(response));
-        } else {
-            var response = {
-                "portfolio": portfolioList
-            };
-        
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(response));
-        }
-    })
-}
+        res.status(403).send(response);
+    } else {
+        let response = {
+            "portfolio": portfolioList
+        };
+    
+        res.status(200).send(response);
+    }
+})
+
+module.exports = router;

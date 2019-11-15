@@ -1,6 +1,4 @@
 const request = require('supertest');
-// const express = require('express');
-// const server = express();
 const server = require('../../main');
 
 describe('Portfolio Endpoint', () => {
