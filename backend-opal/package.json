@@ -4,7 +4,7 @@
   "description": "jsa opal investment feature backend",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon main.js",
+    "start": "nodemon -r tsconfig-paths/register main.js",
     "test": "jest"
   },
   "author": "",
@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "jest": "^24.9.0",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "tsconfig-paths": "^3.9.0"
   },
   "jest": {
     "testEnvironment": "node",

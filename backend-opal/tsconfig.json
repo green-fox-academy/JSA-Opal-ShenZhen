@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "server/*": ["src/server/*"],
+            "database/*": ["src/server/*"]
+        },
+        "allowJs": true
+    }
+}
