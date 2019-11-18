@@ -9,7 +9,6 @@ import styles from './styles'
 import ListIcon from '../../assets/list-icon.png';
 import SearchIcon from '../../assets/search-button.png';
 
-
 const Header = () => {
     const narTitles = [
         { id: 1, key: "PORTFOLI" },
@@ -34,7 +33,6 @@ const Header = () => {
 
     return (
       <View>
-        {/* Three children can be wrapped into components */}
         <View style={styles.search}>
           <Image
             style={styles.listIcon}
