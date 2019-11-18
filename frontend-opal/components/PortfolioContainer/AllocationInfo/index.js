@@ -35,10 +35,11 @@ const AllocationInfo = ({pieData, pieColor, legendData}) => {
 }
 
 AllocationInfo.propTypes = {
-  pieData: PropTypes.instanceOf(object).isRequired,
-  pieColor: PropTypes.instanceOf(array).isRequired,
-  legendData: PropTypes.instanceOf(object).isRequired
+  pieData: PropTypes.objectOf(PropTypes.object).isRequired,
+  pieColor: PropTypes.arrayOf(PropTypes.array).isRequired,
+  legendData: PropTypes.objectOf(PropTypes.object).isRequired
 }
+
 
 export default AllocationInfo;
 

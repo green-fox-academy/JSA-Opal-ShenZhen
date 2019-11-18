@@ -46,9 +46,9 @@ const PieChart = ({ data, color, legendData }) => {
 }
 
 PieChart.propTypes = {
-  data: PropTypes.instanceOf(object).isRequired,
-  color: PropTypes.instanceOf(array).isRequired,
-  legendData: PropTypes.instanceOf(object).isRequired
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  color: PropTypes.arrayOf(PropTypes.array).isRequired,
+  legendData: PropTypes.objectOf(PropTypes.object).isRequired
 }
 
 export default PieChart;
