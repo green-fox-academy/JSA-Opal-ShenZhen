@@ -1,13 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
-import Header from './components/Header';
-import Portfolio from './components/portfolio'
+import OpalApp from './components'
 
 export default function App() {
   return (
-    <View>
-      <Header />
-      <Portfolio />
-    </View>
+    <OpalApp />
   );
 }
