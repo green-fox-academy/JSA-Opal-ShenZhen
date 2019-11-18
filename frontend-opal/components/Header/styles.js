@@ -1,25 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-let displayBorder = (width = 2, style = "solid", color = "black") => (
-    {
-        borderWidth: width,
-        borderStyle: style,
-        borderColor: color,
-    }
-)
-
 export default StyleSheet.create({
-/* ------------------------ Search Area ------------------------ 
-    - a list icon, 
-    - an search input
-    - a search button
------------------------------------------------------------------- */
     search: {
         // Display & Box Model
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-around",
-        // ...displayBorder(3, "solid", "#74b9ff"),
         width: "100%",
         height: 50,
         alignContent: "center",
@@ -33,7 +19,6 @@ export default StyleSheet.create({
         marginLeft: 20,
 
         // Display & Box Model
-        // ...displayBorder(2, "solid", "#ff7675"),
         width: 25,
         height: 25,
 
@@ -43,7 +28,6 @@ export default StyleSheet.create({
         marginTop: 10,
 
         // Display & Box Model
-        // ...displayBorder(2, "solid", "#00b894"),
         width: "75%",
         height: 30,
 
@@ -55,27 +39,20 @@ export default StyleSheet.create({
         marginRight: 20,
 
         // Display & Box Model
-        // ...displayBorder(2, "solid", "#fdcb6e"),
         width: 25,
         height: 25,
     },
 
-/* ------------------------ Navigation Area ------------------------ 
-    - a portfolio link
-    - a watch list link
------------------------------------------------------------------- */
     navBars: {
         // Display & Box Model
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        // ...displayBorder(2, "solid", "#00cec9"),
 
     },
     narTitle: {
         // Display & Box Model
         padding: 2,
-        // ...displayBorder(2, "solid", "#636e72"),
         width: "50%",
         height: 50,
         textAlign: "center",

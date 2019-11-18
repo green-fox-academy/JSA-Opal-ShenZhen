@@ -5,7 +5,10 @@ import {
     TextInput,
     Image,
 } from 'react-native'
-import styles from './styles.js'
+import styles from './styles'
+import ListIcon from '../../assets/list-icon.png';
+import SearchIcon from '../../assets/search-button.png';
+
 
 const Header = () => {
     const narTitles = [
@@ -17,37 +20,37 @@ const Header = () => {
 
     const renderItems = (titles) => (
         titles.map(title => (
-            <View
-                key={title["id"]}
-                style={[styles.narTitle, handlePress(title["key"]) && styles.buttonPressed]}
-            >
-                <Button
-                    title={title["key"]}
-                    color="#e17055"
-                />
-            </View>
+          <View
+            key={title.id}
+            style={[styles.narTitle, handlePress(title.key) && styles.buttonPressed]}
+          >
+            <Button
+              title={title.key}
+              color="#e17055"
+            />
+          </View>
         ))
     )
 
     return (
-        <View>
-            {/* Three children can be wrapped into components */}
-            <View style={styles.search}>
-                <Image
-                    style={styles.listIcon}
-                    source={require('../../assets/list-icon.png')}
-                />
-                <TextInput style={styles.input}></TextInput>
-                <Image
-                    style={styles.searchButton}
-                    source={require('../../assets/search-button.png')}
-                />
-            </View>
-
-            <View style={styles.navBars}>
-                {renderItems(narTitles)}
-            </View>
+      <View>
+        {/* Three children can be wrapped into components */}
+        <View style={styles.search}>
+          <Image
+            style={styles.listIcon}
+            source={ListIcon}
+          />
+          <TextInput style={styles.input} />
+          <Image
+            style={styles.searchButton}
+            source={SearchIcon}
+          />
         </View>
+
+        <View style={styles.navBars}>
+          {renderItems(narTitles)}
+        </View>
+      </View>
     );
 }
 
