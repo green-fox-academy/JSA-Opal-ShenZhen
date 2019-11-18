@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import Svg from 'react-native-svg';
-import { VictoryLegend, VictoryPie, VictoryTheme } from 'victory-native'
+import { VictoryLegend, VictoryPie } from 'victory-native';
 
 const PieChart = (props) => {
     return (

@@ -3,9 +3,8 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { Card } from 'native-base';
 import styles from './styles';
 
-const Value = (props) => {
+const ValueInfo = (props) => {
     return (
-
         <View style={styles.valueArea}>
             <Text style={styles.title}>Value</Text>
 
@@ -24,4 +23,4 @@ const Value = (props) => {
     )
 }
 
-export default Value;
+export default ValueInfo;

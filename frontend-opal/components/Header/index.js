@@ -9,13 +9,18 @@ import styles from './styles.js'
 
 const Header = () => {
     const narTitles = [
-        { key: "PORTFOLI" },
-        { key: "WATCHLIST" }
+        { id: 1, key: "PORTFOLI" },
+        { id: 2, key: "WATCHLIST" }
     ]
+
+    const handlePress = (key) => key === "PORTFOLIO";
 
     const renderItems = (titles) => (
         titles.map(title => (
-            <View style={styles.narTitle}>
+            <View
+                key={title["id"]}
+                style={[styles.narTitle, handlePress(title["key"]) && styles.buttonPressed]}
+            >
                 <Button
                     title={title["key"]}
                     color="#e17055"
