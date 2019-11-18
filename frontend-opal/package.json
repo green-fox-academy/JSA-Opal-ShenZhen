@@ -5,18 +5,43 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|victory-.*|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js"
+    ]
   },
   "dependencies": {
     "expo": "^35.0.0",
+    "lodash": "^4.17.15",
+    "native-base": "^2.13.8",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-native-web": "^0.11.7"
+    "react-native-svg": "9.9.5",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-web": "^0.11.7",
+    "victory-native": "^33.0.0",
+    "expo-font": "~7.0.0"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
     "babel-plugin-root-import": "^6.4.1",
-    "babel-preset-expo": "^7.1.0"
+    "babel-preset-expo": "^7.1.0",
+    "i": "^0.3.6",
+    "jest-expo": "^35.0.0",
+    "react-test-renderer": "^16.8.3"
   },
   "private": true
 }
