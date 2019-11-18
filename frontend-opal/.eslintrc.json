@@ -1,13 +1,12 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "react-native/react-native": true
     },
     "extends": [
         "airbnb",
-        "prettier",
-        "eslint:recommended",
-        "plugin:react/recommended"
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -22,12 +21,12 @@
     },
     "plugins": [
         "react",
-        "react-native"
+        "react-native",
+        "prettier"
     ],
     "rules": {
-        "no-use-before-define": "warn",
-        "import/no-unresolved": "warn",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-undef": "warn"
+        "prettier/prettier": ["error"],
+        "react/jsx-filename-extension": ["warn"],
+        "no-use-before-define": ["warn"]
     }
 }
