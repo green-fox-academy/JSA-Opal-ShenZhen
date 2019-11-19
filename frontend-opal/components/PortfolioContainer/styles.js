@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    portfolioArea: {
-        alignItems: "center",
-    },
+  portfolioArea: {
+    alignItems: 'center'
+  }
 });

@@ -5,30 +5,26 @@ import { Card } from 'native-base';
 import styles from './styles';
 
 const ValueInfo = ({ totalInvestment }) => {
-    return (
-      <View style={styles.valueArea}>
-        <Text style={styles.title}>Value</Text>
+  return (
+    <View style={styles.valueArea}>
+      <Text style={styles.title}>Value</Text>
 
-        <Card>
-          <View style={styles.investment}>
-            <Text style={styles.name}>Total Investment</Text>
-            <Text style={styles.amount}>
+      <Card>
+        <View style={styles.investment}>
+          <Text style={styles.name}>Total Investment</Text>
+          <Text style={styles.amount}>{totalInvestment}</Text>
+        </View>
 
-              {totalInvestment}
-            </Text>
-          </View>
-
-          <TouchableOpacity onPress={() => console.log('button pressed')}>
-            <Text style={styles.button}>INVESTMENT ACCOUNT</Text>
-          </TouchableOpacity>
-
-        </Card>
-      </View>
-    )
-}
+        <TouchableOpacity onPress={() => console.log('button pressed')}>
+          <Text style={styles.button}>INVESTMENT ACCOUNT</Text>
+        </TouchableOpacity>
+      </Card>
+    </View>
+  );
+};
 
 ValueInfo.propTypes = {
   totalInvestment: PropTypes.string.isRequired
-}
+};
 
 export default ValueInfo;
