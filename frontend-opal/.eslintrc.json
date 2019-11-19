@@ -27,6 +27,7 @@
     "rules": {
         "prettier/prettier": ["error"],
         "react/jsx-filename-extension": ["warn"],
-        "no-use-before-define": ["warn"]
+        "no-use-before-define": ["warn"],
+	"no-undef": ["warn"]
     }
 }
