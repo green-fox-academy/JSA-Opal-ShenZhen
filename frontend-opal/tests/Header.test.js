@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Header from '../components/Header'
+import { describe } from 'jest-expo';
 
 
 describe('<Header />', () => {
