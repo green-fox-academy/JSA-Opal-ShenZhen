@@ -6,6 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+<<<<<<< HEAD
     "lint": "eslint ./ --ext .js --fix",
     "test": "jest"
   },
@@ -22,8 +23,12 @@
       "!**/babel.config.js",
       "!**/jest.setup.js"
     ]
+=======
+    "lint": "eslint ./ --ext .js --fix"
+>>>>>>> refactor files (undo deleted files)
   },
   "dependencies": {
+    "eslint-plugin-react-native": "^3.8.1",
     "expo": "^35.0.0",
     "expo-font": "~7.0.0",
     "native-base": "^2.13.8",
