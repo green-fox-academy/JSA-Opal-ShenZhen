@@ -1,8 +1,8 @@
 import React from 'react';
-import OpalApp from './components'
+import Portofolio from './components/Portofolio'
 
 export default function App() {
   return (
-    <OpalApp />
+    <Portofolio />
   );
 }
