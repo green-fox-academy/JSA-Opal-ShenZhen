@@ -34,13 +34,15 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  narTitle: {
+  navTitle: {
     padding: 2,
     width: '50%',
     height: 50,
     textAlign: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e17055',
     fontSize: 12
+  },
+  buttonPressed: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#e17055'
   }
 });
