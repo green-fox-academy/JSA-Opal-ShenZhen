@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, View } from 'react-native';
 import styles from './styles';
 
@@ -16,6 +17,15 @@ const NavBar = ({ navTitles }) => {
     ));
 
   return <View style={styles.navBars}>{renderItems(navTitles)}</View>;
+};
+
+NavBar.propTypes = {
+  navTitles: PropTypes.objectOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      key: PropTypes.string
+    })
+  ).isRequired
 };
 
 export default NavBar;
