@@ -1,5 +1,5 @@
 const request = require('supertest');
-const server = require('../../main');
+const server = require('../../server');
 
 describe('Portfolio Endpoint', () => {
   it('no authorization, should get 401', async () => {
