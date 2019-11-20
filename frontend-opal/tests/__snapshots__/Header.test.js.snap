@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "backgroundColor": "#0984e3",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "space-around",
+        "width": "100%",
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 25,
+          "marginLeft": 20,
+          "marginTop": 14,
+          "width": 25,
+        }
+      }
+    />
+    <TextInput
+      allowFontScaling={true}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "height": 30,
+          "marginTop": 10,
+          "width": "75%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 25,
+          "marginRight": 20,
+          "marginTop": 14,
+          "width": 25,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "height": 50,
+            "padding": 2,
+            "textAlign": "center",
+            "width": "50%",
+          },
+          Object {
+            "borderBottomColor": "#e17055",
+            "borderBottomWidth": 1,
+          },
+        ]
+      }
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityStates={Array []}
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "padding": 8,
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#e17055",
+                },
+              ]
+            }
+          >
+            PORTFOLIO
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "height": 50,
+            "padding": 2,
+            "textAlign": "center",
+            "width": "50%",
+          },
+          false,
+        ]
+      }
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityStates={Array []}
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "padding": 8,
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#e17055",
+                },
+              ]
+            }
+          >
+            WATCHLIST
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
