@@ -1,8 +1,10 @@
 module.exports = {
-  apps: [{
-    name: 'opal',
-    script: './main.js'
-  }],
+  apps: [
+    {
+      name: 'opal',
+      script: './main.js'
+    }
+  ],
   deploy: {
     production: {
       user: 'ubuntu',
@@ -14,4 +16,4 @@ module.exports = {
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
-}
+};
