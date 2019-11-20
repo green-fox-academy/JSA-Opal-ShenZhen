@@ -6,14 +6,35 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint ./ --ext .js --fix"
+    "lint": "eslint ./ --ext .js --fix",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|victory-.*|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js"
+    ]
   },
   "dependencies": {
     "expo": "^35.0.0",
+    "expo-font": "~7.0.0",
+    "native-base": "^2.13.8",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-native-web": "^0.11.7"
+    "react-native-svg": "9.9.5",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-web": "^0.11.7",
+    "victory-native": "^33.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -28,7 +49,10 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-react-native": "^3.8.1",
-    "prettier": "^1.19.1"
+    "i": "^0.3.6",
+    "jest-expo": "^35.0.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.8.3"
   },
   "private": true
 }
