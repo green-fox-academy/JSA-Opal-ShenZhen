@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, TextInput, Image } from 'react-native';
+import ListIcon from 'assets/list-icon.png';
+import SearchIcon from 'assets/search-button.png';
 import styles from './styles';
-import ListIcon from '../../assets/list-icon.png';
-import SearchIcon from '../../assets/search-button.png';
 
 import NavBar from './NavBar';
 

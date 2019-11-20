@@ -23,6 +23,10 @@ module.exports = function (api) {
               rootPathSuffix: './src/reducers',
               rootPathPrefix: 'reducers/',
             },
+            {
+              rootPathSuffix: './assets',
+              rootPathPrefix: 'assets/',
+            },
           ],
         },
       ],
