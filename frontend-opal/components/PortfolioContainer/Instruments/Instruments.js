@@ -4,13 +4,13 @@ import { SafeAreaView, View, Text, TouchableOpacity, Image, FlatList } from 'rea
 import { Card } from 'native-base';
 import styles from './styles';
 
-function InstrumentsItem({ company, stockExchange, positions, marketValue, unrlzedPLPercentage, unrlzedPL }){
+function InstrumentsItem({ company, stockExchange,profileImg, positions, marketValue, unrlzedPLPercentage, unrlzedPL }){
     return (
         <View>
             <Card>
                 <View style={styles.header}>
                     <View style = {styles.profileImgContainer}>
-                        <Image style = {styles.profileImg} source={require('./images/avatarPlaceholder.png')} />
+                        <Image style = {styles.profileImg} source={ profileImg } />
                     </View>
                     <View style = {styles.profileText}>
                         <Text>{ company }</Text>
@@ -60,7 +60,8 @@ const Instruments = ({ InstrumentList }) => {
                 renderItem = {({ item }) => 
                     <InstrumentsItem 
                         company={item.company}
-                        stockExchange={item.stockExchange} 
+                        stockExchange={item.stockExchange}
+                        profileImg={item.profileImg} 
                         positions={item.positions} 
                         marketValue={item.marketValue} 
                         unrlzedPLPercentage={item.unrlzedPLPercentage}
@@ -77,7 +78,8 @@ Instruments.propTypes = {
     InstrumentList: PropTypes.arrayOf(
         PropTypes.shape({
             company: PropTypes.string.isRequired, 
-            stockExchange: PropTypes.string.isRequired, 
+            stockExchange: PropTypes.string.isRequired,
+            profileImg: PropTypes.any.isRequired, 
             positions: PropTypes.number.isRequired, 
             marketValue: PropTypes.number.isRequired, 
             unrlzedPLPercentage: PropTypes.string.isRequired, 
