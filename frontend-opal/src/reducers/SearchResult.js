@@ -7,7 +7,7 @@ function searchResult(state = {}, action) {
 }
 
 function search(state, action) {
-    return action.payload.results;
+  return action.payload.results;
 }
 
 export default searchResult;

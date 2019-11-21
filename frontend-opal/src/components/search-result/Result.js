@@ -1,13 +1,18 @@
 import React from 'react';
-import { View, FlatList, Text, Image } from 'react-native';
+import {
+  View, FlatList, Text, Image,
+} from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './styles/result';
+import tradeIcon from './icons/trade.png';
+import infoIcon from './icons/info.png';
 
-function Item(props) {
-  const name = props.result.name;
-  const inputIndex = name.indexOf(props.input);
-  const inputLength = props.input.length;
+function Item({ result, input }) {
+  const name = String(result.name);
+  const inputIndex = name.indexOf(input);
+  const inputLength = input.length;
 
   return (
     <View style={styles.itemContainer}>
@@ -18,12 +23,12 @@ function Item(props) {
           <Text style={styles.name}>{name.substr(inputIndex + inputLength)}</Text>
         </View>
         <View style={styles.iconContainer}>
-          <Image source={require('./icons/trade.png')} style={styles.tradeIcon} />
-          <Image source={require('./icons/info.png')} style={styles.infoIcon} />
+          <Image source={tradeIcon} style={styles.tradeIcon} />
+          <Image source={infoIcon} style={styles.infoIcon} />
         </View>
       </View>
       <View>
-        <Text style={styles.fullName}>{props.result.fullName}</Text>
+        <Text style={styles.fullName}>{result.fullName}</Text>
       </View>
     </View>
   );
@@ -34,14 +39,42 @@ function Result({ state }) {
     <FlatList
       data={state.results}
       renderItem={({ item }) => <Item result={item} input={state.input} />}
-      keyExtractor={item => item.fullName}
+      keyExtractor={(item) => item.fullName}
       style={styles.container}
     />
   );
 }
 
-const mapStateToProps = state => ({
-  state: state.searchResult
+Result.propTypes = {
+  state: PropTypes.shape({
+    results: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        fullName: PropTypes.string,
+        market: PropTypes.string,
+      }),
+    ),
+    input: PropTypes.string,
+  }).isRequired,
+};
+
+Item.defaultProps = {
+  result: []
+}
+
+Item.propTypes = {
+  result: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      fullName: PropTypes.string,
+      market: PropTypes.string,
+    }),
+  ),
+  input: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  state: state.searchResult,
 });
 
 export default connect(mapStateToProps, null)(Result);

@@ -6,12 +6,12 @@ import SearchHeader from './Header';
 import Result from './Result';
 
 function Index() {
-    return (
-        <View style={styles.Index}>
-            <SearchHeader />
-            <Result />
-        </View>
-    );
+  return (
+    <View style={styles.Index}>
+      <SearchHeader />
+      <Result />
+    </View>
+  );
 }
 
 export default Index;

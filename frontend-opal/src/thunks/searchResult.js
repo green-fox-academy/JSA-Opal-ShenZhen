@@ -4,33 +4,31 @@ const data = [
   {
     name: 'MS',
     fullName: 'Morgan Stanley',
-    market: 'NYSE'
+    market: 'NYSE',
   },
   {
     name: 'MSFT',
     fullName: 'Microsoft Corp.',
-    market: 'NASDAQ'
+    market: 'NASDAQ',
   },
   {
     name: 'FBMS',
     fullName: 'First Branchshares Inc/MS',
-    market: 'NASDAQ'
-  }
+    market: 'NASDAQ',
+  },
 ];
 
 function search(input) {
-  return dispatch => {
-      dispatch(actions.search({
-          input,
-          results: data.filter(info => 
-            input !== '' && 
-            (info.name.includes(input) || 
-            info.fullName.includes(input))
-          )
-      }));
+  return (dispatch) => {
+    dispatch(actions.search({
+      input,
+      results: data.filter((info) => input !== ''
+            && (info.name.includes(input)
+            || info.fullName.includes(input))),
+    }));
   };
 }
 
 export default {
-  search
+  search,
 };
