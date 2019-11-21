@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es6": true,
-	"react-native/react-native": true
+        "react-native/react-native": true,
+        "mocha": true
     },
     "extends": [
         "airbnb"
@@ -20,11 +21,19 @@
     },
     "plugins": [
         "react",
-	    "react-native"
+        "react-native"
     ],
     "parser": "babel-eslint",
     "rules": {
-	    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
         "no-undef": "warn",
         "import/no-unresolved": "warn",
         "no-unused-vars": "warn"

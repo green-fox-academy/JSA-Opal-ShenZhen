@@ -1,8 +1,9 @@
-const pairs = new Map();
-pairs.set('GET_ALL_DATA', (state, action) => action.payload.data);
+const pairs = {
+  GET_ALL_DATA: (state, action) => action.payload.data,
+};
 
 function watchLists(state = {}, action) {
-  if (pairs.has(action.type)) return pairs.get(action.type)(state, action);
+  if (action.type in pairs) return pairs[action.type](state, action);
   return state;
 }
 
