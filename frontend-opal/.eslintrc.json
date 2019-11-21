@@ -2,7 +2,7 @@
     "env": {
         "browser": true,
         "es6": true,
-	"react-native/react-native": true
+	    "react-native/react-native": true
     },
     "extends": [
         "airbnb"
@@ -20,7 +20,7 @@
     },
     "plugins": [
         "react",
-	"react-native"
+	    "react-native"
     ],
     "parser": "babel-eslint",
     "rules": {
