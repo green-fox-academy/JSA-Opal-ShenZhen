@@ -6,7 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint ./ --ext .js --fix",
+    "lint": "eslint ./ --ext .js .json --fix",
     "test": "jest"
   },
   "jest": {
