@@ -59,8 +59,8 @@ Result.propTypes = {
 };
 
 Item.defaultProps = {
-  result: []
-}
+  result: [],
+};
 
 Item.propTypes = {
   result: PropTypes.arrayOf(
