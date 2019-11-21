@@ -10,5 +10,5 @@ function getPixel(num, designWidth = 375) {
 }
 
 export default {
-  getPixel
-}
+  getPixel,
+};

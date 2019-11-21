@@ -20,13 +20,13 @@
     },
     "plugins": [
         "react",
-	"react-native"
+	    "react-native"
     ],
     "parser": "babel-eslint",
     "rules": {
-	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-undef": "warn",
-    "import/no-unresolved": "warn",
-    "no-unused-vars": "warn"
+	    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-undef": "warn",
+        "import/no-unresolved": "warn",
+        "no-unused-vars": "warn"
     }
 }
