@@ -1,10 +1,10 @@
-const getAllData = data => ({
-  type: 'GET_ALL_DATA',
+const getWatchlistData = data => ({
+  type: 'GET_WATCHLIST_DATA',
   payload: {
     data
   }
 });
 
 export default {
-  getAllData
+  getWatchlistData
 };

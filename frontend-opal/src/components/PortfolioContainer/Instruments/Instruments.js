@@ -9,10 +9,8 @@ const Instruments = ({ instrumentList }) => (
     <Text style={styles.title}>Instruments</Text>
     <FlatList
       data={instrumentList}
-      renderItem={({ item }) => (
-        <InstrumentsItem InstrumentItem={item} />
-      )}
-      keyExtractor={(item) => item.stockExchange + item.company}
+      renderItem={({ item }) => <InstrumentsItem InstrumentItem={item} />}
+      keyExtractor={item => item.stockExchange + item.company}
     />
   </SafeAreaView>
 );
@@ -21,9 +19,9 @@ Instruments.propTypes = {
   instrumentList: PropTypes.arrayOf(
     PropTypes.shape({
       company: PropTypes.string,
-      stockExchange: PropTypes.string,
-    }),
-  ).isRequired,
+      stockExchange: PropTypes.string
+    })
+  ).isRequired
 };
 
 export default Instruments;

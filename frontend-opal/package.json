@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint **/*.{js,jsx} --ext .js --fix",
+    "lint": "eslint **/*.{js,jsx} --ext .js",
+    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix",
     "test": "jest"
   },
   "jest": {

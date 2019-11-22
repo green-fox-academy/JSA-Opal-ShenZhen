@@ -6,7 +6,13 @@ import styles from './styles';
 
 function InstrumentsItem({ instrumentItem }) {
   const {
-    company, stockExchange, profileImg, positions, marketValue, unrlzedPLPercentage, unrlzedPL,
+    company,
+    stockExchange,
+    profileImg,
+    positions,
+    marketValue,
+    unrlzedPLPercentage,
+    unrlzedPL
   } = instrumentItem;
 
   return (
@@ -17,30 +23,30 @@ function InstrumentsItem({ instrumentItem }) {
             <Image style={styles.profileImg} source={profileImg} />
           </View>
           <View style={styles.profileText}>
-            <Text>{ company }</Text>
-            <Text style={styles.stockExchange}>{ stockExchange }</Text>
+            <Text>{company}</Text>
+            <Text style={styles.stockExchange}>{stockExchange}</Text>
           </View>
         </View>
 
         <View style={styles.instruments}>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Positions:</Text>
-            <Text style={styles.instrumentDetailText}>{ positions }</Text>
+            <Text style={styles.instrumentDetailText}>{positions}</Text>
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Market Value:</Text>
-            <Text style={styles.instrumentDetailText}>{ marketValue }</Text>
+            <Text style={styles.instrumentDetailText}>{marketValue}</Text>
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Unrlzd P/L %:</Text>
             <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
-              { unrlzedPLPercentage }
+              {unrlzedPLPercentage}
             </Text>
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Unrlzd P/L:</Text>
             <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
-              { unrlzedPL }
+              {unrlzedPL}
             </Text>
           </View>
         </View>
@@ -66,8 +72,8 @@ InstrumentsItem.propTypes = {
     positions: PropTypes.number,
     marketValue: PropTypes.number,
     unrlzedPLPercentage: PropTypes.string,
-    unrlzedPL: PropTypes.number,
-  }).isRequired,
+    unrlzedPL: PropTypes.number
+  }).isRequired
 };
 
 export default InstrumentsItem;

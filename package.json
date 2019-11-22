@@ -4,7 +4,8 @@
   "description": "JSA Opal",
   "main": "index.js",
   "scripts": {
-    "lint": "./lint.sh",
+    "lint": "./scripts/lint.sh",
+    "lint-fix": "./scripts/lint-fix.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": [
