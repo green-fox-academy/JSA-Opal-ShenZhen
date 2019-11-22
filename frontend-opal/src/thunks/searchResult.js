@@ -1,4 +1,4 @@
-import actions from 'actions/SearchResult';
+import actions from 'actions/searchResult';
 
 const data = [
   {

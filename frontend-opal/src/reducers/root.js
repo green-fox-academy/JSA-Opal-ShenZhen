@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import watchLists from './Watchlists';
-import searchResult from './SearchResult';
+import watchLists from './watchlists';
+import searchResult from './searchResult';
 
 export default combineReducers({
   watchLists,
