@@ -4,9 +4,4 @@ const pairs = {
   }
 };
 
-function watchLists(state = {}, action) {
-  if (action.type in pairs) return pairs[action.type](state, action);
-  return state;
-}
-
-export default watchLists;
+export default pairs;
