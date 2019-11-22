@@ -13,7 +13,7 @@ function queryFilter(items) {
   const target = Object.keys(items)
     .filter(key => items[key] !== undefined)
     .reduce((obj, key) => {
-      let res = obj;
+      const res = obj;
       res[key] = items[key];
       return res;
     }, {});
