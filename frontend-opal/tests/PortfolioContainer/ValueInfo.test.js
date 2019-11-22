@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ValueInfo from '../../src/components/PortfolioContainer/ValueInfo';
+import ValueInfo from 'components/PortfolioContainer/ValueInfo';
 
 const totalInvestment = '3,400';
 

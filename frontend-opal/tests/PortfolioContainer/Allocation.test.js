@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AllocationInfo from '../../src/components/PortfolioContainer/AllocationInfo';
+import AllocationInfo from 'components/PortfolioContainer/AllocationInfo';
 
 const pieData = [
   { x: 'IT', y: 40, label: '40%' },

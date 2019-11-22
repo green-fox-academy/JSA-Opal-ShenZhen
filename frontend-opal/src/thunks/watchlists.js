@@ -1,4 +1,4 @@
-import actions from 'actions/Watchlists';
+import actions from 'actions/watchlists';
 
 const lists = [
   {
