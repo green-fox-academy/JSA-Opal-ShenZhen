@@ -10,12 +10,12 @@ const PortfolioContainer = () => {
   const pieData = [
     { x: 'IT', y: 40, label: '40%' },
     { x: 'Finance', y: 30, label: '30%' },
-    { x: 'Energy', y: 30, label: '30%' },
+    { x: 'Energy', y: 30, label: '30%' }
   ];
   const legendData = [
     { name: 'IT', symbol: { type: 'square' } },
     { name: 'Finance', symbol: { type: 'square' } },
-    { name: 'Energy', symbol: { type: 'square' } },
+    { name: 'Energy', symbol: { type: 'square' } }
   ];
   const pieColor = ['#711702', '#A91600', '#E12C00'];
 

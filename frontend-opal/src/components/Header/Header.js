@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, TextInput, Image } from 'react-native';
+import ListIcon from 'assets/list-icon.png';
+import SearchIcon from 'assets/search-button.png';
 import styles from './styles';
-import ListIcon from '../../assets/list-icon.png';
-import SearchIcon from '../../assets/search-button.png';
 
 import NavBar from './NavBar';
 
 const Header = () => {
   const navTitles = [
     { id: 1, key: 'PORTFOLIO' },
-    { id: 2, key: 'WATCHLIST' },
+    { id: 2, key: 'WATCHLIST' }
   ];
 
   return (

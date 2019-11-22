@@ -1,32 +1,46 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-	"react-native/react-native": true
+  "env": {
+    "browser": true,
+    "es6": true,
+    "react-native/react-native": true,
+    "mocha": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "airbnb"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-native",
+    "prettier",
+    "json"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-	"react-native"
-    ],
-    "parser": "babel-eslint",
-    "rules": {
-	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-
-	"no-use-before-define": "warn",
-	"no-undef": "warn"
-    }
+    "no-undef": "warn",
+    "import/no-unresolved": "warn",
+    "no-unused-vars": "warn",
+    "prettier/prettier": "error"
+  }
 }
