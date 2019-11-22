@@ -24,4 +24,13 @@ describe('Portfolio Endpoint', () => {
       .set('Authorization', 'Bearer token');
     expect(res.statusCode).toEqual(200);
   });
+  it('server of stock returns correcly response', async () => {
+    const res = await request(server)
+      .get('/portfolio')
+      .set('Authorization', 'Bearer token');
+
+    const data = res.body.portfolio;
+    expect(data[0].user_id).toEqual(1);
+    expect(data[0].symbol).toEqual('MSFT');
+  });
 });
