@@ -1,9 +1,9 @@
 jest.mock('./stockServer');
-const stock = require('./stockServer');
+const stockServer = require('./stockServer');
 
 describe('getStockByUser function', () => {
   it("returns an error for a stock doesn't exist", async () => {
-    const stockData = await stock.getStockByUser(5);
+    const stockData = await stockServer.getStockByUser(5);
 
     expect(stockData.error).not.toBeNull();
     expect(stockData.error).toBe('Stock item not found');
