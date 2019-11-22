@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'native-base';
 import styles from './styles';
 
-function InstrumentsItem({ InstrumentItem }) {
+function InstrumentsItem({ instrumentItem }) {
   const {
     company, stockExchange, profileImg, positions, marketValue, unrlzedPLPercentage, unrlzedPL,
-  } = InstrumentItem;
+  } = instrumentItem;
 
   return (
     <View>
@@ -59,7 +59,7 @@ function InstrumentsItem({ InstrumentItem }) {
 }
 
 InstrumentsItem.propTypes = {
-  InstrumentItem: PropTypes.shape({
+  instrumentItem: PropTypes.shape({
     company: PropTypes.string,
     stockExchange: PropTypes.string,
     profileImg: PropTypes.any,

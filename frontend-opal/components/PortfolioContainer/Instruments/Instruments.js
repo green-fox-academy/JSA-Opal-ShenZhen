@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import InstrumentsItem from './InstrumentsItem';
 import styles from './styles';
 
-const Instruments = ({ InstrumentList }) => (
+const Instruments = ({ instrumentList }) => (
   <SafeAreaView style={styles.instrumentsArea}>
     <Text style={styles.title}>Instruments</Text>
     <FlatList
-      data={InstrumentList}
+      data={instrumentList}
       renderItem={({ item }) => (
         <InstrumentsItem InstrumentItem={item} />
       )}
@@ -18,7 +18,7 @@ const Instruments = ({ InstrumentList }) => (
 );
 
 Instruments.propTypes = {
-  InstrumentList: PropTypes.arrayOf(
+  instrumentList: PropTypes.arrayOf(
     PropTypes.shape({
       company: PropTypes.string,
       stockExchange: PropTypes.string,
