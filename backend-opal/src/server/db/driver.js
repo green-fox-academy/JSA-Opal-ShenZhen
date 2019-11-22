@@ -5,21 +5,22 @@ const MYSQL_DB = require('./config');
  * Database Manipulation Tools Initialization 
 ------------------------------------------------------------*/
 function isStringVal(val) {
-  return typeof val === 'string' ? "'" + val + "'" : val;
+  return typeof val === 'string' ? `'${val}'` : val;
 }
 
 function queryFilter(items) {
   // Filter object item without value
-  let target = Object.keys(items)
-    .filter(key => items[key] != undefined)
+  const target = Object.keys(items)
+    .filter(key => items[key] !== undefined)
     .reduce((obj, key) => {
-      obj[key] = items[key];
-      return obj;
+      let res = obj;
+      res[key] = items[key];
+      return res;
     }, {});
   // Join query string
-  let filterString = Object.keys(target)
+  const filterString = Object.keys(target)
     .map(key => {
-      return key + '=' + isStringVal(items[key]);
+      return `${key}=${isStringVal(items[key])}`;
     })
     .join(' and ');
 
@@ -44,12 +45,12 @@ function executeQuery(conn, query) {
 ------------------------------------------------------------*/
 function getStockByUserId(id, db = MYSQL_DB) {
   let query = `SELECT ?? FROM Stock ${queryFilter({ user_id: id })};`;
-  let columns = ['id', 'user_id', 'symbol', 'amount'];
+  const columns = ['id', 'user_id', 'symbol', 'amount'];
 
   query = mysql.format(query, [columns]);
   return executeQuery(db, query);
 }
 
 module.exports = {
-    getStockByUserId
+  getStockByUserId
 };
