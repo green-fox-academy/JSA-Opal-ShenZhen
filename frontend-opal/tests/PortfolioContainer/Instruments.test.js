@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Instruments from '../components/PortfolioContainer/Instruments';
+import Instruments from '../../src/components/PortfolioContainer/Instruments';
 
 const instrumentsList = [{
   company: 'FB - Facebook Inc.',
   stockExchange: 'NASDAQ',
   /* eslint-disable-next-line */
-  profileImg: require('../components/PortfolioContainer/Instruments/images/avatarPlaceholder.png'),
+  profileImg: require('../../src/components/PortfolioContainer/Instruments/images/avatarPlaceholder.png'),
   positions: 136,
   marketValue: 11863.28,
   unrlzedPLPercentage: '4.5%',
