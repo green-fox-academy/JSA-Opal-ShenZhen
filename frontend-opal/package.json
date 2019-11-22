@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint ./ --ext .js --fix",
+    "lint": "eslint **/*.{js,jsx} --ext .js",
+    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix",
     "test": "jest"
   },
   "jest": {
@@ -24,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "eslint-plugin-react-native": "^3.8.1",
     "expo": "^35.0.0",
     "expo-font": "~7.0.0",
     "native-base": "^2.13.8",
