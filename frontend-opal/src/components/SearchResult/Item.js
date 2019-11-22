@@ -42,7 +42,7 @@ Item.propTypes = {
     fullName: PropTypes.string,
     market: PropTypes.string
   }),
-  input: PropTypes.string.isRequired
+  input: PropTypes.string
 };
 
 export default Item;
