@@ -5,5 +5,5 @@ import searchResult from './searchResult';
 
 export default combineReducers({
   watchLists,
-  searchResult,
+  searchResult
 });

@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function(api) {
   api.cache(true);
   return {
     presets: ['babel-preset-expo'],
@@ -9,31 +9,31 @@ module.exports = function (api) {
           paths: [
             {
               rootPathSuffix: './src',
-              rootPathPrefix: '~/',
+              rootPathPrefix: '~/'
             },
             {
               rootPathSuffix: './src/components',
-              rootPathPrefix: 'components/',
+              rootPathPrefix: 'components/'
             },
             {
               rootPathSuffix: './src/actions',
-              rootPathPrefix: 'actions/',
+              rootPathPrefix: 'actions/'
             },
             {
               rootPathSuffix: './src/reducers',
-              rootPathPrefix: 'reducers/',
+              rootPathPrefix: 'reducers/'
             },
             {
               rootPathSuffix: './assets',
-              rootPathPrefix: 'assets/',
+              rootPathPrefix: 'assets/'
             },
             {
               rootPathSuffix: './src/thunks',
-              rootPathPrefix: 'thunks/',
-            },
-          ],
-        },
-      ],
-    ],
+              rootPathPrefix: 'thunks/'
+            }
+          ]
+        }
+      ]
+    ]
   };
 };

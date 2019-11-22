@@ -1,10 +1,10 @@
-const search = (results) => ({
+const search = results => ({
   type: 'SEARCH',
   payload: {
-    results,
-  },
+    results
+  }
 });
 
 export default {
-  search,
+  search
 };

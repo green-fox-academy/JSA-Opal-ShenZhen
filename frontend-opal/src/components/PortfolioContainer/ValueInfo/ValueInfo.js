@@ -22,7 +22,7 @@ const ValueInfo = ({ totalInvestment }) => (
 );
 
 ValueInfo.propTypes = {
-  totalInvestment: PropTypes.string.isRequired,
+  totalInvestment: PropTypes.string.isRequired
 };
 
 export default ValueInfo;

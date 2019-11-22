@@ -11,11 +11,13 @@ describe('<Result />', () => {
   it('renders correctly', () => {
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
-    const tree = renderer.create(
-      <Provider store={store}>
-        <Result />
-      </Provider>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <Result />
+        </Provider>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View, FlatList, Text, Image,
-} from 'react-native';
+import { View, FlatList, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -39,7 +37,7 @@ function Result({ state }) {
     <FlatList
       data={state.results}
       renderItem={({ item }) => <Item result={item} input={state.input} />}
-      keyExtractor={(item) => item.fullName}
+      keyExtractor={item => item.fullName}
       style={styles.container}
     />
   );
@@ -51,15 +49,15 @@ Result.propTypes = {
       PropTypes.shape({
         name: PropTypes.string,
         fullName: PropTypes.string,
-        market: PropTypes.string,
-      }),
+        market: PropTypes.string
+      })
     ),
-    input: PropTypes.string,
-  }).isRequired,
+    input: PropTypes.string
+  }).isRequired
 };
 
 Item.defaultProps = {
-  result: [],
+  result: []
 };
 
 Item.propTypes = {
@@ -67,14 +65,14 @@ Item.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       fullName: PropTypes.string,
-      market: PropTypes.string,
-    }),
+      market: PropTypes.string
+    })
   ),
-  input: PropTypes.string.isRequired,
+  input: PropTypes.string.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  state: state.searchResult,
+const mapStateToProps = state => ({
+  state: state.searchResult
 });
 
 export default connect(mapStateToProps, null)(Result);

@@ -1,13 +1,10 @@
-const pairs = new Map();
-pairs.set('SEARCH', search);
+const pairs = {
+  SEARCH: (state, action) => action.payload.results
+};
 
 function searchResult(state = {}, action) {
-  if (pairs.has(action.type)) return pairs.get(action.type)(state, action);
+  if (action.type in pairs) return pairs[action.type](state, action);
   return state;
-}
-
-function search(state, action) {
-  return action.payload.results;
 }
 
 export default searchResult;
