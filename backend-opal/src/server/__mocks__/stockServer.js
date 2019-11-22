@@ -1,6 +1,8 @@
-const { stockItems } = require('./stockTestData');
+const { stockItems } = require('./stockServerTestData');
 
-const getStock = userID => {
+const getStockByUser = userID => {
+  console.log("mock: getStockByUserId");
+
   return new Promise(resolve => {
     const stockData = stockItems.filter(item => item.userID === userID);
 
@@ -12,4 +14,4 @@ const getStock = userID => {
   });
 };
 
-module.exports = { getStock };
+module.exports = { getStockByUser };
