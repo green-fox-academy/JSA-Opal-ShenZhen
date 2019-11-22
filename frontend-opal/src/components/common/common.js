@@ -1,6 +1,4 @@
-import {
-  Dimensions,
-} from 'react-native';
+import { Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 const ScreenWidth = width;
@@ -10,5 +8,5 @@ function getPixel(num, designWidth = 375) {
 }
 
 export default {
-  getPixel,
+  getPixel
 };

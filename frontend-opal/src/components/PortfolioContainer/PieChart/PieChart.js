@@ -28,16 +28,16 @@ PieChart.propTypes = {
     PropTypes.shape({
       x: PropTypes.string,
       y: PropTypes.number,
-      label: PropTypes.string,
-    }),
+      label: PropTypes.string
+    })
   ).isRequired,
   color: PropTypes.arrayOf(PropTypes.string).isRequired,
   legendData: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      symbol: PropTypes.objectOf(PropTypes.string),
-    }),
-  ).isRequired,
+      symbol: PropTypes.objectOf(PropTypes.string)
+    })
+  ).isRequired
 };
 
 export default PieChart;

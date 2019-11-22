@@ -1,10 +1,10 @@
-const getAllData = (data) => ({
+const getAllData = data => ({
   type: 'GET_ALL_DATA',
   payload: {
-    data,
-  },
+    data
+  }
 });
 
 export default {
-  getAllData,
+  getAllData
 };

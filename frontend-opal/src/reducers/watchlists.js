@@ -1,5 +1,5 @@
 const pairs = {
-  GET_ALL_DATA: (state, action) => action.payload.data,
+  GET_ALL_DATA: (state, action) => action.payload.data
 };
 
 function watchLists(state = {}, action) {

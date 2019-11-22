@@ -9,7 +9,7 @@ import NavBar from './NavBar';
 const Header = () => {
   const navTitles = [
     { id: 1, key: 'PORTFOLIO' },
-    { id: 2, key: 'WATCHLIST' },
+    { id: 2, key: 'WATCHLIST' }
   ];
 
   return (
