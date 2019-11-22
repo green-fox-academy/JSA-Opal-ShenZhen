@@ -1,7 +1,14 @@
 const router = require('express').Router();
 const authService = require('./common/authorizationService');
 
-const portfolioList = [{ id: '1', userId: '1', symbol: 'MSFT', amount: 123 }];
+const data = [
+  {
+    id: 1,
+    userId: 1,
+    name: 'My Watchlist 1',
+    symbols: ['MSFT', 'AMZN', 'AAPL', 'FB']
+  }
+];
 
 router.get('/', function(req, res) {
   const { authorization } = req.headers;
@@ -19,7 +26,7 @@ router.get('/', function(req, res) {
     res.status(403).send(response);
   } else {
     const response = {
-      portfolio: portfolioList
+      watchlists: data
     };
 
     res.status(200).send(response);

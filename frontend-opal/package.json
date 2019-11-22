@@ -24,6 +24,7 @@
     ]
   },
   "dependencies": {
+    "eslint-plugin-react-native": "^3.8.1",
     "expo": "^35.0.0",
     "expo-font": "~7.0.0",
     "native-base": "^2.13.8",

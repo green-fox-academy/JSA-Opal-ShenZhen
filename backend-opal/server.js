@@ -4,12 +4,10 @@ const express = require('express');
 const server = express();
 
 const getPortfolio = require('./src/server/portfolio');
+const getWatchLists = require('./src/server/watchLists');
 
 // wait for handlers
 server.use('/portfolio', getPortfolio);
-
-server.listen(process.env.SERVER_PORT, () => {
-  console.log(`express server's running on PORT ${process.env.SERVER_PORT}`);
-});
+server.use('/watchlists', getWatchLists);
 
 module.exports = server;
