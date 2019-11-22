@@ -1,7 +1,7 @@
 const { stockItems } = require('./stockTestData');
 
 const getStock = userID => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     const stockData = stockItems.filter(item => item.userID === userID);
 
     if (Array.isArray(stockData) && stockData.length) {
