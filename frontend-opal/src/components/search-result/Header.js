@@ -5,7 +5,7 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import thunks from 'thunks/searchResult';
+import thunks from '~/src/thunks/SearchResult';
 import styles from './styles/header';
 
 function SearchHeader({ search }) {
