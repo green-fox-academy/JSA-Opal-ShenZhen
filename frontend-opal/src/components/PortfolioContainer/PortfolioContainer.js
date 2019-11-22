@@ -19,16 +19,18 @@ const PortfolioContainer = () => {
     { name: 'Energy', symbol: { type: 'square' } }
   ];
   const pieColor = ['#711702', '#A91600', '#E12C00'];
-  const instrumentsList = [{
-    company: 'FB - Facebook Inc.',
-    stockExchange: 'NASDAQ',
-    /* eslint-disable-next-line */
+  const instrumentsList = [
+    {
+      company: 'FB - Facebook Inc.',
+      stockExchange: 'NASDAQ',
+      /* eslint-disable-next-line */
     profileImg: require('./Instruments/images/avatarPlaceholder.png'),
-    positions: 136,
-    marketValue: 11863.28,
-    unrlzedPLPercentage: '4.5%',
-    unrlzedPL: 510.86,
-  }];
+      positions: 136,
+      marketValue: 11863.28,
+      unrlzedPLPercentage: '4.5%',
+      unrlzedPL: 510.86
+    }
+  ];
 
   return (
     <View style={styles.portfolioArea}>
