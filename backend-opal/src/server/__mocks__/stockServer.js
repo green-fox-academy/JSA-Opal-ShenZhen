@@ -1,8 +1,6 @@
 const { stockItems } = require('./stockServerTestData');
 
 const getStockByUser = userID => {
-  console.log('mock: getStockByUserId');
-
   return new Promise(resolve => {
     const stockData = stockItems.filter(item => item.userID === userID);
 
