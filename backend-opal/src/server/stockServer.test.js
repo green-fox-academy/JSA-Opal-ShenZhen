@@ -18,7 +18,7 @@ describe('getStockByUser function', () => {
         amount: 30
       }
     ];
-    const stockData = await stock.getStockByUser(3);
+    const stockData = await stockServer.getStockByUser(3);
 
     expect(stockData.data).not.toBeNull();
     expect(stockData.data).toEqual(expectedStockData);
