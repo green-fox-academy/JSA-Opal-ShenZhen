@@ -1,10 +1,9 @@
-// const router = require('express').Router();
 const dbDriver = require('./db/driver');
 
-const getStockByUser = userID => async (req, res) => {
+const getStockByUser = async userID => {
+  console.log('stockServer');
   const data = await dbDriver.getStockByUserId(userID);
-
-  return res.json(data);
+  return data;
 };
 
-module.exports = { getStockByUser };
+module.exports = { getByUser: getStockByUser };
