@@ -12,12 +12,11 @@ const dbConfig = {
 const initDataBase = config => {
   if (!connection) {
     connection = mysql.createConnection(config);
-    connection.connect(function (err) {
+    connection.connect(function(err) {
       if (err) {
         console.error(`Database connection error ${err.stack}`);
         return;
       }
-
       console.log(`Database connected as id ${connection.threadId}`);
     });
   }
