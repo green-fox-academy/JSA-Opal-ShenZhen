@@ -1,3 +1,4 @@
+jest.mock('./stockService');
 const request = require('supertest');
 const server = require('../../server');
 
@@ -29,8 +30,8 @@ describe('Portfolio Endpoint', () => {
       .get('/portfolio')
       .set('Authorization', 'Bearer token');
 
-    const data = res.body.portfolio;
-    expect(data[0].user_id).toEqual(1);
-    expect(data[0].symbol).toEqual('MSFT');
+    const { data } = res.body.portfolio;
+    expect(data[0].userID).toEqual(1);
+    expect(data[0].symbol).toEqual('A');
   });
 });

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const authService = require('./common/authorizationService');
 
 // const portfolioList = [{ id: '1', userId: '1', symbol: 'MSFT', amount: 123 }];
-const StockData = require('./stockServer');
+const StockData = require('./stockService');
 
 router.get('/', async (req, res) => {
   const { authorization } = req.headers;

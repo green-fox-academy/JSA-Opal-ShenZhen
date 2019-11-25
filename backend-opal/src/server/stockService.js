@@ -1,7 +1,7 @@
-const dbDriver = require('./db/driver');
+const driver = require('./db/driver');
 
 const getStockByUser = async userID => {
-  const data = await dbDriver.getStockByUserId(userID);
+  const data = await driver.getStockByUserId(userID);
   return data;
 };
 

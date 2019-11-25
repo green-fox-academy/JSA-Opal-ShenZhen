@@ -1,9 +1,10 @@
-jest.mock('./stockServer');
-const stockServer = require('./stockServer');
+// jest.mock('./stockServer');
+jest.mock('./db/driver');
+const stockService = require('./stockService');
 
-describe('getStockByUser function', () => {
+describe('stock service', () => {
   it("returns an error for a stock doesn't exist", async () => {
-    const stockData = await stockServer.getStockByUser(5);
+    const stockData = await stockService.getByUser(5);
 
     expect(stockData.error).not.toBeNull();
     expect(stockData.error).toBe('Stock item not found');
@@ -18,8 +19,10 @@ describe('getStockByUser function', () => {
         amount: 30
       }
     ];
-    const stockData = await stockServer.getStockByUser(3);
+    const stockData = await stockService.getByUser(3);
 
+    console.log('test stockData');
+    console.log(stockData);
     expect(stockData.data).not.toBeNull();
     expect(stockData.data).toEqual(expectedStockData);
   });
