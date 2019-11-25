@@ -1,6 +1,11 @@
+/* eslint-disable global-require, no-unused-expressions, no-bitwise */
+(process.env.NODE_ENV === 'development' &&
+  require('dotenv').config({ path: `${__dirname}/.env.dev` })) |
+  (process.env.NODE_ENV === 'production' &&
+    require('dotenv').config({ path: `${__dirname}/.env.prod` }));
+/* eslint-disable global-require, no-unused-expressions, no-bitwise */
 const mysql = require('mysql');
 const migration = require('mysql-migrations');
-require('dotenv').config();
 
 const conn = mysql.createPool({
   host: process.env.MYSQL_HOST,
