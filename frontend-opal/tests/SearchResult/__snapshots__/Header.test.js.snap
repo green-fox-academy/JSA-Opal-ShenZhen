@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F8F8F8",
+          "borderBottomColor": "#a7a6ab",
+          "borderBottomWidth": 0.5,
+          "elevation": 3,
+          "flexDirection": "row",
+          "height": 64,
+          "justifyContent": "center",
+          "left": 0,
+          "paddingLeft": 6,
+          "paddingRight": 10,
+          "paddingTop": 18,
+          "right": 0,
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+          "top": 0,
+        },
+        Object {
+          "backgroundColor": "rgb(77,119,245)",
+          "elevation": 20,
+          "marginTop": 58,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "center",
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": null,
+            "backgroundColor": "transparent",
+            "borderBottomWidth": null,
+            "borderColor": null,
+            "borderLeftWidth": null,
+            "borderRadius": 5,
+            "borderRightWidth": null,
+            "borderTopWidth": null,
+            "borderWidth": undefined,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "space-between",
+            "marginLeft": -3,
+            "opacity": 1,
+            "paddingBottom": 6,
+            "paddingLeft": 4,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "shadowColor": null,
+            "shadowOffset": null,
+            "shadowOpacity": null,
+            "shadowRadius": null,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "borderBottomWidth": 4,
+            "borderColor": "#D9D5DC",
+            "borderLeftWidth": 0,
+            "borderRadius": undefined,
+            "borderRightWidth": 0,
+            "borderTopWidth": 0,
+            "borderWidth": undefined,
+            "flexDirection": "row",
+            "height": 60,
+            "marginLeft": 2,
+            "opacity": 1,
+            "width": 480,
+          }
+        }
+      >
+        <Text />
+        <TextInput
+          allowFontScaling={true}
+          editable={true}
+          onChange={[Function]}
+          placeholder="Search"
+          placeholderTextColor="#575757"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "flex": 1,
+                "fontSize": 17,
+                "height": 50,
+                "paddingLeft": 5,
+                "paddingRight": 5,
+                "top": 1.5,
+              },
+              Object {
+                "color": "white",
+              },
+            ]
+          }
+          underlineColorAndroid="rgba(0,0,0,0)"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "alignSelf": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        }
+      }
+    />
+  </View>
+</View>
+`;
