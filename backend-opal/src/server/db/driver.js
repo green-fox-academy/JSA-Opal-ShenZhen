@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const MYSQL_DB = require('./config');
+const db = require('./config');
 
 /* ---------------------------------------------------------
  * Database Manipulation Tools Initialization 
@@ -43,11 +43,12 @@ function executeQuery(conn, query) {
 /* ---------------------------------------------------------
  * Retrieve data from Database
 ------------------------------------------------------------*/
-function getStockByUserId(id, db = MYSQL_DB) {
+function getStockByUserId(id) {
   let query = `SELECT ?? FROM Stock ${queryFilter({ user_id: id })};`;
   const columns = ['id', 'user_id', 'symbol', 'amount'];
 
   query = mysql.format(query, [columns]);
+  console.log(query);
   return executeQuery(db, query);
 }
 
