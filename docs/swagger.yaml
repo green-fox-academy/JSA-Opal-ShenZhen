@@ -7,12 +7,15 @@ tags:
     description: Portfolio management
   - name: Watchlists
     description: Watchlists management
+
 paths:
   /portfolio:
     get:
       summary: List Portfolio
       tags:
         [Portfolio]
+      security: 
+        - bearerAuth: ['Bearer']
       responses:
         "200":
           description: OK
@@ -37,6 +40,8 @@ paths:
       summary: List Watchlists
       tags:
         [Watchlists]
+      security: 
+        - bearerAuth: ['Bearer']
       responses:
         "200":
           description: OK
@@ -56,7 +61,12 @@ paths:
             application/json:
               example:
                 error: 'User is not allowed to do this action!'
+
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
   schemas:
     Instrument:
       type: object
