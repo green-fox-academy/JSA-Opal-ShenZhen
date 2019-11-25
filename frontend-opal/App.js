@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import WatchList1 from './components/WatchList1/index';
-import WatchList2 from './components/WachList2/index';
-import Header from './components/Header2/index';
+
+import * as Font from 'expo-font';
+import { Ionicons } from 'react-native-vector-icons';
+import { AppLoading } from 'expo'; import WatchListContainer from './components/WatchListContainer/WatchListContainer';
 
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header />
-        <WatchList1 />
-        <WatchList2 />
-      </View>
-    );
+export default function App() {
+  const [isReady, setReady] = useState(false);
+  const fontFunc = async () => {
+    await Font.loadAsync({
+      Roboto: require('./node_modules/native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('./node_modules/native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+    setReady(true);
+  };
+  useEffect(fontFunc, {});
+
+  if (!isReady) {
+    return <AppLoading />;
   }
+
+  return (
+    <View style={styles.container}>
+      <WatchListContainer />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Icon } from 'native-base';
 
 export default StyleSheet.create({
   body: {

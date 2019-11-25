@@ -19,7 +19,7 @@ const NavBar = ({ navTitles }) => {
 };
 
 NavBar.propTypes = {
-  navTitles: PropTypes.objectOf(
+  navTitles: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
       key: PropTypes.string,
