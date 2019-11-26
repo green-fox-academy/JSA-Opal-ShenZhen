@@ -4,7 +4,7 @@
 # test circleci
 version: 2
 jobs:
-  build:
+  backend-test:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.3
@@ -22,9 +22,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - backend-dependencies-{{ checksum "./backend-opal/package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - backend-dependencies-
 
       - run: 
           name: install packages in backend
@@ -33,7 +33,53 @@ jobs:
       - save_cache:
           paths:
             - ./backend-opal/node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: backend-dependencies-{{ checksum "./backend-opal/package-lock.json" }}
 
       # run tests!
-      - run: npm test
+      - run: 
+          name: backend test
+          command: 'cd backend-opal && npm test'
+
+  frontend-test:
+    docker: 
+      - image: circleci/node:10.16.3
+
+    working_directory: ~/frontend-opal
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - frontend-dependencies-{{ checksum "./frontend-opal/package-lock.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - frontend-dependencies-
+
+      - run:
+          name: install packages in frontend
+          command: 'cd frontend-opal && npm install'
+
+      - save_cache:
+          paths:
+            - ./frontend-opal/node_modules
+          key: frontend-dependencies-{{ checksum "./frontend-opal/package-lock.json" }}
+
+      - run:
+          name: frontend test
+          command: 'cd frontend-opal && npm test'
+
+workflows:
+  version: 2
+  test-backend-frontend:
+    jobs:
+      - backend-test:
+          filters:
+            branches:
+              only: 
+                - master
+                - honda-issue70-ci
+      - frontend-test:
+          filters:
+            branches:
+              only: 
+                - master
+                - honda-issue70-ci
