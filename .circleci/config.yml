@@ -27,11 +27,18 @@ jobs:
           name: backend test
           command: 'cd backend-opal && npm test'
 
+      - persist_to_workspace:
+          root: .
+          paths:
+            - backend-opal
+
   deploy-backend:
     docker: 
       - image: circleci/node:10.16.3
 
     steps:
+      - attach_workspace:
+          at: ~/backend-opal
       - run:
           name: deploy with pm2
           command: |
