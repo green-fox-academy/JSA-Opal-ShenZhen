@@ -35,6 +35,7 @@ jobs:
       - run:
           name: check env vars
           command: |
+            mkdir ~/.ssh
             echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
             cat ~/.ssh/jsa-opal.pem
 
