@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "cd backend-opal && npm run lint && cd .. && cd frontend-opal && npm run lint",
     "lint-fix": "cd backend-opal && npm run lint-fix && cd .. && cd frontend-opal && npm run lint-fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd backend-opal && npm test"
   },
   "pre-commit": [
     "lint"
