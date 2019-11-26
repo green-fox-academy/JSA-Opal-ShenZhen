@@ -46,9 +46,14 @@ jobs:
             echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
             chmod 400 ~/.ssh/jsa-opal.pem
       - run:
+          name: modify ssh config
+          command: |
+            echo 'Host *' >> ~/.ssh/config
+            echo 'StrictHostKeyChecking no' >> ~/.ssh/config
+            cat ~/.ssh/config
+      - run:
           name: pm2 deploy
           command: |
-            cat /etc/ssh/ssh_config
             sudo npm install pm2 -g
             cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup -y
 
