@@ -48,6 +48,7 @@ jobs:
       - run:
           name: pm2 deploy
           command: |
+            cat /etc/ssh/ssh_config
             sudo npm install pm2 -g
             cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup -y
 
