@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'opal',
-      script: './main.js'
+      script: './start.js'
     }
   ],
   deploy: {
