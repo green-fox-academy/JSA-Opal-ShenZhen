@@ -52,6 +52,12 @@ function getStockByUserId(id) {
   return executeQuery(db, query);
 }
 
+function getSymbols(userId){
+  let sql = 'select symbols from watchlist where user_id = ' + db.escape(userId)
+  return executeQuery(db,sql)
+}
+
 module.exports = {
-  getStockByUserId
+  getStockByUserId,
+  getSymbols
 };
