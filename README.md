@@ -1,5 +1,5 @@
 # JSA-Opal-ShenZhen
-JSA-Opal-ShenZhen
+JSA-Opal-ShenZhen. [API](https://green-fox-academy.github.io/JSA-Opal-ShenZhen/).
 
 ## Naming rules
 * Rules for front-end components
