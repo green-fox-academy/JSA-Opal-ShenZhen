@@ -34,7 +34,7 @@ jobs:
     steps:
       - run:
           name: check env vars
-          command: echo $AWS_PEM
+          command: echo $AWS_PEM | base64 --decode
 
   frontend-test:
     docker: 
