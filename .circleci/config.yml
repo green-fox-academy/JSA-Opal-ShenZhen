@@ -40,12 +40,14 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: deploy with pm2
+          name: generate pem file
           command: |
             mkdir ~/.ssh
             echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
             chmod 400 ~/.ssh/jsa-opal.pem
-            ssh -i "~/.ssh/jsa-opal.pem" ubuntu@ec2-54-199-209-203.ap-northeast-1.compute.amazonaws.com
+      - run:
+          name: pm2 deploy
+          command: |
             sudo npm install pm2 -g
             cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup
 
