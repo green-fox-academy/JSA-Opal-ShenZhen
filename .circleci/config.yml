@@ -44,8 +44,8 @@ jobs:
           command: |
             mkdir ~/.ssh
             echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
+            chmod 400 ~/.ssh/jsa-opal.pem
             sudo npm install pm2 -g
-            cat ~/.ssh/jsa-opal.pem
             cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup
 
   frontend-test:
