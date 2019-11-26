@@ -9,7 +9,7 @@ module.exports = {
     production: {
       user: 'ubuntu',
       host: 'ec2-54-199-209-203.ap-northeast-1.compute.amazonaws.com',
-      key: '../../jsa-opal.pem',
+      key: '~/.ssh/jsa-opal.pem',
       ref: 'origin/master',
       repo: 'git@github.com:green-fox-academy/JSA-Opal-ShenZhen.git',
       path: '/home/ubuntu/opal',
