@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/green-fox-academy/JSA-Opal-ShenZhen#readme",
   "dependencies": {
-    "pre-commit": "^1.2.2",
-    "swagger-ui": "^3.24.3"
+    "pre-commit": "^1.2.2"
   }
 }
