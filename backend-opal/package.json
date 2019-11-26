@@ -2,7 +2,7 @@
   "name": "backend-opal",
   "version": "1.0.0",
   "description": "jsa opal investment feature backend",
-  "main": "main.js",
+  "main": "start.js",
   "scripts": {
     "start": "export NODE_ENV=development && node migration.js up && nodemon -r tsconfig-paths/register start.js",
     "start-prod": "export NODE_ENV=production && node migration.js up && nodemon -r tsconfig-paths/register start.js",
