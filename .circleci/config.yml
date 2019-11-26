@@ -26,11 +26,13 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: 
+          name: install packages in backend
+          command: 'cd backend-opal && npm install'
 
       - save_cache:
           paths:
-            - node_modules
+            - ./backend-opal/node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       # run tests!
