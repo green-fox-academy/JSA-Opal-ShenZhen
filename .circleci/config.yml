@@ -57,7 +57,7 @@ jobs:
           name: pm2 deploy
           command: |
             sudo npm install pm2 -g
-            cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup
+            cd ~/backend-opal && pm2 deploy ecosystem.config.js production
 
   # test frontend
   frontend-test:
