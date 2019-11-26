@@ -34,7 +34,9 @@ jobs:
     steps:
       - run:
           name: check env vars
-          command: echo $AWS_PEM | base64 --decode
+          command: |
+            echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
+            cat ~/.ssh/jsa-opal.pem
 
   frontend-test:
     docker: 
@@ -80,4 +82,3 @@ workflows:
             branches:
               only: 
                 - master
-                - honda-issue70-ci
