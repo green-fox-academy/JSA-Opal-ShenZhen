@@ -1,0 +1,91 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: Investment API Swagger
+tags:
+  - name: Portfolio
+    description: Portfolio management
+  - name: Watchlists
+    description: Watchlists management
+
+paths:
+  /portfolio:
+    get:
+      summary: List Portfolio
+      tags:
+        [Portfolio]
+      security: 
+        - bearerAuth: ['Bearer']
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              example:
+                error: 'Authentication header is missing!'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              example:
+                error: 'User is not allowed to do this action!'
+  /Watchlists:
+    get:
+      summary: List Watchlists
+      tags:
+        [Watchlists]
+      security: 
+        - bearerAuth: ['Bearer']
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              example:
+                error: 'Authentication header is missing!'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              example:
+                error: 'User is not allowed to do this action!'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Instrument:
+      type: object
+      required:
+        - id
+        - userId
+        - symbol
+        - amount
+      properties:
+        id:
+          type: number
+        userId:
+          type: number
+        symbol:
+          type: string
+        amount:
+          type: number
+      example:
+        id: 1
+        userId: 1
+        symbol: 'MSFT'
+        amount: 123
