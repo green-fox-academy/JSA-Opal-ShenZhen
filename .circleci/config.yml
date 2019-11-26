@@ -1,5 +1,6 @@
 version: 2
 jobs:
+  # test backend and store it
   backend-test:
     docker:
       - image: circleci/node:10.16.3
@@ -31,7 +32,8 @@ jobs:
           root: .
           paths:
             - backend-opal
-
+  
+  # deploy the backend
   deploy-backend:
     docker: 
       - image: circleci/node:10.16.3
@@ -57,6 +59,7 @@ jobs:
             sudo npm install pm2 -g
             cd ~/backend-opal && pm2 deploy ecosystem.config.js production setup
 
+  # test frontend
   frontend-test:
     docker: 
       - image: circleci/node:10.16.3
