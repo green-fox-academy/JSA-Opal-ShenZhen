@@ -13,7 +13,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:green-fox-academy/JSA-Opal-ShenZhen.git',
       path: '/home/ubuntu/opal',
-      'post-deploy': 'cd backend-opal && npm install && pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'cd backend-opal && npm install && node migration.js up && pm2 startOrRestart ecosystem.config.js'
     }
   }
 };
