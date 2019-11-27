@@ -2,7 +2,7 @@ const router = require('express').Router();
 const authService = require('./common/authorizationService');
 
 // const portfolioList = [{ id: '1', userId: '1', symbol: 'MSFT', amount: 123 }];
-const StockData = require('./stockService');
+const stockService = require('./stockService');
 
 router.get('/', async (req, res) => {
   const { authorization } = req.headers;
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     res.status(403).send(response);
   } else {
     const response = {
-      portfolio: await StockData.getByUser()
+      portfolio: await stockService.getByUser()
     };
 
     res.status(200).send(response);
