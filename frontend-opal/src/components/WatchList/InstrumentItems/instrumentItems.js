@@ -15,8 +15,8 @@ const InstrumentItems = ({ infos }) => (
 %
         </Text>
         <Text style={styles.text}>{info.whole}</Text>
-        <View style={styles.text}><Image style={styles.icon} source={require('../../assets/transformation-icon.jpg')} /></View>
-        <Image style={styles.icon} source={require('../../assets/icons-info.png')} />
+        <View style={styles.text}><Image style={styles.icon} source={require('assets/transformation-icon.jpg')} /></View>
+        <Image style={styles.icon} source={require('assets/icons-info.png')} />
       </View>
     ))}
   </View>
