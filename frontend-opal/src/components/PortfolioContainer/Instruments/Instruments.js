@@ -9,7 +9,7 @@ const Instruments = ({ instrumentList }) => (
     <Text style={styles.title}>Instruments</Text>
     <FlatList
       data={instrumentList}
-      renderItem={({ item }) => <InstrumentsItem InstrumentItem={item} />}
+      renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
       keyExtractor={item => item.stockExchange + item.company}
     />
   </SafeAreaView>
