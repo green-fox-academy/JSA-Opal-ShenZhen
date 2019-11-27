@@ -1,4 +1,3 @@
-// jest.mock('./stockServer');
 jest.mock('./db/driver');
 const stockService = require('./stockService');
 

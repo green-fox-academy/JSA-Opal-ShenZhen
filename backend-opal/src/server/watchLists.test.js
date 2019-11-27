@@ -24,4 +24,33 @@ describe('Watchlist Endpoint', () => {
       .set('Authorization', 'Bearer token');
     expect(res.statusCode).toEqual(200);
   });
+  it('request body missing part, should get 400 ', async () => {
+    const postData = {
+      id: 3,
+      userId: 3,
+      symbols: []
+    };
+    const res = await request(server)
+      .post('/watchlists')
+      .set('Authorization', 'Bearer token')
+      .send(postData);
+
+    expect(res.statusCode).toEqual(400);
+    expect(res.body.error).toEqual('name is missing');
+  });
+  it("authorization equals to 'Bearere token', and body are valided, get '200 OK' ", async () => {
+    const postData = {
+      id: 3,
+      userId: 3,
+      name: 'My watchlist 3',
+      symbols: []
+    };
+    const res = await request(server)
+      .post('/watchlists')
+      .set('Authorization', 'Bearer token')
+      .send(postData);
+
+    expect(res.statusCode).toEqual(200);
+    expect(res.body.name).toEqual('My watchlist 3');
+  });
 });
