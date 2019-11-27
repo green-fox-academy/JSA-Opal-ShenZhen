@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const authService = require('./common/authorizationService');
-const WatchListsData = require('./watchListService')
-
+const WatchListsData = require('./watchListService');
 
 router.get('/:UserId', async (req, res) => {
   const { authorization } = req.headers;
-  const UserId = req.params.UserId
+  const { UserId } = req.params;
   if (authService.checkAuthHeader(authorization)) {
     const response = {
       error: 'Authentication header is missing!'
