@@ -7,4 +7,3 @@
 ## Links
 * [Wiki](https://github.com/green-fox-academy/JSA-Opal-ShenZhen/wiki)
 * [API](https://green-fox-academy.github.io/JSA-Opal-ShenZhen/)
-
