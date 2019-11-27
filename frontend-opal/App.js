@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
@@ -16,3 +17,9 @@ export default function App() {
     </Provider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 25,
+  },
+});

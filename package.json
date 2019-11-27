@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/green-fox-academy/JSA-Opal-ShenZhen#readme",
   "dependencies": {
+    "@expo/vector-icons": "^10.0.6",
     "pre-commit": "^1.2.2"
   }
 }
