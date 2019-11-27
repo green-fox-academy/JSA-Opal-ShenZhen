@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const authService = require('./common/authorizationService');
 
-const portfolioList = [{ id: '1', userId: '1', symbol: 'MSFT', amount: 123 }];
+// const portfolioList = [{ id: '1', userId: '1', symbol: 'MSFT', amount: 123 }];
+const stockService = require('./stockService');
 
-router.get('/', function(req, res) {
+router.get('/', async (req, res) => {
   const { authorization } = req.headers;
   if (authService.checkAuthHeader(authorization)) {
     const response = {
@@ -19,7 +20,7 @@ router.get('/', function(req, res) {
     res.status(403).send(response);
   } else {
     const response = {
-      portfolio: portfolioList
+      portfolio: await stockService.getByUser()
     };
 
     res.status(200).send(response);
