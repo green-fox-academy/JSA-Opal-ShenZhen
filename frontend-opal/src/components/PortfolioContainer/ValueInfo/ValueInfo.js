@@ -14,7 +14,7 @@ const ValueInfo = ({ totalInvestment }) => (
         <Text style={styles.amount}>{totalInvestment}</Text>
       </View>
 
-      <TouchableOpacity onPress={() => console.log('button pressed')}>
+      <TouchableOpacity>
         <Text style={styles.button}>INVESTMENT ACCOUNT</Text>
       </TouchableOpacity>
     </Card>

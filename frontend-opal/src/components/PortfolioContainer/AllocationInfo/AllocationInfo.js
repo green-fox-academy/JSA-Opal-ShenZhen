@@ -16,10 +16,10 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => (
       </View>
 
       <View style={styles.allocationButtons}>
-        <TouchableOpacity onPress={() => console.log('button pressed')}>
+        <TouchableOpacity>
           <Text style={styles.button}>SECTOR</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => console.log('button pressed')}>
+        <TouchableOpacity>
           <Text style={styles.button}>GEOGRAPHY</Text>
         </TouchableOpacity>
       </View>
