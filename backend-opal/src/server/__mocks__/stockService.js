@@ -1,4 +1,4 @@
-const { stockItems } = require('./stockServiceTestData');
+const { stockItems } = require('../db/__mocks__/stockServiceTestData');
 
 const getByUser = () => {
   return new Promise(resolve => {

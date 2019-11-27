@@ -11,7 +11,7 @@ const data = [
 ];
 
 function checkRequestBody(body) {
-  const bodyKey = ['id', 'userId', 'name', 'symbols'];
+  const bodyKey = ['userId', 'name'];
   const result = bodyKey.filter(key => !(key in body));
   return result;
 }
