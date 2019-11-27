@@ -1,0 +1,106 @@
+version: 2
+jobs:
+  # test backend and store it
+  backend-test:
+    docker:
+      - image: circleci/node:10.16.3
+
+    working_directory: ~/backend-opal
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - backend-dependencies-{{ checksum "./backend-opal/package-lock.json" }}
+            - backend-dependencies-
+
+      - run: 
+          name: install packages in backend
+          command: 'cd backend-opal && npm install'
+
+      - save_cache:
+          paths:
+            - ./backend-opal/node_modules
+          key: backend-dependencies-{{ checksum "./backend-opal/package-lock.json" }}
+
+      - run: 
+          name: backend test
+          command: 'cd backend-opal && npm test'
+
+      - persist_to_workspace:
+          root: /home/circleci/
+          paths:
+            - backend-opal
+  
+  # deploy the backend
+  deploy-backend:
+    docker: 
+      - image: circleci/node:10.16.3
+
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: generate pem file
+          command: |
+            mkdir ~/.ssh
+            echo $AWS_PEM | base64 --decode > ~/.ssh/jsa-opal.pem
+            chmod 400 ~/.ssh/jsa-opal.pem
+      - run:
+          name: modify ssh config
+          command: |
+            echo 'Host *' >> ~/.ssh/config
+            echo 'StrictHostKeyChecking no' >> ~/.ssh/config
+            cat ~/.ssh/config
+      - run:
+          name: pm2 deploy
+          command: |
+            sudo npm install pm2 -g
+            cd ~/backend-opal/backend-opal && pm2 deploy ecosystem.config.js production
+
+  # test frontend
+  frontend-test:
+    docker: 
+      - image: circleci/node:10.16.3
+
+    working_directory: ~/frontend-opal
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - frontend-dependencies-{{ checksum "./frontend-opal/package-lock.json" }}
+            - frontend-dependencies-
+
+      - run:
+          name: install packages in frontend
+          command: 'cd frontend-opal && npm install'
+
+      - save_cache:
+          paths:
+            - ./frontend-opal/node_modules
+          key: frontend-dependencies-{{ checksum "./frontend-opal/package-lock.json" }}
+
+      - run:
+          name: frontend test
+          command: 'cd frontend-opal && npm test'
+
+workflows:
+  version: 2
+  test-backend-frontend:
+    jobs:
+      - backend-test:
+          filters:
+            branches:
+              only: 
+                - master
+                - honda-issue70-ci
+      - deploy-backend:
+          requires:
+            - backend-test
+      - frontend-test:
+          filters:
+            branches:
+              only: 
+                - master
