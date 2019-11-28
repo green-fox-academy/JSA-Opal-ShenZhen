@@ -1,6 +1,9 @@
 const pairs = {
   GET_PORTFOLIO_DATA: (state, action) => {
-    return [...state, action.payload.data];
+    return {
+      ...state,
+      ...action.payload.data
+    };
   }
 };
 

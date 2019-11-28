@@ -17,10 +17,14 @@ const Instruments = ({ instrumentList }) => (
 );
 
 const mapStateToProps = state => ({
-  instrumentList: !state.portfolio[0] ? [] : state.portfolio[0].instrumentList
+  instrumentList: state.portfolio.instrumentList
 });
 
 export default connect(mapStateToProps, null)(Instruments);
+
+Instruments.defaultProps = {
+  instrumentList: []
+};
 
 Instruments.propTypes = {
   instrumentList: PropTypes.arrayOf(
@@ -28,5 +32,5 @@ Instruments.propTypes = {
       company: PropTypes.string,
       stockExchange: PropTypes.string
     })
-  ).isRequired
+  )
 };

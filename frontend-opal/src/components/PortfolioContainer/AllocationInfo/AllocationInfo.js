@@ -29,12 +29,18 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => (
 );
 
 const mapStateToProps = state => ({
-  pieData: !state.portfolio[0] ? [] : state.portfolio[0].pieData,
-  pieColor: !state.portfolio[0] ? [] : state.portfolio[0].pieColor,
-  legendData: !state.portfolio[0] ? [] : state.portfolio[0].legendData
+  pieData: state.portfolio.pieData,
+  pieColor: state.portfolio.pieColor,
+  legendData: state.portfolio.legendData
 });
 
 export default connect(mapStateToProps, null)(AllocationInfo);
+
+AllocationInfo.defaultProps = {
+  pieData: [],
+  pieColor: [],
+  legendData: []
+};
 
 AllocationInfo.propTypes = {
   pieData: PropTypes.arrayOf(
@@ -43,12 +49,12 @@ AllocationInfo.propTypes = {
       y: PropTypes.number,
       label: PropTypes.string
     })
-  ).isRequired,
-  pieColor: PropTypes.arrayOf(PropTypes.string).isRequired,
+  ),
+  pieColor: PropTypes.arrayOf(PropTypes.string),
   legendData: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       symbol: PropTypes.objectOf(PropTypes.string)
     })
-  ).isRequired
+  )
 };

@@ -13,7 +13,7 @@ const ValueInfo = ({ totalInvestment }) => {
       <Card>
         <View style={styles.investment}>
           <Text style={styles.name}>Total Investment</Text>
-          <Text style={styles.amount}>{totalInvestment}</Text>
+          <Text style={styles.amount}>{`$ ${totalInvestment}`}</Text>
         </View>
 
         <TouchableOpacity>
@@ -25,11 +25,15 @@ const ValueInfo = ({ totalInvestment }) => {
 };
 
 const mapStateToProps = state => ({
-  totalInvestment: !state.portfolio[0] ? '' : state.portfolio[0].totalInvestment
+  totalInvestment: state.portfolio.totalInvestment
 });
 
 export default connect(mapStateToProps, null)(ValueInfo);
 
+ValueInfo.defaultProps = {
+  totalInvestment: ''
+};
+
 ValueInfo.propTypes = {
-  totalInvestment: PropTypes.string.isRequired
+  totalInvestment: PropTypes.string
 };

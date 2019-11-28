@@ -76,7 +76,7 @@ exports[`<ValueInfo /> renders correctly 1`] = `
           }
         }
       >
-        3,400
+        $ 
       </Text>
     </View>
     <View

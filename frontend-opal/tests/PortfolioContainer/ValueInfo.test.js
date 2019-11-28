@@ -1,12 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ValueInfo from 'components/PortfolioContainer/ValueInfo';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-const totalInvestment = '3,400';
+import reducers from 'reducers/root';
+import ValueInfo from 'components/PortfolioContainer/ValueInfo';
 
 describe('<ValueInfo />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<ValueInfo totalInvestment={totalInvestment} />).toJSON();
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <ValueInfo />
+        </Provider>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

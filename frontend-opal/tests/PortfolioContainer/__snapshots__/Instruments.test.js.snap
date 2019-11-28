@@ -21,6 +21,7 @@ exports[`<Instruments /> renders correctly 1`] = `
     Instruments
   </Text>
   <RCTScrollView
+    data={Array []}
     disableVirtualization={false}
     getItem={[Function]}
     getItemCount={[Function]}
