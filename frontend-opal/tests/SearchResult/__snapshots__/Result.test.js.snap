@@ -2,6 +2,7 @@
 
 exports[`<Result /> renders correctly 1`] = `
 <RCTScrollView
+  data={Array []}
   disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
