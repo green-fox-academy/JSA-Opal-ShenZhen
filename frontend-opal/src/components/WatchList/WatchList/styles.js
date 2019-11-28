@@ -7,6 +7,6 @@ export default StyleSheet.create({
     borderColor: 'black',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
+    justifyContent: 'space-between'
+  }
 });

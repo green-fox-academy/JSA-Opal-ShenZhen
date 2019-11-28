@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  marginTop: 80,
+  marginTop: 80
 });

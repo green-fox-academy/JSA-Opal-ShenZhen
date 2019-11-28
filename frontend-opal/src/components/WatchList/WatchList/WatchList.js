@@ -6,56 +6,55 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 import InstrumentItems from '../InstrumentItems/instrumentItems';
 import ChartDetail from '../ChartDetail/ChartDetail';
+import WatchListItem from '../WatchListItem/WatchListItem';
 
+const WatchList = ({ watchlistArr }) => {
+  const info = [
+    {
+      name: 'MSFT',
+      num: '141.21',
+      increase: '+0.23',
+      whole: '1.2M'
+    },
+    {
+      name: 'AMZN',
+      num: '2108.2',
+      increase: '-0.06',
+      whole: '609K'
+    },
+    {
+      name: 'AAPL',
+      num: '250.7',
+      increase: '+1.63',
+      whole: '810K'
+    }
+  ];
+  const chartData = [
+    { x: 1, y: 8 },
+    { x: 2, y: 7 },
+    { x: 3, y: 5 }
+  ];
+  const stockData = [
+    { name: '52 wk low', value: '231.6' },
+    { name: '52 wk high', value: '250.7' },
+    { name: 'P/E', value: '20.3' },
+    { name: 'EPS', value: '1.2' },
+    { name: 'DivYield', value: '2.34%' }
+  ];
 
-const WatchList = ({
-  watchlistArr, info, stockData, chartData,
-}) => (
-  <View>
-    {watchlistArr.map((item) => {
-      const [showwatchlist, setShowwatchlist] = useState(false);
-
-      const toggle = (parm) => !parm;
-
-      const changeShowWatchList = () => (
-        setShowwatchlist((toggle(showwatchlist)))
-      );
-      return (
+  return (
+    <View>
+      {watchlistArr.map(item => (
         <View key={item}>
-          <View style={styles.border}>
-            <Text>{item}</Text>
-            <Button onPress={changeShowWatchList}><AntDesign name="caretdown" size={15} color="black" /></Button>
-          </View>
-          {showwatchlist ? (
-            <View>
-              <InstrumentItems infos={info} />
-              <ChartDetail stockData={stockData} chartData={chartData} />
-            </View>
-          ) : null}
+          <WatchListItem item={item} stockData={stockData} chartData={chartData} info={info} />
         </View>
-      );
-    })}
-  </View>
-);
-
-WatchList.propTypes = {
-  watchlistArr: PropTypes.arrayOf(PropTypes.string).isRequired,
-  info: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      num: PropTypes.string,
-      increase: PropTypes.string,
-      whole: PropTypes.string,
-    }),
-  ).isRequired,
-  chartData: PropTypes.arrayOf(
-    PropTypes.shape({
-      x: PropTypes.number,
-      y: PropTypes.number,
-    }),
-  ).isRequired,
-  stockData: PropTypes.objectOf(PropTypes.any).isRequired,
+      ))}
+    </View>
+  );
 };
 
+WatchList.propTypes = {
+  watchlistArr: PropTypes.arrayOf(PropTypes.string).isRequired
+};
 
 export default WatchList;

@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Header, Left, Body, Right, Button, Icon, Title,
-} from 'native-base';
+import { Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 
 export default function NewHeader() {
   return (
