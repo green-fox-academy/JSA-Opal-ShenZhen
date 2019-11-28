@@ -2,7 +2,6 @@ const router = require('express').Router();
 const authService = require('./common/authorizationService');
 const WatchListsData = require('./watchListService');
 
-
 function checkRequestBody(body) {
   const bodyKey = ['userId', 'name'];
   const result = bodyKey.filter(key => !(key in body));
@@ -10,7 +9,6 @@ function checkRequestBody(body) {
 }
 
 router.get('/:UserId', async (req, res) => {
-
   const { authorization } = req.headers;
   const { UserId } = req.params;
   if (authService.checkAuthHeader(authorization)) {
