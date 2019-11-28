@@ -1,14 +1,12 @@
 module.exports = (req, res, next) => {
-  try {
-    const bearer = req.headers.authorization.split(' ')[0];
-    const token = req.headers.authorization.split(' ')[1];
-    if (bearer !== 'Bearer') {
+  if (req.headers.authorization) {
+    if (!req.headers.authorization.startsWith('Bearer')) {
       const response = {
         error: 'Authentication header is missing!'
       };
 
       res.status(401).send(response);
-    } else if (token !== 'token') {
+    } else if (!req.headers.authorization.includes('token')) {
       const response = {
         error: 'User is not allowed to do this action!'
       };
@@ -17,7 +15,11 @@ module.exports = (req, res, next) => {
     } else {
       next();
     }
-  } catch (error) {
-    res.status(401).send(error);
+  } else {
+    const response = {
+      error: 'Authentication header is missing!'
+    };
+
+    res.status(401).send(response);
   }
 };

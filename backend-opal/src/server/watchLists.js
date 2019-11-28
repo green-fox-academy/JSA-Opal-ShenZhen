@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const authService = require('../middleware/authenticationService');
 
 const data = [
   {
@@ -16,7 +15,7 @@ function checkRequestBody(body) {
   return result;
 }
 
-router.get('/', authService, function(req, res) {
+router.get('/', function(req, res) {
   const response = {
     watchlists: data
   };
@@ -24,7 +23,7 @@ router.get('/', authService, function(req, res) {
   res.status(200).send(response);
 });
 
-router.post('/', authService, function(req, res) {
+router.post('/', function(req, res) {
   try {
     const { body } = req;
     const missingPart = checkRequestBody(body);
