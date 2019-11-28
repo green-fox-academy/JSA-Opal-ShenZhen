@@ -1,7 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
-import styles from './styles';
+import { View, Text } from 'react-native';
 
+import headers from 'components/common/headers';
+import styles from './styles';
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
@@ -42,5 +43,7 @@ const PortfolioContainer = () => {
     </View>
   );
 };
+
+headers.addListHeader(PortfolioContainer, 'Investments');
 
 export default PortfolioContainer;
