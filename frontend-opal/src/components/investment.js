@@ -6,11 +6,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Header from './Header';
 import PortfolioContainer from './PortfolioContainer';
 
-const Investment = createStackNavigator(
-  {
-    Home: PortfolioContainer 
-  }
-)
+const Investment = createStackNavigator({
+  Home: PortfolioContainer
+});
 
 // export default function Portfolio() {
 //   return (
