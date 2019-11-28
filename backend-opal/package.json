@@ -8,8 +8,7 @@
     "start-prod": "cross-env NODE_ENV=prod node migration.js up && cross-env NODE_ENV=dev nodemon -r tsconfig-paths/register start.js",
     "test": "jest",
     "lint": "eslint **/*.{js,jsx} --ext .js",
-    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix",
-    "cross": "cross-env CUR_ENV=dev && echo $CUR_ENV"
+    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix"
   },
   "author": "",
   "license": "ISC",
