@@ -4,11 +4,12 @@
   "description": "jsa opal investment feature backend",
   "main": "start.js",
   "scripts": {
-    "start": "export NODE_ENV=dev && node migration.js up && nodemon -r tsconfig-paths/register start.js",
-    "start-prod": "export NODE_ENV=prod && node migration.js up && nodemon -r tsconfig-paths/register start.js",
+    "start": "cross-env NODE_ENV=dev node migration.js up && cross-env NODE_ENV=dev nodemon -r tsconfig-paths/register start.js",
+    "start-prod": "cross-env NODE_ENV=prod node migration.js up && cross-env NODE_ENV=dev nodemon -r tsconfig-paths/register start.js",
     "test": "jest",
     "lint": "eslint **/*.{js,jsx} --ext .js",
-    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix"
+    "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix",
+    "cross": "cross-env CUR_ENV=dev && echo $CUR_ENV"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "nodemon": "^1.19.4"
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.5.0",
