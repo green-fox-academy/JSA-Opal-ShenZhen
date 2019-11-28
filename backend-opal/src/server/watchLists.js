@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const authService = require('./common/authorizationService');
+const WatchListsData = require('./watchListService');
 
-const data = [
-  {
-    id: 1,
-    userId: 1,
-    name: 'My Watchlist 1',
-    symbols: ['MSFT', 'AMZN', 'AAPL', 'FB']
-  }
-];
 
 function checkRequestBody(body) {
   const bodyKey = ['userId', 'name'];
@@ -16,8 +9,10 @@ function checkRequestBody(body) {
   return result;
 }
 
-router.get('/', function(req, res) {
+router.get('/:UserId', async (req, res) => {
+
   const { authorization } = req.headers;
+  const { UserId } = req.params;
   if (authService.checkAuthHeader(authorization)) {
     const response = {
       error: 'Authentication header is missing!'
@@ -32,7 +27,7 @@ router.get('/', function(req, res) {
     res.status(403).send(response);
   } else {
     const response = {
-      watchlists: data
+      watchlists: await WatchListsData.getSymbols(UserId)
     };
 
     res.status(200).send(response);
