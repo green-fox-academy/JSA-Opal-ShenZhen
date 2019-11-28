@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Card } from 'native-base';
 import styles from './styles';
@@ -16,16 +17,30 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => (
       </View>
 
       <View style={styles.allocationButtons}>
-        <TouchableOpacity onPress={() => console.log('button pressed')}>
+        <TouchableOpacity>
           <Text style={styles.button}>SECTOR</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => console.log('button pressed')}>
+        <TouchableOpacity>
           <Text style={styles.button}>GEOGRAPHY</Text>
         </TouchableOpacity>
       </View>
     </Card>
   </View>
 );
+
+const mapStateToProps = state => ({
+  pieData: state.portfolio.pieData,
+  pieColor: state.portfolio.pieColor,
+  legendData: state.portfolio.legendData
+});
+
+export default connect(mapStateToProps, null)(AllocationInfo);
+
+AllocationInfo.defaultProps = {
+  pieData: [],
+  pieColor: [],
+  legendData: []
+};
 
 AllocationInfo.propTypes = {
   pieData: PropTypes.arrayOf(
@@ -34,14 +49,12 @@ AllocationInfo.propTypes = {
       y: PropTypes.number,
       label: PropTypes.string
     })
-  ).isRequired,
-  pieColor: PropTypes.arrayOf(PropTypes.string).isRequired,
+  ),
+  pieColor: PropTypes.arrayOf(PropTypes.string),
   legendData: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       symbol: PropTypes.objectOf(PropTypes.string)
     })
-  ).isRequired
+  )
 };
-
-export default AllocationInfo;
