@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Card } from 'native-base';
 import styles from './styles';
@@ -27,6 +28,14 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => (
   </View>
 );
 
+const mapStateToProps = state => ({
+  pieData: !state.portfolio[0] ? [] : state.portfolio[0].pieData,
+  pieColor: !state.portfolio[0] ? [] : state.portfolio[0].pieColor,
+  legendData: !state.portfolio[0] ? [] : state.portfolio[0].legendData
+});
+
+export default connect(mapStateToProps, null)(AllocationInfo);
+
 AllocationInfo.propTypes = {
   pieData: PropTypes.arrayOf(
     PropTypes.shape({
@@ -43,5 +52,3 @@ AllocationInfo.propTypes = {
     })
   ).isRequired
 };
-
-export default AllocationInfo;

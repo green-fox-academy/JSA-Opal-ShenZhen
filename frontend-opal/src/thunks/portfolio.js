@@ -13,7 +13,7 @@ const investment = {
     { name: 'Energy', symbol: { type: 'square' } }
   ],
   pieColor: ['#711702', '#A91600', '#E12C00'],
-  instrumentsList: [
+  instrumentList: [
     {
       company: 'FB - Facebook Inc.',
       stockExchange: 'NASDAQ',
