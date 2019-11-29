@@ -21,10 +21,7 @@ const ChartDetail = ({ chartData, stockData }) => {
         </View>
         <View style={styles.chartinfo}>
           {stockData.map(item => (
-            <Text key={item.name}>
-              {item.name}:
-{item.value}
-            </Text>
+            <Text key={item.name}>{`${item.name}:${item.value}`}</Text>
           ))}
         </View>
       </View>

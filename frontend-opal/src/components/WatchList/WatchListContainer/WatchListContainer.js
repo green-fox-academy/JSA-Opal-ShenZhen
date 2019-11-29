@@ -5,7 +5,7 @@ import Header from '../NewHeader/newHeader';
 import NavBar from '../Header/NavBar';
 
 export default function WatchListContainer() {
-  const watchlistArr = ['my watchlist1', 'my watchlist2'];
+  const watchlists = ['my watchlist1', 'my watchlist2'];
 
   const navTitles = [
     { id: 1, key: 'PORTFOLIO' },
@@ -16,7 +16,7 @@ export default function WatchListContainer() {
     <View>
       <Header />
       <NavBar navTitles={navTitles} />
-      <WatchList watchlistArr={watchlistArr} />
+      <WatchList watchlists={watchlists} />
     </View>
   );
 }

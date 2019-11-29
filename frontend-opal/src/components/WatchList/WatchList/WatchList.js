@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import WatchListItem from '../WatchListItem/WatchListItem';
 
-const WatchList = ({ watchlistArr }) => {
+const WatchList = ({ watchlists }) => {
   const info = [
     {
       name: 'MSFT',
@@ -39,17 +39,21 @@ const WatchList = ({ watchlistArr }) => {
 
   return (
     <View>
-      {watchlistArr.map(item => (
-        <View key={item}>
-          <WatchListItem item={item} stockData={stockData} chartData={chartData} info={info} />
-        </View>
+      {watchlists.map(item => (
+        <WatchListItem
+          key={item}
+          item={item}
+          stockData={stockData}
+          chartData={chartData}
+          info={info}
+        />
       ))}
     </View>
   );
 };
 
 WatchList.propTypes = {
-  watchlistArr: PropTypes.arrayOf(PropTypes.string).isRequired
+  watchlists: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default WatchList;
