@@ -1,5 +1,5 @@
 module.exports = {
-  up: `INSERT INTO WatchList 
+  up: `INSERT INTO watch_lists 
     (user_id, name, symbols) 
  VALUES 
     (1, 'adom', 'MSFT,EPAM'),
@@ -7,6 +7,6 @@ module.exports = {
     (1, 'adom', 'GO,ALI'),
     (1, 'adom', 'TENC,AMZN');`,
   down: `
-    DELETE FROM User 
+    DELETE FROM watch_lists 
     WHERE user_id = 1;`
 };

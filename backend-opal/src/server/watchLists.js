@@ -8,9 +8,8 @@ function checkRequestBody(body) {
   return result;
 }
 
-router.get('/:UserId', async (req, res) => {
+router.get('/', async (req, res) => {
   const { authorization } = req.headers;
-  const { UserId } = req.params;
   if (authService.checkAuthHeader(authorization)) {
     const response = {
       error: 'Authentication header is missing!'
@@ -25,7 +24,7 @@ router.get('/:UserId', async (req, res) => {
     res.status(403).send(response);
   } else {
     const response = {
-      watchlists: await WatchListsData.getSymbols(UserId)
+      watchlists: await WatchListsData.getSymbols(1)
     };
 
     res.status(200).send(response);
