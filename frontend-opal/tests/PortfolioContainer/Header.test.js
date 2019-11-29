@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Header from 'components/Header';
+import SegControl from '~/src/components/SegControl';
 
 describe('<Header />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Header />).toJSON();
+    const tree = renderer.create(<SegControl />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

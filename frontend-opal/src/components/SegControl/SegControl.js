@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button, View } from 'react-native';
 import styles from './styles';
 
-const NavBar = ({ navTitles }) => {
+const SegControl = () => {
+  const navTitles = [
+    { id: 1, key: 'PORTFOLIO' },
+    { id: 2, key: 'WATCHLIST' }
+  ];
+
   const handlePress = key => key === 'PORTFOLIO';
 
   const renderItems = titles =>
@@ -19,13 +23,4 @@ const NavBar = ({ navTitles }) => {
   return <View style={styles.navBars}>{renderItems(navTitles)}</View>;
 };
 
-NavBar.propTypes = {
-  navTitles: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      key: PropTypes.string
-    })
-  ).isRequired
-};
-
-export default NavBar;
+export default SegControl;
