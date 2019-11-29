@@ -3,7 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
 import { NavigationContext } from 'react-navigation';
 
-import tools from 'components/common/common';
+import tools from 'components/common/tools';
 
 const styles = StyleSheet.create({
   listIcon: {

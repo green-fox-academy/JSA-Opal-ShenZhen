@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import tools from 'components/common/common';
+import tools from 'components/common/tools';
 
 const styles = StyleSheet.create({
   container: {

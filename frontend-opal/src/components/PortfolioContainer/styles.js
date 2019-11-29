@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import tools from 'components/common/common';
+import tools from 'components/common/tools';
 
 export default StyleSheet.create({
   portfolioArea: {

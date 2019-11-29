@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SegControl from '~/src/components/SegControl';
+import SegControl from 'components/SegControl/SegControl';
 
-describe('<Header />', () => {
+describe('<SegControl />', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<SegControl />).toJSON();
     expect(tree).toMatchSnapshot();

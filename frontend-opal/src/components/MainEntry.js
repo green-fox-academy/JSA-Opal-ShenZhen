@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { NavigationContext } from 'react-navigation';
 
-import tools from './common/common';
+import tools from './common/tools';
 
 const styles = StyleSheet.create({
   container: {
