@@ -1,23 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Instruments from 'components/PortfolioContainer/Instruments';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-const instrumentsList = [
-  {
-    company: 'FB - Facebook Inc.',
-    stockExchange: 'NASDAQ',
-    /* eslint-disable-next-line */
-  profileImg: require('components/PortfolioContainer/Instruments/images/avatarPlaceholder.png'),
-    positions: 136,
-    marketValue: 11863.28,
-    unrlzedPLPercentage: '4.5%',
-    unrlzedPL: 510.86
-  }
-];
+import reducers from 'reducers/root';
+import Instruments from 'components/PortfolioContainer/Instruments';
 
 describe('<Instruments />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Instruments InstrumentList={instrumentsList} />).toJSON();
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <Instruments />
+        </Provider>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

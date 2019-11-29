@@ -39,6 +39,7 @@ export default function App() {
       {ready ? (
         <Provider store={store}>
           <WatchListContainer />
+          <Investment />
         </Provider>
       ) : (
         <AppLoading />

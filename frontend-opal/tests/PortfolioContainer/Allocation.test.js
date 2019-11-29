@@ -1,24 +1,22 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
+import reducers from 'reducers/root';
 import AllocationInfo from 'components/PortfolioContainer/AllocationInfo';
 
-const pieData = [
-  { x: 'IT', y: 40, label: '40%' },
-  { x: 'Finance', y: 30, label: '30%' },
-  { x: 'Energy', y: 30, label: '30%' }
-];
-const legendData = [
-  { name: 'IT', symbol: { type: 'square' } },
-  { name: 'Finance', symbol: { type: 'square' } },
-  { name: 'Energy', symbol: { type: 'square' } }
-];
-const pieColor = ['#711702', '#A91600', '#E12C00'];
-
-describe('<Header />', () => {
+describe('<AllocationInfo />', () => {
   it('renders correctly', () => {
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
     const tree = renderer
-      .create(<AllocationInfo pieData={pieData} pieColor={pieColor} legendData={legendData} />)
+      .create(
+        <Provider store={store}>
+          <AllocationInfo />
+        </Provider>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

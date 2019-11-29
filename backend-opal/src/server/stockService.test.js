@@ -20,8 +20,6 @@ describe('stock service', () => {
     ];
     const stockData = await stockService.getByUser(3);
 
-    console.log('test stockData');
-    console.log(stockData);
     expect(stockData.data).not.toBeNull();
     expect(stockData.data).toEqual(expectedStockData);
   });
