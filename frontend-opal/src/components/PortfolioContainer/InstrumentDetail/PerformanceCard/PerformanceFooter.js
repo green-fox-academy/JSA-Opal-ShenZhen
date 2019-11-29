@@ -4,7 +4,7 @@ import { CardItem, Button, Text } from 'native-base';
 import styles from '../styles';
 
 const IntervalFooter = ({ intervals }) => {
-  const buttons = intervals =>
+  const buttons = () =>
     intervals.map(item => (
       <Button transparent key={item.id}>
         <Text style={styles.footerText}>{item.val}</Text>
@@ -25,6 +25,6 @@ IntervalFooter.propTypes = {
       val: PropTypes.string
     })
   ).isRequired
-}
+};
 
 export default IntervalFooter;

@@ -9,50 +9,41 @@ function doFlexDisplay(direction, justify) {
 }
 
 export default StyleSheet.create({
-  firstCard: {
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: 'green'
-  },
-  secondCard: {
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: 'red'
-  },
-  title : {
-      color: "grey",
-      fontSize: 24,
-  },
-  body : {
-      backgroundColor: "green",
-      opacity : 0.1,
-      height: 300,
+  firstCard: {},
+  secondCard: {},
+  title: {
+    color: 'grey',
+    fontSize: 24
   },
   chart: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'yellow',
-    width: "100%",
-    height: "50%",
+    backgroundColor: '#DFF1FD'
   },
-  statisticDetail: {
+  detail: {
     ...doFlexDisplay('row', 'space-evenly'),
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'blue'
+    height: 200,
+
+    backgroundColor: '#DFF1FD'
+  },
+  detailSection: {
+    width: '43%'
   },
   detailItem: {
     ...doFlexDisplay('row', 'space-between'),
-    // height: 100,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'green'
+    marginTop: 4
+  },
+  itemTitle: {
+    color: 'grey',
+    fontSize: 13
   },
   itemText: {
-    color: 'grey'
+    color: 'grey',
+    fontSize: 15
   },
   chartFooter: {
     ...doFlexDisplay('row', 'space-around')
+  },
+  footerText: {
+    color: 'black'
   },
   detailFooter: {
     ...doFlexDisplay('row', 'space-around')
