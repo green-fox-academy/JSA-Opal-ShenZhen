@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     res.status(403).send(response);
   } else {
     const response = {
-      watchlists: await WatchListsData.getSymbols(1)
+      watchlists: await WatchListsData.getWatchListsByUserId(1)
     };
 
     res.status(200).send(response);

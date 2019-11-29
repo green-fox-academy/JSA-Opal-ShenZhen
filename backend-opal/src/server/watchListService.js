@@ -1,9 +1,9 @@
 const driver = require('./db/driver');
 
-const getSymbols = async getWatchlists => {
-  console.log(getWatchlists);
-  const data = await driver.getSymbols(getWatchlists);
+const getWatchListsByUserId = async userId => {
+  console.log(userId);
+  const data = await driver.getWatchListsByUserId(userId);
   return data;
 };
 
-module.exports = { getSymbols };
+module.exports = { getWatchListsByUserId };

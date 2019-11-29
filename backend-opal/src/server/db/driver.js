@@ -45,12 +45,12 @@ function getStockByUserId(id) {
   return executeQuery(db, query);
 }
 
-function getSymbols(getWatchListsByUserId) {
-  const sql = `select * from watch_list where user_id = ${db.escape(getWatchListsByUserId)}`;
+function getWatchListsByUserId(userId) {
+  const sql = `select * from watch_list where user_id = ${db.escape(userId)}`;
   return executeQuery(db, sql);
 }
 
 module.exports = {
   getStockByUserId,
-  getSymbols
+  getWatchListsByUserId
 };
