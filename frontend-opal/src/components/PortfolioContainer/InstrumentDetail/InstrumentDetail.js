@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, Header, Content, Body, Text, Card, CardItem, Button } from 'native-base';
+import { Container, Header } from 'native-base';
 
 import PerformanceCard from './PerformanceCard';
 import DetailCard from './DetailCard/DetailCard';
 
-let InstrumentDetail = () => {
+const InstrumentDetail = () => {
   return (
     <Container>
       <Header />
-      <PerformanceCard  />
+      <PerformanceCard />
       <DetailCard />
     </Container>
   );

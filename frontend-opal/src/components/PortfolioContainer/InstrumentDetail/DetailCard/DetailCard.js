@@ -18,7 +18,7 @@ const DetailCard = () => {
       </Card>
 
       <Card>
-        <View style={styles.statisticDetail}>
+        <View style={styles.detail}>
           <StatisticDetail data={getDataGroup(dataSample, 1)} />
           <StatisticDetail data={getDataGroup(dataSample, 2)} />
         </View>
