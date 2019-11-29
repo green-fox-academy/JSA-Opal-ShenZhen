@@ -1,8 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Content, Text, Card, CardItem } from 'native-base';
 
-import LineChart from '../LineChart';
+import LineChart from '../../LineChart';
 import PerformanceFooter from './PerformanceFooter';
 import styles from '../styles';
 
@@ -24,7 +23,7 @@ const PerformanceCard = () => {
       </Card>
 
       <Card>
-        <CardItem cardBody>
+        <CardItem cardBody style={styles.chart}>
           <LineChart />
         </CardItem>
 

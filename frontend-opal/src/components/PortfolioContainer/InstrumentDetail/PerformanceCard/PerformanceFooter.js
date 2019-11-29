@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { CardItem, Button, Text } from 'native-base';
 import styles from '../styles';
 
@@ -6,7 +7,7 @@ const IntervalFooter = ({ intervals }) => {
   const buttons = intervals =>
     intervals.map(item => (
       <Button transparent key={item.id}>
-        <Text>{item.val}</Text>
+        <Text style={styles.footerText}>{item.val}</Text>
       </Button>
     ));
 
@@ -16,5 +17,14 @@ const IntervalFooter = ({ intervals }) => {
     </CardItem>
   );
 };
+
+IntervalFooter.propTypes = {
+  intervals: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      val: PropTypes.string
+    })
+  ).isRequired
+}
 
 export default IntervalFooter;
