@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import InstrumentItems from '../../components/InstrumentItems/instrumentItems';
+import InstrumentItems from '../../src/components/WatchList/InstrumentItems/instrumentItems';
 
 describe('<InstrumentItems />', () => {
   it('renders correctly', () => {

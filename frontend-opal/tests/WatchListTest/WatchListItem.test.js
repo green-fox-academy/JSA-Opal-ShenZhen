@@ -1,9 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import WatchListItem from '../../src/components/WatchList/WatchListItem/WatchListItem';
 
-import WatchList from '../../components/WatchList/WatchList';
-
-describe('<WatchList />', () => {
+describe('<WatchListItem />', () => {
   it('renders correctly', () => {
     const info = [
       {
@@ -25,31 +24,20 @@ describe('<WatchList />', () => {
         whole: '810K'
       }
     ];
-
     const chartData = [
       { x: 1, y: 8 },
       { x: 2, y: 7 },
       { x: 3, y: 5 }
     ];
-
-    const stockData = {
-      '52 wk low': '231.6',
-      '52 wk high': '250.7',
-      'P/E': '20.3',
-      EPS: '1.2',
-      DivYield: '2.34%'
-    };
-
-    const watchlistArr = ['my watchlist1', 'my watchlist2'];
+    const stockData = [
+      { name: '52 wk low', value: '231.6' },
+      { name: '52 wk high', value: '250.7' },
+      { name: 'P/E', value: '20.3' },
+      { name: 'EPS', value: '1.2' },
+      { name: 'DivYield', value: '2.34%' }
+    ];
     const tree = renderer
-      .create(
-        <WatchList
-          watchlistArr={watchlistArr}
-          info={info}
-          stockData={stockData}
-          chartData={chartData}
-        />
-      )
+      .create(<WatchListItem info={info} stockData={stockData} chartData={chartData} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

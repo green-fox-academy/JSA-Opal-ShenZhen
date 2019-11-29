@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import NewHeader from '../../components/NewHeader/newHeader';
+import NewHeader from '../../src/components/WatchList/NewHeader/newHeader';
 
 describe('<NewHeader />', () => {
   it('renders correctly', () => {

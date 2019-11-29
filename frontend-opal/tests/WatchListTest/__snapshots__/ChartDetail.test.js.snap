@@ -3989,23 +3989,28 @@ exports[`<ChartDetail /> renders correctly 1`] = `
       }
     >
       <Text>
-        52 wk high :
-        250.7
-      </Text>
-      <Text>
-        52 wk low :
+        52 wk low
+        :
         231.6
       </Text>
       <Text>
-        P/E :
+        52 wk high
+        :
+        250.7
+      </Text>
+      <Text>
+        P/E
+        :
         20.3
       </Text>
       <Text>
-        EPS :
+        EPS
+        :
         1.2
       </Text>
       <Text>
-        DivYield :
+        DivYield
+        :
         2.34%
       </Text>
     </View>

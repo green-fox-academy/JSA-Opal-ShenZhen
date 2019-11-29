@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import WatchListContainer from '../../components/WatchListContainer/WatchListContainer';
+import WatchListContainer from '../../src/components/WatchList/WatchListContainer/WatchListContainer';
 
 describe('<WatchListContainer />', () => {
   it('renders correctly', () => {
