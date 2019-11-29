@@ -103,4 +103,3 @@ workflows:
             branches:
               only: 
                 - master
-                - watchlistFE
