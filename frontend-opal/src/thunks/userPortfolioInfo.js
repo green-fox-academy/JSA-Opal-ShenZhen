@@ -8,18 +8,18 @@ const fetchPortfolioEndpoint = () => {
     fetch('http://10.22.19.55:3001/portfolio', {
       headers: {
         'Content-type': 'application/json',
-        'Authorization': 'Bearer token'
-      },
+        Authorization: 'Bearer token'
+      }
     })
-      .then (res => res.json())
-      .then (res => {
-        dispatch(actions.fetchPortfolioEndpoint(res))
+      .then(res => res.json())
+      .then(res => {
+        dispatch(actions.fetchPortfolioEndpoint(res));
       })
       .catch(error => {
         return 'error';
-      })
-  }
-}
+      });
+  };
+};
 
 export default {
   fetchPortfolioEndpoint

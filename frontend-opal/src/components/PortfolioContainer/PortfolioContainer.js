@@ -11,7 +11,11 @@ import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
 
-const PortfolioContainer = ({ userPortfolioInfo, onGetPortfolioData, onfetchPortfolioEndpoint }) => {
+const PortfolioContainer = ({
+  userPortfolioInfo,
+  onGetPortfolioData,
+  onfetchPortfolioEndpoint
+}) => {
   useEffect(() => onGetPortfolioData(), [onGetPortfolioData]);
   useEffect(() => onfetchPortfolioEndpoint(), [onfetchPortfolioEndpoint]);
   console.log(userPortfolioInfo);
