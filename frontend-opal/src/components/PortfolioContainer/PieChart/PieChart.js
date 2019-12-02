@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import Svg from 'react-native-svg';
 import { VictoryLegend, VictoryPie } from 'victory-native';
 
 const PieChart = ({ data, color, legendData }) => (
   <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-    <Svg width={150} height={50} style={{ border: '1 px solid #ccc' }}>
+    <View width={150} height={50} style={{ border: '1 px solid #ccc' }}>
       <VictoryLegend colorScale={color} x={30} y={40} data={legendData} responsive={false} />
-    </Svg>
+    </View>
 
     <VictoryPie
       data={data}

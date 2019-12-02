@@ -2,9 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   valueArea: {
-    width: '92%',
-    height: 280,
-    margin: 15
+    width: '100%'
   },
   title: {
     fontSize: 16

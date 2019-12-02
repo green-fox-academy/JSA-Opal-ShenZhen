@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Card, CardItem } from 'native-base';
 import thunksPortfolio from 'thunks/portfolio';
 import thunksUserPortfolioInfo from 'thunks/userPortfolioInfo';
 
@@ -11,29 +12,28 @@ import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
 
-const PortfolioContainer = ({
-  userPortfolioInfo,
-  onGetPortfolioData,
-  onfetchPortfolioEndpoint
-}) => {
+const PortfolioContainer = ({ onGetPortfolioData, onfetchPortfolioEndpoint }) => {
   useEffect(() => onGetPortfolioData(), [onGetPortfolioData]);
   useEffect(() => onfetchPortfolioEndpoint(), [onfetchPortfolioEndpoint]);
-  console.log(userPortfolioInfo);
 
   return (
     <>
       <View style={styles.portfolioArea}>
-        <ValueInfo />
-        <AllocationInfo />
-        <Instruments />
+        <Card transparent>
+          <CardItem>
+            <ValueInfo />
+          </CardItem>
+          <CardItem>
+            <AllocationInfo />
+          </CardItem>
+          <CardItem>
+            <Instruments />
+          </CardItem>
+        </Card>
       </View>
     </>
   );
 };
-
-const mapStateToProps = state => ({
-  userPortfolioInfo: state.userPortfolioInfo
-});
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -42,7 +42,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer);
+export default connect(null, mapDispatchToProps)(PortfolioContainer);
 
 PortfolioContainer.propTypes = {
   onGetPortfolioData: PropTypes.func.isRequired,

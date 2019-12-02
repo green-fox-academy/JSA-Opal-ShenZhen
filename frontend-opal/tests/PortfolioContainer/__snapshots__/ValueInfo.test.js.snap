@@ -4,9 +4,7 @@ exports[`<ValueInfo /> renders correctly 1`] = `
 <View
   style={
     Object {
-      "height": 280,
-      "margin": 15,
-      "width": "92%",
+      "width": "100%",
     }
   }
 >
@@ -80,32 +78,55 @@ exports[`<ValueInfo /> renders correctly 1`] = `
       </Text>
     </View>
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "opacity": 1,
+          "alignItems": "flex-start",
+          "padding": 10,
         }
       }
     >
-      <Text
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "fontSize": 16,
-            "height": 40,
-            "padding": 12,
-            "textAlign": "left",
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "borderBottomWidth": null,
+            "borderColor": "#007aff",
+            "borderLeftWidth": null,
+            "borderRadius": 5,
+            "borderRightWidth": null,
+            "borderTopWidth": null,
+            "borderWidth": undefined,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "space-between",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "opacity": 1,
+            "paddingBottom": 6,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "shadowColor": undefined,
+            "shadowOffset": undefined,
+            "shadowOpacity": undefined,
+            "shadowRadius": undefined,
           }
         }
       >
-        INVESTMENT ACCOUNT
-      </Text>
+        <Text>
+          INVESTMENT ACCOUNT
+        </Text>
+      </View>
     </View>
   </View>
 </View>

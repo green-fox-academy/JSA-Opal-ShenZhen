@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Card, Button } from 'native-base';
 import styles from './styles';
 
@@ -9,7 +9,9 @@ import PieChart from '../PieChart';
 
 const AllocationInfo = ({ pieData, pieColor, legendData }) => (
   <View style={styles.allocationArea}>
-    <Text style={styles.title}>Allocation</Text>
+    <Card transparent>
+      <Text style={styles.title}>Allocation</Text>
+    </Card>
 
     <Card>
       <View style={styles.pie}>
