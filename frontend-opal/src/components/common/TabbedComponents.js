@@ -22,28 +22,27 @@ const styles = StyleSheet.create({
   }
 });
 
-function AddTabs({ Cmpnts, names }) {
+function TabbedComponents({ components }) {
   return (
     <Tabs style={styles.tabs}>
-      {Cmpnts.map((Cmpnt, index) => (
+      {components.map(Component => (
         <Tab
-          heading={names[index]}
-          key={names[index]}
+          heading={Component.title}
+          key={Component.title}
           tabStyle={styles.tabStyle}
           textStyle={styles.textStyle}
           activeTabStyle={styles.activeTabStyle}
           activeTextStyle={styles.textStyle}
         >
-          <Cmpnt />
+          <Component />
         </Tab>
       ))}
     </Tabs>
   );
 }
 
-AddTabs.propTypes = {
-  Cmpnts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  names: PropTypes.arrayOf(PropTypes.string).isRequired
+TabbedComponents.propTypes = {
+  components: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
-export default AddTabs;
+export default TabbedComponents;

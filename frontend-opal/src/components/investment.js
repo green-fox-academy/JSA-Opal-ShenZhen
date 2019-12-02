@@ -6,11 +6,13 @@ import MainEntry from './MainEntry';
 import Search from './SearchResult/Result';
 import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
-import AddTabs from './common/AddTabs';
+import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
 
 const InvestmentMain = () => {
-  return <AddTabs Cmpnts={[Portfolio, Watchlist]} names={['PORTFOLIO', 'WATCHLIST']} />;
+  Portfolio.title = 'PORTFOLIO';
+  Watchlist.title = 'WATCHLIST';
+  return <TabbedComponents components={[Portfolio, Watchlist]} />;
 };
 headers.addListHeader(InvestmentMain, 'Investments');
 

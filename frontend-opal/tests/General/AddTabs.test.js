@@ -1,18 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AddTabs from 'components/common/AddTabs';
+import TabbedComponents from 'components/common/TabbedComponents';
 
 function TestComponent() {
   return <></>;
 }
 
-describe('<AddTabs />', () => {
+describe('<TabbedComponents />', () => {
   it('renders correctly', () => {
+    TestComponent.title = 'test';
     const tree = renderer
-      .create(
-        <AddTabs Cmpnts={[TestComponent, TestComponent]} names={['PORTFOLIO', 'WATCHLIST']} />
-      )
+      .create(<TabbedComponents components={[TestComponent, TestComponent]} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

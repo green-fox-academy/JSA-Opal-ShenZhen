@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AddTabs /> renders correctly 1`] = `
+exports[`<TabbedComponents /> renders correctly 1`] = `
 <View
   onLayout={[Function]}
   style={
@@ -95,7 +95,7 @@ exports[`<AddTabs /> renders correctly 1`] = `
           }
           uppercase={false}
         >
-          PORTFOLIO
+          test
         </Text>
       </View>
     </View>
@@ -155,7 +155,7 @@ exports[`<AddTabs /> renders correctly 1`] = `
           }
           uppercase={false}
         >
-          WATCHLIST
+          test
         </Text>
       </View>
     </View>
@@ -214,7 +214,7 @@ exports[`<AddTabs /> renders correctly 1`] = `
               "color": "rgb(250,110,59)",
             }
           }
-          heading="PORTFOLIO"
+          heading="test"
           style={
             Object {
               "backgroundColor": "#FFF",
@@ -241,7 +241,7 @@ exports[`<AddTabs /> renders correctly 1`] = `
         }
       >
         <View
-          heading="WATCHLIST"
+          heading="test"
         />
       </View>
     </View>
