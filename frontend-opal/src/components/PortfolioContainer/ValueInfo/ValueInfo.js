@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Card } from 'native-base';
+import { Card, Button } from 'native-base';
 import styles from './styles';
 
 const ValueInfo = ({ totalInvestment }) => {
@@ -16,9 +16,11 @@ const ValueInfo = ({ totalInvestment }) => {
           <Text style={styles.amount}>{`$ ${totalInvestment}`}</Text>
         </View>
 
-        <TouchableOpacity>
-          <Text style={styles.button}>INVESTMENT ACCOUNT</Text>
-        </TouchableOpacity>
+        <View style={styles.valueButton}>
+          <Button style={styles.button}>
+            <Text>INVESTMENT ACCOUNT</Text>
+          </Button>
+        </View>
       </Card>
     </View>
   );

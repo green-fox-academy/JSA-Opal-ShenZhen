@@ -26,10 +26,15 @@ export default StyleSheet.create({
     fontSize: 80,
     color: '#e17055'
   },
+  valueButton: {
+    alignItems: 'flex-start',
+    padding: 10
+  },
   button: {
-    height: 40,
-    padding: 12,
-    textAlign: 'left',
-    fontSize: 16
+    marginLeft: 10,
+    marginRight: 10,
+    backgroundColor: 'white',
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });

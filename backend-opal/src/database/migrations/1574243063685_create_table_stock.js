@@ -5,11 +5,7 @@ module.exports = {
             symbol TEXT,
             amount INT,
 
-            PRIMARY KEY (id),
-            FOREIGN KEY (user_id) 
-                REFERENCES User (id)
-                ON DELETE CASCADE
-                ON UPDATE CASCADE
+            PRIMARY KEY (id)
         );`,
   down: `DROP TABLE IF EXISTS Stock;`
 };
