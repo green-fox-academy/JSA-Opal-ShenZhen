@@ -3,7 +3,6 @@ import { StyleSheet, Text } from 'react-native';
 import { Icon } from 'native-base';
 
 import tools from 'components/common/tools';
-import BackIcon from './BackIcon';
 
 const styles = StyleSheet.create({
   listIcon: {
@@ -29,8 +28,8 @@ const addDetailHeader = (component, title) => {
   /* eslint-disable-next-line */
   component.navigationOptions = {
     headerTitle: () => <Text style={styles.title}>{title}</Text>,
-    headerLeft: () => <BackIcon prevPage="Portfolio" />,
-    headerRight: () => <AddWatchList />
+    headerRight: () => <AddWatchList />,
+    headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
   };
 };
 

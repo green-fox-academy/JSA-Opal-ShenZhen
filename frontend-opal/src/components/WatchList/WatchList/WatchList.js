@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import WatchListItem from '../WatchListItem/WatchListItem';
+
+import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 
 const WatchList = ({ watchlists }) => {
   const info = [

@@ -38,8 +38,7 @@ exports[`<InstrumentItems /> renders correctly 1`] = `
         }
       }
     >
-      +0.23
-      %
+      +0.23%
     </Text>
     <Text
       style={
@@ -113,8 +112,7 @@ exports[`<InstrumentItems /> renders correctly 1`] = `
         }
       }
     >
-      -0.06
-      %
+      -0.06%
     </Text>
     <Text
       style={
@@ -188,8 +186,7 @@ exports[`<InstrumentItems /> renders correctly 1`] = `
         }
       }
     >
-      +1.63
-      %
+      +1.63%
     </Text>
     <Text
       style={

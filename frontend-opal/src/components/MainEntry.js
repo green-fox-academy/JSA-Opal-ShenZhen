@@ -30,7 +30,10 @@ function MainEntry() {
   const navigation = useContext(NavigationContext);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Portfolio')}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('InvestmentMain')}
+    >
       <Text style={styles.start}>Start</Text>
       <Text style={styles.your}>Your</Text>
       <Text style={styles.investment}>Investment</Text>
