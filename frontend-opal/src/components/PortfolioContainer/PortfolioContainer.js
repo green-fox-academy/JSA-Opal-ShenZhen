@@ -27,6 +27,8 @@ const PortfolioContainer = ({ onGetPortfolioData }) => {
   );
 };
 
+PortfolioContainer.title = 'PORTFOLIO';
+
 const mapDispatchToProps = dispatch => {
   return {
     onGetPortfolioData: () => dispatch(thunks.getPortfolioData())

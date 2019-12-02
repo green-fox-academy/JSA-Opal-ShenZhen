@@ -10,8 +10,6 @@ import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
 
 const InvestmentMain = () => {
-  Portfolio.title = 'PORTFOLIO';
-  Watchlist.title = 'WATCHLIST';
   return <TabbedComponents components={[Portfolio, Watchlist]} />;
 };
 headers.addListHeader(InvestmentMain, 'Investments');

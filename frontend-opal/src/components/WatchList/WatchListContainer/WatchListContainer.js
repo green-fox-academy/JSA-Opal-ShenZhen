@@ -14,4 +14,6 @@ function WatchListContainer() {
   );
 }
 
+WatchListContainer.title = 'WATCHLIST';
+
 export default connect(null, null)(WatchListContainer);
