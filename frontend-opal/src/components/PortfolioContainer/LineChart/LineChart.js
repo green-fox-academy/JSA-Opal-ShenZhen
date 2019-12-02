@@ -34,7 +34,7 @@ const InstrumentDetail = () => {
         <VictoryAxis
           style={{ axis: { stroke: 'none' } }}
           tickValues={[new Date(2019, 5, 1), new Date(2019, 8, 1), new Date(2019, 11, 1)]}
-          tickFormat={x => formatAxisMonth(new Date(x))}
+          tickFormat={x => new Date(x).getMonth()}
         />
         <VictoryAxis style={{ axis: { stroke: 'none' } }} dependentAxis />
       </VictoryChart>
