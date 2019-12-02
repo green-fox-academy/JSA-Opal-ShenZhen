@@ -5,11 +5,6 @@ import { VictoryLine, VictoryChart, VictoryAxis, VictoryScatter } from 'victory-
 import dataSample from './dataSample';
 
 const InstrumentDetail = () => {
-  const formatAxisMonth = date => {
-    const options = { month: 'short' };
-    return new Intl.DateTimeFormat('en-US', options).format(date);
-  };
-
   return (
     <View>
       <VictoryChart
