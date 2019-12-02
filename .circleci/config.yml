@@ -95,7 +95,6 @@ workflows:
             branches:
               only: 
                 - master
-                - honda-issue70-ci
       - deploy-backend:
           requires:
             - backend-test
