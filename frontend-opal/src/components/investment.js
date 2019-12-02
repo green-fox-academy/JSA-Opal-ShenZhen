@@ -1,15 +1,24 @@
-import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
-import Header from './Header';
-import PortfolioContainer from './PortfolioContainer';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default function Portfolio() {
-  return (
-    <SafeAreaView>
-      <ScrollView>
-        <Header />
-        <PortfolioContainer />
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+import MainEntry from './MainEntry';
+import Portfolio from './PortfolioContainer';
+import Search from './SearchResult/Result';
+
+const Investment = createStackNavigator(
+  {
+    MainEntry,
+    Portfolio,
+    Search
+  },
+  {
+    initialRouteName: 'MainEntry',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: 'rgb(77,119,245)'
+      }
+    }
+  }
+);
+
+export default createAppContainer(Investment);

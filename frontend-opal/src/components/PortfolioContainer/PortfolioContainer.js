@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import thunks from 'thunks/portfolio';
 
+import headers from 'components/common/headers';
+import SegControl from 'components/SegControl/SegControl';
 import styles from './styles';
-
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
@@ -15,11 +16,16 @@ const PortfolioContainer = ({ onGetPortfolioData }) => {
 
   return (
     <>
-      <View style={styles.portfolioArea}>
-        <ValueInfo />
-        <AllocationInfo />
-        <Instruments />
-      </View>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={styles.portfolioArea}>
+            <SegControl />
+            <ValueInfo />
+            <AllocationInfo />
+            <Instruments />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     </>
   );
 };
@@ -29,6 +35,8 @@ const mapDispatchToProps = dispatch => {
     onGetPortfolioData: () => dispatch(thunks.getPortfolioData())
   };
 };
+
+headers.addListHeader(PortfolioContainer, 'Investments');
 
 export default connect(null, mapDispatchToProps)(PortfolioContainer);
 

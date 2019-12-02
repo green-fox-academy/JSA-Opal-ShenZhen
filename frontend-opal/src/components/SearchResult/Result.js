@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from 'components/SearchResult/styles/result';
 import Item from 'components/SearchResult/Item';
+import headers from 'components/common/headers';
 
 function Result({ results, input }) {
   return (
@@ -16,6 +17,8 @@ function Result({ results, input }) {
     />
   );
 }
+
+headers.addSearchHeader(Result);
 
 Result.defaultProps = {
   results: [],
