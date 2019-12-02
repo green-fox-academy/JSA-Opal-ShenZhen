@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { AntDesign } from 'react-native-vector-icons';
 import { Button } from 'native-base';
 import PropTypes from 'prop-types';
+
 import styles from './styles';
 import InstrumentItems from '../InstrumentItems/instrumentItems';
 import ChartDetail from '../ChartDetail/ChartDetail';
