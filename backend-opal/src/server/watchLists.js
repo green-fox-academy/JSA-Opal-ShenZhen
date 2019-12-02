@@ -1,27 +1,19 @@
 const router = require('express').Router();
+const WatchListsData = require('./watchListService');
 
-const data = [
-  {
-    id: 1,
-    userId: 1,
-    name: 'My Watchlist 1',
-    symbols: ['MSFT', 'AMZN', 'AAPL', 'FB']
-  }
-];
+router.get('/', async (req, res) => {
+  const response = {
+    portfolio: await WatchListsData.getWatchLists(1)
+  };
+
+  res.status(200).send(response);
+});
 
 function checkRequestBody(body) {
   const bodyKey = ['userId', 'name'];
   const result = bodyKey.filter(key => !(key in body));
   return result;
 }
-
-router.get('/', function(req, res) {
-  const response = {
-    watchlists: data
-  };
-
-  res.status(200).send(response);
-});
 
 router.post('/', function(req, res) {
   try {
