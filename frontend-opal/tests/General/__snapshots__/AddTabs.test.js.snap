@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddTabs /> renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "zIndex": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 0.5,
+          "borderColor": "#a7a6ab",
+          "elevation": 3,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+        },
+        Object {
+          "backgroundColor": "#F8F8F8",
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        active={true}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F8F8F8",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {
+              "backgroundColor": "white",
+              "borderBottomColor": "rgb(250,110,59)",
+              "borderBottomWidth": 4,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007aff",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "marginLeft": 7,
+                "marginRight": 7,
+              },
+              Object {
+                "fontSize": 15,
+              },
+              Object {
+                "color": "rgb(250,110,59)",
+              },
+              Object {
+                "color": "rgb(250,110,59)",
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          PORTFOLIO
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        active={false}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F8F8F8",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#6b6b6b",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "marginLeft": 7,
+                "marginRight": 7,
+              },
+              Object {
+                "fontSize": 15,
+              },
+              Object {
+                "color": "rgb(250,110,59)",
+              },
+              Object {
+                "color": "rgb(250,110,59)",
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          WATCHLIST
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#007aff",
+          "bottom": 0,
+          "height": 4,
+          "left": 0,
+          "position": "absolute",
+          "width": 375,
+        }
+      }
+    />
+  </View>
+  <RCTScrollView
+    alwaysBounceVertical={false}
+    automaticallyAdjustContentInsets={false}
+    contentOffset={
+      Object {
+        "x": 0,
+      }
+    }
+    directionalLockEnabled={true}
+    horizontal={true}
+    keyboardDismissMode="on-drag"
+    keyboardShouldPersistTaps="handled"
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    pagingEnabled={true}
+    scrollEnabled={true}
+    scrollEventThrottle={16}
+    scrollsToTop={false}
+    showsHorizontalScrollIndicator={false}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <View
+          activeTabStyle={
+            Object {
+              "backgroundColor": "white",
+              "borderBottomColor": "rgb(250,110,59)",
+              "borderBottomWidth": 4,
+            }
+          }
+          activeTextStyle={
+            Object {
+              "color": "rgb(250,110,59)",
+            }
+          }
+          heading="PORTFOLIO"
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "flex": 1,
+            }
+          }
+          tabStyle={
+            Object {
+              "backgroundColor": "white",
+            }
+          }
+          textStyle={
+            Object {
+              "color": "rgb(250,110,59)",
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <View
+          heading="WATCHLIST"
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

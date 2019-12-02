@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import tools from 'components/common/tools';
 import thunks from 'thunks/searchResult';
-import BackIcon from './BackIcon';
 
 const styles = StyleSheet.create({
   searchContainer: {
@@ -43,7 +42,7 @@ const addSearchHeader = component => {
   /* eslint-disable-next-line */
   component.navigationOptions = {
     headerTitle: () => <ReduxSearchInput />,
-    headerLeft: () => <BackIcon prevPage="Portfolio" />
+    headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
   };
 };
 

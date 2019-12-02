@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import thunks from 'thunks/portfolio';
 
-import headers from 'components/common/headers';
-import SegControl from 'components/SegControl/SegControl';
 import styles from './styles';
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
@@ -19,7 +17,6 @@ const PortfolioContainer = ({ onGetPortfolioData }) => {
       <SafeAreaView>
         <ScrollView>
           <View style={styles.portfolioArea}>
-            <SegControl />
             <ValueInfo />
             <AllocationInfo />
             <Instruments />
@@ -35,8 +32,6 @@ const mapDispatchToProps = dispatch => {
     onGetPortfolioData: () => dispatch(thunks.getPortfolioData())
   };
 };
-
-headers.addListHeader(PortfolioContainer, 'Investments');
 
 export default connect(null, mapDispatchToProps)(PortfolioContainer);
 
