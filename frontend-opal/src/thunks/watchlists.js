@@ -1,14 +1,8 @@
 import actions from 'actions/watchlists';
 
-const lists = [
-  {
-    data: {
-      '52 wk low': '231.6',
-      '52 wk high': '250.7',
-      'P/E': '20.3',
-      EPS: '1.2',
-      DivYield: '2.34%'
-    },
+const lists = [];
+for (let i = 0; i < 3; i += 1) {
+  lists.push({
     info: [
       {
         name: 'MSFT',
@@ -28,13 +22,25 @@ const lists = [
         increase: '+1.63',
         whole: '810K'
       }
+    ],
+    chartData: [
+      { x: 1, y: 8 },
+      { x: 2, y: 7 },
+      { x: 3, y: 5 }
+    ],
+    stockData: [
+      { name: '52 wk low', value: '231.6' },
+      { name: '52 wk high', value: '250.7' },
+      { name: 'P/E', value: '20.3' },
+      { name: 'EPS', value: '1.2' },
+      { name: 'DivYield', value: '2.34%' }
     ]
-  }
-];
+  });
+}
 
-function getWatchlistData(listId) {
+function getWatchlistData() {
   return dispatch => {
-    dispatch(actions.getWatchlistData(lists[listId]));
+    dispatch(actions.getWatchlistData(lists));
   };
 }
 
