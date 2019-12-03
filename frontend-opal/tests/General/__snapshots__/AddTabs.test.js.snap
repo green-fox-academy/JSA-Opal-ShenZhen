@@ -65,8 +65,6 @@ exports[`<TabbedComponents /> renders correctly 1`] = `
             },
             Object {
               "backgroundColor": "white",
-              "borderBottomColor": "rgb(250,110,59)",
-              "borderBottomWidth": 4,
             },
           ]
         }
@@ -162,7 +160,7 @@ exports[`<TabbedComponents /> renders correctly 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#007aff",
+          "backgroundColor": "rgb(250,110,59)",
           "bottom": 0,
           "height": 4,
           "left": 0,
@@ -205,8 +203,6 @@ exports[`<TabbedComponents /> renders correctly 1`] = `
           activeTabStyle={
             Object {
               "backgroundColor": "white",
-              "borderBottomColor": "rgb(250,110,59)",
-              "borderBottomWidth": 4,
             }
           }
           activeTextStyle={

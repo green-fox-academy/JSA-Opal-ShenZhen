@@ -3,11 +3,12 @@ import { Tab, Tabs } from 'native-base';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import tools from './tools';
-
 const styles = StyleSheet.create({
   tabs: {
     zIndex: 10
+  },
+  tabBarUnderlineStyle: {
+    backgroundColor: 'rgb(250,110,59)'
   },
   tabStyle: {
     backgroundColor: 'white'
@@ -16,15 +17,13 @@ const styles = StyleSheet.create({
     color: 'rgb(250,110,59)'
   },
   activeTabStyle: {
-    backgroundColor: 'white',
-    borderBottomWidth: tools.getPixel(2),
-    borderBottomColor: 'rgb(250,110,59)'
+    backgroundColor: 'white'
   }
 });
 
 function TabbedComponents({ components }) {
   return (
-    <Tabs style={styles.tabs}>
+    <Tabs style={styles.tabs} tabBarUnderlineStyle={styles.tabBarUnderlineStyle}>
       {components.map(Component => (
         <Tab
           heading={Component.title}
