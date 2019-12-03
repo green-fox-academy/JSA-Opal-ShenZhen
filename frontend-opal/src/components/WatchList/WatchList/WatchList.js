@@ -31,11 +31,7 @@ WatchList.propTypes = {
   getLists: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    watchlists: state.watchLists === undefined ? [] : state.watchLists
-  };
-};
+const mapStateToProps = ({ watchlists = [] }) => ({ watchlists });
 
 const mapDispatchToProps = dispatch => ({
   getLists: () => dispatch(thunks.getWatchlistData())
