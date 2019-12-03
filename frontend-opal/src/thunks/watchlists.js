@@ -1,4 +1,8 @@
+import { API_TOKEN } from 'react-native-dotenv';
+
 import actions from 'actions/watchlists';
+
+const databaseUrl = 'localhost:3001';
 
 const lists = [];
 for (let i = 0; i < 3; i += 1) {
@@ -39,7 +43,17 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 function getWatchlistData() {
-  return dispatch => {
+  return async dispatch => {
+    const dbResponse = await fetch(`${databaseUrl}/watchlists`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authentication: 'Bearer token'
+      }
+    });
+    const dbData = await dbResponse.json();
+    console.log(dbData);
     dispatch(actions.getWatchlistData(lists));
   };
 }
