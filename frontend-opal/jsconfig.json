@@ -16,6 +16,9 @@
       ],
       "assets/*": [
         "assets/*"
+      ],
+      "thunks/*": [
+        "src/thunks/*"
       ]
     }
   }

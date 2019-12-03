@@ -1,6 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import WatchListItem from '../../src/components/WatchList/WatchListItem/WatchListItem';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+import reducers from 'reducers/root';
+import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 
 describe('<WatchListItem />', () => {
   it('renders correctly', () => {
@@ -36,8 +41,14 @@ describe('<WatchListItem />', () => {
       { name: 'EPS', value: '1.2' },
       { name: 'DivYield', value: '2.34%' }
     ];
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
     const tree = renderer
-      .create(<WatchListItem info={info} stockData={stockData} chartData={chartData} />)
+      .create(
+        <Provider store={store}>
+          <WatchListItem info={info} stockData={stockData} chartData={chartData} />
+        </Provider>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

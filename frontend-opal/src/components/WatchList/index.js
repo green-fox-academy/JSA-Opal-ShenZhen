@@ -1,3 +1,3 @@
-import WatchListContainer from './WatchListContainer/WatchListContainer';
+import WatchList from './WatchList/WatchList';
 
-export default WatchListContainer;
+export default WatchList;
