@@ -1,8 +1,9 @@
-import { API_TOKEN } from 'react-native-dotenv';
+import { API_TOKEN, DATABASE_URL, DATABASE_PORT } from 'react-native-dotenv';
 
 import actions from 'actions/watchlists';
 
-const databaseUrl = 'localhost:3001';
+const databaseUrl = `http://${DATABASE_URL}:${DATABASE_PORT}`;
+const apiUrl = 'https://cloud.iexapis.com/stable/';
 
 const lists = [];
 for (let i = 0; i < 3; i += 1) {
@@ -44,17 +45,24 @@ for (let i = 0; i < 3; i += 1) {
 
 function getWatchlistData() {
   return async dispatch => {
-    const dbResponse = await fetch(`${databaseUrl}/watchlists`, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authentication: 'Bearer token'
-      }
-    });
-    const dbData = await dbResponse.json();
-    console.log(dbData);
-    dispatch(actions.getWatchlistData(lists));
+    try {
+      const dbResponse = await fetch(`${databaseUrl}/watchlists`, {
+        method: 'get',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          authorization: 'Bearer token'
+        }
+      });
+      const dbData = await dbResponse.json();
+      const symbolsList = dbData.watchlists.map(data => ({
+        symbols: data.symbols
+      }));
+      console.log(symbolsList);
+      dispatch(actions.getWatchlistData(lists));
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 
