@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const WatchListsServer = require('./watchListService');
+const WatchListsService = require('./watchListService');
 
 router.get('/', async (req, res) => {
   const response = {
-    watchlists: await WatchListsServer.getWatchLists(1)
+    watchlists: await WatchListsService.getWatchLists(1)
   };
 
   res.status(200).send(response);
