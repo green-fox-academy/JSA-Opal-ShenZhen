@@ -9,7 +9,8 @@
     "test": "cd backend-opal && npm test && cd .. && cd frontend-opal && npm test"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "repository": {
     "type": "git",
