@@ -14,8 +14,7 @@ export default function App() {
 
   return ( 
         <Provider store={store}>
-          <WatchListContainer />
-          
+          <Investment />
         </Provider>
   );
 }
