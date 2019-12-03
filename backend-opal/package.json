@@ -5,6 +5,7 @@
   "main": "start.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev node migration.js up && cross-env NODE_ENV=dev nodemon -r tsconfig-paths/register start.js",
+    "start-prod": "cross-env NODE_ENV=prod node migration.js up && cross-env NODE_ENV=dev nodemon -r tsconfig-paths/register start.js",
     "test": "jest",
     "lint": "eslint **/*.{js,jsx} --ext .js",
     "lint-fix": "eslint **/*.{js,jsx} --ext .js --fix"
