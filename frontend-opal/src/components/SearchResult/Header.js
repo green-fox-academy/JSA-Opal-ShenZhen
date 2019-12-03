@@ -33,8 +33,4 @@ SearchHeader.propTypes = {
   search: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = dispatch => ({
-  search: input => dispatch(thunks.search(input))
-});
-
-export default connect(null, mapDispatchToProps)(SearchHeader);
+export default SearchHeader;
