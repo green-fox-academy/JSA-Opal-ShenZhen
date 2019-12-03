@@ -6,10 +6,11 @@
   "scripts": {
     "lint": "cd backend-opal && npm run lint && cd .. && cd frontend-opal && npm run lint",
     "lint-fix": "cd backend-opal && npm run lint-fix && cd .. && cd frontend-opal && npm run lint-fix",
-    "test": "cd backend-opal && npm test"
+    "test": "cd backend-opal && npm test && cd .. && cd frontend-opal && npm test"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/green-fox-academy/JSA-Opal-ShenZhen#readme",
   "dependencies": {
+    "@expo/vector-icons": "^10.0.6",
     "pre-commit": "^1.2.2"
   }
 }

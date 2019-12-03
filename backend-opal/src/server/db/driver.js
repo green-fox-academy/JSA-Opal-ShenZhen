@@ -1,15 +1,11 @@
 const mysql = require('mysql');
 const db = require('./config');
 
-/* ---------------------------------------------------------
- * Database Manipulation Tools Initialization 
-------------------------------------------------------------*/
 function isStringVal(val) {
   return typeof val === 'string' ? `'${val}'` : val;
 }
 
 function queryFilter(items) {
-  // Filter object item without value
   const target = Object.keys(items)
     .filter(key => items[key] !== undefined)
     .reduce((obj, key) => {
@@ -40,9 +36,6 @@ function executeQuery(conn, query) {
   });
 }
 
-/* ---------------------------------------------------------
- * Retrieve data from Database
-------------------------------------------------------------*/
 function getStockByUserId(id) {
   let query = `SELECT ?? FROM Stock ${queryFilter({ user_id: id })};`;
   const columns = ['id', 'user_id', 'symbol', 'amount'];
@@ -52,6 +45,12 @@ function getStockByUserId(id) {
   return executeQuery(db, query);
 }
 
+function getWatchListsByUserId(userId) {
+  const sql = `select * from watch_list where user_id = ${db.escape(userId)}`;
+  return executeQuery(db, sql);
+}
+
 module.exports = {
-  getStockByUserId
+  getStockByUserId,
+  getWatchListsByUserId
 };

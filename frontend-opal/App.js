@@ -11,6 +11,7 @@ import RobotoFont from 'native-base/Fonts/Roboto.ttf';
 import RobotoMediumFont from 'native-base/Fonts/Roboto_medium.ttf';
 
 import reducers from 'reducers/root';
+import WatchListContainer from 'components/WatchList/';
 import Investment from './src/components/investment';
 
 import InstrumentDetail from './src/components/PortfolioContainer/InstrumentDetail';
