@@ -3,7 +3,7 @@ import { API_TOKEN, DATABASE_URL, DATABASE_PORT } from 'react-native-dotenv';
 import actions from 'actions/watchlists';
 
 const databaseUrl = `http://${DATABASE_URL}:${DATABASE_PORT}`;
-const apiUrl = 'https://cloud.iexapis.com/stable/';
+const apiUrl = 'https://cloud.iexapis.com/stable';
 
 const lists = [];
 for (let i = 0; i < 3; i += 1) {
@@ -43,22 +43,67 @@ for (let i = 0; i < 3; i += 1) {
   });
 }
 
+async function getDataFromDB(url) {
+  const dbResponse = await fetch(url, {
+    method: 'get',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      authorization: 'Bearer token'
+    }
+  });
+  const dbData = await dbResponse.json();
+  return dbData.watchlists.map(data => ({
+    symbols: data.symbols
+  }));
+}
+
+async function requestApiOnce(request) {
+  const apiResponse = await fetch(request);
+  const apiData = await apiResponse.json();
+  return apiData;
+}
+
+function getDataFromApi(symbolsList) {
+  return new Promise(resolve => {
+    const watchlists = [];
+    symbolsList.forEach(async ({ symbols }, index) => {
+      const apiData = await requestApiOnce(
+        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote`
+      );
+      watchlists.push({
+        index,
+        apiData
+      });
+      if (watchlists.length === symbolsList.length) {
+        resolve(watchlists);
+      }
+    });
+  });
+}
+
+function getListByIndex(dataLists, index) {
+  return dataLists.filter(list => list.index === index)[0];
+}
+
+function generateWatchlists(symbolsList, data) {
+  return symbolsList.map(({ symbols }, index) => {
+    symbolList = symbols.split(',');
+    return {
+      info: symbolList.map(symbol => ({
+        name: symbol,
+        num: getListByIndex(data, index).apiData[symbol].quote.iexRealtimePrice
+      }))
+    };
+  });
+}
+
 function getWatchlistData() {
   return async dispatch => {
     try {
-      const dbResponse = await fetch(`${databaseUrl}/watchlists`, {
-        method: 'get',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          authorization: 'Bearer token'
-        }
-      });
-      const dbData = await dbResponse.json();
-      const symbolsList = dbData.watchlists.map(data => ({
-        symbols: data.symbols
-      }));
-      console.log(symbolsList);
+      const symbolsList = await getDataFromDB(`${databaseUrl}/watchlists`);
+      const requestApi = await getDataFromApi(symbolsList);
+      const watchlists = generateWatchlists(symbolsList, requestApi);
       dispatch(actions.getWatchlistData(lists));
     } catch (error) {
       console.log(error);

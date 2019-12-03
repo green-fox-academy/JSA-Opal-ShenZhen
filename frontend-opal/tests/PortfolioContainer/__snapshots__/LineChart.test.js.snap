@@ -855,7 +855,7 @@ exports[`LineChart component renders correctly 1`] = `
               }
             >
               <RNSVGTSpan
-                content="Jun"
+                content="5"
                 dx={
                   Array [
                     0,
@@ -1024,7 +1024,7 @@ exports[`LineChart component renders correctly 1`] = `
               }
             >
               <RNSVGTSpan
-                content="Sep"
+                content="8"
                 dx={
                   Array [
                     0,
@@ -1193,7 +1193,7 @@ exports[`LineChart component renders correctly 1`] = `
               }
             >
               <RNSVGTSpan
-                content="Dec"
+                content="11"
                 dx={
                   Array [
                     0,
