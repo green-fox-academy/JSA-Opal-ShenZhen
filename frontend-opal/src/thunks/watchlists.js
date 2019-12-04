@@ -103,7 +103,7 @@ function generateInfo(symbolList, list) {
     return {
       symbol,
       latestPrice,
-      changePercent: `${changePercent.toFixed(4) * 100}`,
+      changePercent: (changePercent * 100).toFixed(2),
       marketCap: changeUnit(marketCap),
       week52High,
       week52Low,
@@ -121,9 +121,12 @@ function generateInfo(symbolList, list) {
 
 function generateWatchlists(symbolsList, data) {
   return symbolsList.map(({ symbols }, index) => {
-    symbolList = symbols.split(',');
+    const symbolList = symbols.split(',');
     const list = data.filter(dataList => dataList.index === index)[0].apiData;
-    return generateInfo(symbolList, list);
+    return {
+      title: `Watchlist${index + 1}`,
+      data: generateInfo(symbolList, list)
+    };
   });
 }
 
@@ -133,8 +136,7 @@ function getWatchlistData() {
       const symbolsList = await getDataFromDB(`${databaseUrl}/watchlists`);
       const requestApi = await getDataFromApi(symbolsList);
       const watchlists = generateWatchlists(symbolsList, requestApi);
-      console.log(watchlists);
-      dispatch(actions.getWatchlistData(lists));
+      dispatch(actions.getWatchlistData(watchlists));
     } catch (error) {
       console.log(error);
     }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -12,17 +12,15 @@ const WatchList = ({ watchlists, getLists }) => {
   }, [getLists]);
 
   return (
-    <View>
-      {watchlists.map((item, index) => (
-        <WatchListItem
-          key={`Watchlist${index + 1}`}
-          item={`Watchlist${index + 1}`}
-          stockData={item.stockData}
-          chartData={item.chartData}
-          info={item.info}
-        />
-      ))}
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <View>
+          {watchlists.map(({ title, data }) => (
+            <WatchListItem key={title} item={title} data={data} />
+          ))}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
