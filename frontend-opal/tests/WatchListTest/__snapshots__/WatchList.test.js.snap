@@ -6,7 +6,57 @@ exports[`<WatchList /> renders correctly 1`] = `
 >
   <RCTScrollView>
     <View>
-      <View />
+      <View>
+        <RCTScrollView
+          data={Array []}
+          dataArray={Array []}
+          disableVirtualization={false}
+          extraData={
+            Object {
+              "selected": undefined,
+            }
+          }
+          getItem={[Function]}
+          getItemCount={[Function]}
+          headerStyle={
+            Object {
+              "backgroundColor": "white",
+              "fontWeight": "bold",
+            }
+          }
+          horizontal={false}
+          initialNumToRender={10}
+          keyExtractor={[Function]}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onContentSizeChange={[Function]}
+          onEndReachedThreshold={2}
+          onLayout={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderContent={[Function]}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          style={
+            Array [
+              Object {
+                "borderColor": "#d3d3d3",
+                "borderWidth": 0.5,
+              },
+              undefined,
+            ]
+          }
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <View />
+        </RCTScrollView>
+      </View>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>

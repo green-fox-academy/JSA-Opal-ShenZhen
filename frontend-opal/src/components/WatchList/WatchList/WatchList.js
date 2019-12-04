@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Accordion } from 'native-base';
 
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
@@ -11,13 +12,20 @@ const WatchList = ({ watchlists, getLists }) => {
     getLists();
   }, [getLists]);
 
+  const dataArray = watchlists.map(list => ({
+    ...list,
+    title: `Watchlist ${list.index + 1}`
+  }));
+
   return (
     <SafeAreaView>
       <ScrollView>
         <View>
-          {watchlists.map(({ title, data }) => (
-            <WatchListItem key={title} item={title} data={data} />
-          ))}
+          <Accordion
+            dataArray={dataArray}
+            renderContent={WatchListItem}
+            headerStyle={{ backgroundColor: 'white', fontWeight: 'bold' }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
