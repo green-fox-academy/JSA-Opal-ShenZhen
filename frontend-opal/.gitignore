@@ -15,3 +15,5 @@ web-report/
 
 
 coverage/**/*
+
+.env
