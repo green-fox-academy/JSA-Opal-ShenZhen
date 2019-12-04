@@ -3,6 +3,14 @@
 exports[`<WatchListItem /> renders correctly 1`] = `
 <View>
   <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "borderColor": "black",
@@ -11,10 +19,13 @@ exports[`<WatchListItem /> renders correctly 1`] = `
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
+        "opacity": 1,
       }
     }
   >
-    <Text />
+    <Text>
+      
+    </Text>
     <View
       accessible={true}
       isTVSelectable={true}

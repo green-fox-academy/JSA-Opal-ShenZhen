@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ChartDetail from 'components/WatchList/ChartDetail/ChartDetail';
+import InstrumentRow from 'components/WatchList/InstrumentRow/InstrumentRow';
 import presetProps from 'components/WatchList/presetProps';
 
-describe('<ChartDetail />', () => {
+describe('<InstrumentRow />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<ChartDetail data={presetProps.defaultQuote} />).toJSON();
+    const tree = renderer.create(<InstrumentRow infos={presetProps.defaultQuote} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

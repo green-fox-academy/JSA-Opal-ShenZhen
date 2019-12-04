@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleInstrument /> renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "paddingTop": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      
+    </Text>
+    <Text
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      0
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "green",
+          "flex": 1,
+        }
+      }
+    >
+      %
+    </Text>
+    <Text
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 14,
+            "width": 14,
+          }
+        }
+      />
+    </View>
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 14,
+          "width": 14,
+        }
+      }
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WatchList /> renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <RCTScrollView>
+    <View>
+      <View />
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
