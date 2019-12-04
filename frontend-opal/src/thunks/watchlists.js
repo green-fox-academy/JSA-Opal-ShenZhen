@@ -82,19 +82,48 @@ function getDataFromApi(symbolsList) {
   });
 }
 
-function getListByIndex(dataLists, index) {
-  return dataLists.filter(list => list.index === index)[0];
+function changeUnit(number) {
+  const units = [
+    { unit: '', base: 1 },
+    { unit: 'K', base: 1000 },
+    { unit: 'M', base: 1000000 },
+    { unit: 'B', base: 1000000000 },
+    { unit: 'T', base: 1000000000000 }
+  ];
+  const stringNumber = number.toString();
+  const index = Math.floor((stringNumber.length - 1) / 3);
+  return `${(stringNumber / units[index].base).toFixed(1)}${units[index].unit}`;
+}
+
+function generateInfo(symbolList, list) {
+  return symbolList.map(symbol => {
+    const { latestPrice, changePercent, marketCap, week52High, week52Low, peRatio } = list[
+      symbol
+    ].quote;
+    return {
+      symbol,
+      latestPrice,
+      changePercent: `${changePercent.toFixed(4) * 100}`,
+      marketCap: changeUnit(marketCap),
+      week52High,
+      week52Low,
+      peRatio,
+      eps: '1.2',
+      divYield: '2%',
+      chartData: [
+        { x: 1, y: 8 },
+        { x: 2, y: 7 },
+        { x: 3, y: 5 }
+      ]
+    };
+  });
 }
 
 function generateWatchlists(symbolsList, data) {
   return symbolsList.map(({ symbols }, index) => {
     symbolList = symbols.split(',');
-    return {
-      info: symbolList.map(symbol => ({
-        name: symbol,
-        num: getListByIndex(data, index).apiData[symbol].quote.iexRealtimePrice
-      }))
-    };
+    const list = data.filter(dataList => dataList.index === index)[0].apiData;
+    return generateInfo(symbolList, list);
   });
 }
 
@@ -104,6 +133,7 @@ function getWatchlistData() {
       const symbolsList = await getDataFromDB(`${databaseUrl}/watchlists`);
       const requestApi = await getDataFromApi(symbolsList);
       const watchlists = generateWatchlists(symbolsList, requestApi);
+      console.log(watchlists);
       dispatch(actions.getWatchlistData(lists));
     } catch (error) {
       console.log(error);
