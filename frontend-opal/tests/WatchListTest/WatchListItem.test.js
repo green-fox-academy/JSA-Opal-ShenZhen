@@ -1,10 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 
-import reducers from 'reducers/root';
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import presetProps from 'components/WatchList/presetProps';
 

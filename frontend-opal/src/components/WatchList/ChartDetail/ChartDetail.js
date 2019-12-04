@@ -5,7 +5,7 @@ import { VictoryLine, VictoryChart, VictoryTheme } from 'victory-native';
 import presetProps from 'components/WatchList/presetProps';
 import styles from './styles';
 
-const ChartDetail = ({ data }) => {
+function ChartDetail({ data }) {
   return (
     <View style={styles.body} key={`${data.symbol} detail`}>
       <View>
@@ -28,14 +28,14 @@ const ChartDetail = ({ data }) => {
       </View>
     </View>
   );
-};
+}
 
 ChartDetail.defaultProps = {
   data: presetProps.defaultQuote
 };
 
 ChartDetail.propTypes = {
-  data: presetProps.propTypes
+  data: presetProps.quoteTypes
 };
 
 export default ChartDetail;
