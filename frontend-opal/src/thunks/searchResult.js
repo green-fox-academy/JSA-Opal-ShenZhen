@@ -1,6 +1,6 @@
 import actions from 'actions/searchResult';
 
-import { IEXCLOUD_BASE_URL, IEXCLOUD_API_VERSION, IEXCLOUD_PUBLIC_KEY } from 'react-native-dotenv';
+import { IEXCLOUD_PUBLIC_KEY } from 'react-native-dotenv';
 
 import symbolData from './symbolData';
 
@@ -57,7 +57,6 @@ async function searchData(input) {
   const reString = `(^${target}$)|(^${target})|(${target}$)`;
   const re = new RegExp(reString, 'gi');
 
-  // let start = await Date.now();
   const dataSet = apiData
     .filter(item => item.symbol.match(re))
     .reduce(
