@@ -3417,25 +3417,212 @@ exports[`<ChartDetail /> renders correctly 1`] = `
   <View
     style={
       Object {
+        "marginRight": 20,
         "marginTop": "15%",
+        "width": "38%",
       }
     }
   >
-    <Text>
-      52 wk low: 0
-    </Text>
-    <Text>
-      52 wk high: 0
-    </Text>
-    <Text>
-      P/E: 0
-    </Text>
-    <Text>
-      EPS: 
-    </Text>
-    <Text>
-      Div. Yield: 
-    </Text>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          52 wk low:
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          0
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          52 wk high:
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          0
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          P/E:
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          0
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          EPS:
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          Div. Yield
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "width": "50%",
+          }
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;
