@@ -14,10 +14,6 @@ import reducers from 'reducers/root';
 import WatchListContainer from 'components/WatchList/';
 import Investment from './src/components/investment';
 
-import InstrumentDetail from './src/components/PortfolioContainer/InstrumentDetail';
-
-import SearchResult from './src/components/SearchResult/SearchResult';
-
 export default function App() {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
@@ -42,8 +38,7 @@ export default function App() {
     <>
       {ready ? (
         <Provider store={store}>
-          {/* <Investment /> */}
-          <SearchResult />
+          <Investment />
         </Provider>
       ) : (
         <AppLoading />

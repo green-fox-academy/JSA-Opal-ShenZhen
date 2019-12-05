@@ -1,7 +1,5 @@
 import actions from 'actions/searchResult';
 
-import { API_TOKEN } from 'react-native-dotenv';
-
 import symbolData from './symbolData';
 import stockAPI from './stockAPI';
 
@@ -54,18 +52,15 @@ function mapTitle(data) {
 
 function search(input) {
   return async dispatch => {
-    let initRes = {
+    const initRes = {
       results: []
     };
     if (input !== '') {
       const searchRes = await searchData(input);
-      initRes = mapTitle(searchRes);
+      initRes.results = mapTitle(searchRes);
     }
-    dispatch(
-      actions.search({
-        results: initRes
-      })
-    );
+
+    dispatch(actions.search(initRes));
   };
 }
 
