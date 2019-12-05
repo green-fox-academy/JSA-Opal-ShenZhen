@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainEntry /> renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100%",
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "rgb(77,119,245)",
+        "fontSize": 72,
+      }
+    }
+  >
+    Start
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "rgb(77,119,245)",
+        "fontSize": 72,
+      }
+    }
+  >
+    Your
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "rgb(77,119,245)",
+        "fontSize": 72,
+      }
+    }
+  >
+    Investment
+  </Text>
+</View>
+`;

@@ -1,3 +1,4 @@
+jest.mock('./watchListService');
 const request = require('supertest');
 const server = require('../../server');
 

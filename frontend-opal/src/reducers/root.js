@@ -11,7 +11,7 @@ function setReducer(state, action, pairs) {
 }
 
 export default combineReducers({
-  watchLists: (state = [], action) => setReducer(state, action, watchListsPairs),
+  watchlists: (state = [], action) => setReducer(state, action, watchListsPairs),
   searchResult: (state = {}, action) => setReducer(state, action, searchResultPairs),
   portfolio: (state = {}, action) => setReducer(state, action, portfolioPairs),
   fetchPortfolio: (state = {}, action) => setReducer(state, action, userPortfolioInfoPairs)

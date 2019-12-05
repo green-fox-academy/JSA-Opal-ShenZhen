@@ -6,7 +6,6 @@ import { Card, CardItem } from 'native-base';
 import thunksUserPortfolioInfo from 'thunks/userPortfolioInfo';
 
 import styles from './styles';
-
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
@@ -34,6 +33,8 @@ const PortfolioContainer = ({ onfetchPortfolioEndpoint }) => {
     </SafeAreaView>
   );
 };
+
+PortfolioContainer.title = 'PORTFOLIO';
 
 const mapDispatchToProps = dispatch => {
   return {
