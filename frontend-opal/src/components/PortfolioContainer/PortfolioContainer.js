@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Card, CardItem } from 'native-base';
@@ -15,21 +15,23 @@ const PortfolioContainer = ({ onfetchPortfolioEndpoint }) => {
   useEffect(() => onfetchPortfolioEndpoint(), [onfetchPortfolioEndpoint]);
 
   return (
-    <>
-      <View style={styles.portfolioArea}>
-        <Card transparent>
-          <CardItem>
-            <ValueInfo />
-          </CardItem>
-          <CardItem>
-            <AllocationInfo />
-          </CardItem>
-          <CardItem>
-            <Instruments />
-          </CardItem>
-        </Card>
-      </View>
-    </>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.portfolioArea}>
+          <Card transparent>
+            <CardItem>
+              <ValueInfo />
+            </CardItem>
+            <CardItem>
+              <AllocationInfo />
+            </CardItem>
+            <CardItem>
+              <Instruments />
+            </CardItem>
+          </Card>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
