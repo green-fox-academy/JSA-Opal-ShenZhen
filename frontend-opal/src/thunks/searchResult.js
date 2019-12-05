@@ -1,54 +1,18 @@
 import actions from 'actions/searchResult';
 
-import { IEXCLOUD_PUBLIC_KEY } from 'react-native-dotenv';
+import { API_TOKEN } from 'react-native-dotenv';
 
 import symbolData from './symbolData';
+import stockAPI from './stockAPI';
 
-// const data = [
-//   {
-//     name: 'MS',
-//     fullName: 'Morgan Stanley',
-//     market: 'NYSE'
-//   },
-//   {
-//     name: 'MSFT',
-//     fullName: 'Microsoft Corp.',
-//     market: 'NASDAQ'
-//   },
-//   {
-//     name: 'FBMS',
-//     fullName: 'First Branchshares Inc/MS',
-//     market: 'NASDAQ'
-//   }
-// ];
-
-async function fetchData() {
-  const symbols = `https://cloud.iexapis.com/stable/ref-data/symbols?token=${IEXCLOUD_PUBLIC_KEY}`;
-  const res = await fetch(symbols);
-  const data = await res.json();
-  return data;
-}
-
-function getExtractNum(data, num) {
-  const len = data.second.length;
-  return len / num > 1 ? num : len;
-}
-
-async function extractTopNResult(dataSet, num) {
-  const res = [];
-  // searchRes.first: 100% matched result; secondRes.second: partially matched results
-  res.push(...dataSet.first);
-  if (dataSet.second.length > 0) {
-    const count = getExtractNum(dataSet, num);
-    res.push(...dataSet.second.slice(0, count - 1));
-  }
-  return res;
+async function extractTopNResult({ first, second }, num) {
+  return [...first, ...second].slice(0, num);
 }
 
 async function searchData(input) {
   const target = String(input).toUpperCase();
   // use real api fetch data of instrument
-  // const apiData = await fetchData();
+  // const apiData = await stockAPI.fetchData();
 
   // use local data of instrument
   const apiData = symbolData;
@@ -67,7 +31,6 @@ async function searchData(input) {
         } else {
           res.second.push(item);
         }
-        // item.symbol.length === targetLen ? res.first.push(item) : res.second.push(item);
         return res;
       },
       { first: [], second: [] }
@@ -90,24 +53,19 @@ function mapTitle(data) {
 }
 
 function search(input) {
-  const initRes = {
-    input,
-    results: []
-  };
   return async dispatch => {
+    let initRes = {
+      results: []
+    };
     if (input !== '') {
       const searchRes = await searchData(input);
-      const res = mapTitle(searchRes);
-
-      dispatch(
-        actions.search({
-          input,
-          results: res
-        })
-      );
-    } else {
-      dispatch(actions.search(initRes));
+      initRes = mapTitle(searchRes);
     }
+    dispatch(
+      actions.search({
+        results: initRes
+      })
+    );
   };
 }
 
