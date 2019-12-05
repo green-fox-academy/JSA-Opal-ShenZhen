@@ -74,18 +74,16 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
           Object {
             "display": "flex",
             "flexDirection": "row",
-            "justifyContent": "space-around",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          height={50}
           style={
             Object {
-              "border": "1 px solid #ccc",
+              "width": "50%",
             }
           }
-          width={150}
         >
           <View
             className="VictoryContainer"
@@ -110,9 +108,9 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={300}
+              bbHeight={200}
               bbWidth={750}
-              height={300}
+              height={200}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -132,12 +130,12 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
                   },
                   Object {
                     "flex": 0,
-                    "height": 300,
+                    "height": 200,
                     "width": 750,
                   },
                 ]
               }
-              vbHeight={300}
+              vbHeight={200}
               vbWidth={750}
               width={750}
             >
@@ -222,8 +220,8 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
                   strokeWidth={1}
                   vectorEffect={1}
                   width={0}
-                  x={30}
-                  y={40}
+                  x={5}
+                  y={30}
                 />
               </RNSVGGroup>
             </RNSVGSvgView>
@@ -240,9 +238,9 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
             >
               <RNSVGSvgView
                 align="xMidYMid"
-                bbHeight={300}
+                bbHeight={200}
                 bbWidth={750}
-                height={300}
+                height={200}
                 meetOrSlice={0}
                 minX={0}
                 minY={0}
@@ -262,12 +260,12 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
                     },
                     Object {
                       "flex": 0,
-                      "height": 300,
+                      "height": 200,
                       "width": 750,
                     },
                   ]
                 }
-                vbHeight={300}
+                vbHeight={200}
                 vbWidth={750}
                 width={750}
               >
@@ -317,151 +315,30 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
           </View>
         </View>
         <View
-          className="VictoryContainer"
-          onMoveShouldSetResponder={[Function]}
-          onMoveShouldSetResponderCapture={[Function]}
-          onResponderEnd={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderReject={[Function]}
-          onResponderRelease={[Function]}
-          onResponderStart={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onStartShouldSetResponderCapture={[Function]}
-          pointerEvents="box-none"
           style={
             Object {
-              "position": "relative",
+              "width": "50%",
             }
           }
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight={200}
-            bbWidth={180}
-            height={200}
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
-            role="img"
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderWidth": 0,
-                },
-                Object {
-                  "height": "100%",
-                  "width": "100%",
-                },
-                Object {
-                  "opacity": 1,
-                },
-                Object {
-                  "flex": 0,
-                  "height": 200,
-                  "width": 180,
-                },
-              ]
-            }
-            vbHeight={200}
-            vbWidth={180}
-            width={180}
-          >
-            <RNSVGGroup
-              fill={
-                Array [
-                  0,
-                  4278190080,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              font={Object {}}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={Array []}
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
-            >
-              <RNSVGGroup
-                fill={
-                  Array [
-                    0,
-                    4278190080,
-                  ]
-                }
-                fillOpacity={1}
-                fillRule={1}
-                font={Object {}}
-                matrix={
-                  Array [
-                    1,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                  ]
-                }
-                opacity={1}
-                originX={0}
-                originY={0}
-                propList={Array []}
-                rotation={0}
-                scaleX={1}
-                scaleY={1}
-                skewX={0}
-                skewY={0}
-                stroke={null}
-                strokeDasharray={null}
-                strokeDashoffset={null}
-                strokeLinecap={0}
-                strokeLinejoin={0}
-                strokeMiterlimit={4}
-                strokeOpacity={1}
-                strokeWidth={1}
-                vectorEffect={0}
-                x={0}
-                y={0}
-              />
-            </RNSVGGroup>
-          </RNSVGSvgView>
           <View
+            className="VictoryContainer"
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
             pointerEvents="box-none"
             style={
               Object {
-                "left": 0,
-                "position": "absolute",
-                "top": 0,
-                "zIndex": 99,
+                "position": "relative",
               }
             }
           >
@@ -473,6 +350,7 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
               meetOrSlice={0}
               minX={0}
               minY={0}
+              role="img"
               style={
                 Array [
                   Object {
@@ -481,7 +359,6 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
                   },
                   Object {
                     "height": "100%",
-                    "overflow": "visible",
                     "width": "100%",
                   },
                   Object {
@@ -538,8 +415,137 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={0}
                 y={0}
-              />
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      4278190080,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                />
+              </RNSVGGroup>
             </RNSVGSvgView>
+            <View
+              pointerEvents="box-none"
+              style={
+                Object {
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "zIndex": 99,
+                }
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={200}
+                bbWidth={180}
+                height={200}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    Object {
+                      "height": "100%",
+                      "overflow": "visible",
+                      "width": "100%",
+                    },
+                    Object {
+                      "opacity": 1,
+                    },
+                    Object {
+                      "flex": 0,
+                      "height": 200,
+                      "width": 180,
+                    },
+                  ]
+                }
+                vbHeight={200}
+                vbWidth={180}
+                width={180}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      4278190080,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                />
+              </RNSVGSvgView>
+            </View>
           </View>
         </View>
       </View>

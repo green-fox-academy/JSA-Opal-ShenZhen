@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Card, Button } from 'native-base';
+import getTotalInvestment from 'components/common/getTotalInvestment';
 import styles from './styles';
 
-const ValueInfo = ({ totalInvestment }) => {
+const ValueInfo = ({ fetchPortfolio }) => {
+  let totalInvestment = '';
+  if (fetchPortfolio[0]) {
+    totalInvestment = getTotalInvestment(fetchPortfolio)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   return (
     <View style={styles.valueArea}>
       <Text style={styles.title}>Value</Text>
@@ -27,15 +35,27 @@ const ValueInfo = ({ totalInvestment }) => {
 };
 
 const mapStateToProps = state => ({
-  totalInvestment: state.portfolio.totalInvestment
+  fetchPortfolio: state.fetchPortfolio.instruments
 });
 
 export default connect(mapStateToProps, null)(ValueInfo);
 
 ValueInfo.defaultProps = {
-  totalInvestment: ''
+  fetchPortfolio: []
 };
 
 ValueInfo.propTypes = {
-  totalInvestment: PropTypes.string
+  fetchPortfolio: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      user_id: PropTypes.number,
+      symbol: PropTypes.string,
+      amount: PropTypes.number,
+      company: PropTypes.string,
+      stockExchange: PropTypes.string,
+      marketValue: PropTypes.number,
+      profileImg: PropTypes.any,
+      sector: PropTypes.string
+    })
+  )
 };

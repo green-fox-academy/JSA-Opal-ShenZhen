@@ -18,10 +18,9 @@ export default StyleSheet.create({
   },
   amount: {
     width: '100%',
-    height: 110,
     padding: 10,
     textAlign: 'right',
-    fontSize: 80,
+    fontSize: 50,
     color: '#e17055'
   },
   valueButton: {

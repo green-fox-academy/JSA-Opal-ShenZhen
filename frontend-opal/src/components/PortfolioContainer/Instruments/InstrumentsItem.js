@@ -5,15 +5,7 @@ import { Card, Button } from 'native-base';
 import styles from './styles';
 
 function InstrumentsItem({ instrumentItem }) {
-  const {
-    company,
-    stockExchange,
-    profileImg,
-    positions,
-    marketValue,
-    unrlzedPLPercentage,
-    unrlzedPL
-  } = instrumentItem;
+  const { company, stockExchange, profileImg, amount, marketValue } = instrumentItem;
 
   return (
     <View>
@@ -31,7 +23,7 @@ function InstrumentsItem({ instrumentItem }) {
         <View style={styles.instruments}>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Positions:</Text>
-            <Text style={styles.instrumentDetailText}>{positions}</Text>
+            <Text style={styles.instrumentDetailText}>{amount}</Text>
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Market Value:</Text>
@@ -39,15 +31,15 @@ function InstrumentsItem({ instrumentItem }) {
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Unrlzd P/L %:</Text>
-            <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
+            {/* <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
               {unrlzedPLPercentage}
-            </Text>
+            </Text> */}
           </View>
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Unrlzd P/L:</Text>
-            <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
+            {/* <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
               {unrlzedPL}
-            </Text>
+            </Text> */}
           </View>
         </View>
 
@@ -69,10 +61,10 @@ InstrumentsItem.propTypes = {
     company: PropTypes.string,
     stockExchange: PropTypes.string,
     profileImg: PropTypes.any,
-    positions: PropTypes.number,
-    marketValue: PropTypes.number,
-    unrlzedPLPercentage: PropTypes.string,
-    unrlzedPL: PropTypes.number
+    amount: PropTypes.number,
+    marketValue: PropTypes.number
+    // unrlzedPLPercentage: PropTypes.string,
+    // unrlzedPL: PropTypes.number
   }).isRequired
 };
 

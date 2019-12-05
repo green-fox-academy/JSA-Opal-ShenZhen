@@ -66,8 +66,7 @@ exports[`<ValueInfo /> renders correctly 1`] = `
         style={
           Object {
             "color": "#e17055",
-            "fontSize": 80,
-            "height": 110,
+            "fontSize": 50,
             "padding": 10,
             "textAlign": "right",
             "width": "100%",

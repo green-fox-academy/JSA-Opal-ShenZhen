@@ -2,23 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { VictoryLegend, VictoryPie } from 'victory-native';
+import styles from './styles';
 
 const PieChart = ({ data, color, legendData }) => (
-  <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-    <View width={150} height={50} style={{ border: '1 px solid #ccc' }}>
-      <VictoryLegend colorScale={color} x={30} y={40} data={legendData} responsive={false} />
+  <View style={styles.pieArea}>
+    <View style={styles.legendArea}>
+      <VictoryLegend
+        colorScale={color}
+        x={5}
+        y={30}
+        height={200}
+        data={legendData}
+        responsive={false}
+      />
     </View>
 
-    <VictoryPie
-      data={data}
-      width={180}
-      height={200}
-      padding={{ left: 20, bottom: 20, top: 20 }}
-      colorScale={color}
-      labelRadius={() => 24 + 5}
-      style={{ labels: { fill: 'white' } }}
-      responsive={false}
-    />
+    <View style={styles.chartArea}>
+      <VictoryPie
+        data={data}
+        width={180}
+        height={200}
+        padding={10}
+        colorScale={color}
+        labelRadius={() => 24 + 10}
+        style={{ labels: { fill: 'white' } }}
+        responsive={false}
+      />
+    </View>
   </View>
 );
 
