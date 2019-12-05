@@ -3,14 +3,14 @@ import { View } from 'react-native';
 
 import styles from './styles/index';
 
-import ResultLists from '../../container/SearchResult/ResultLists';
+import ResultList from '../../container/SearchResult/ResultList';
 import SearchHeader from '../../container/SearchResult/SearchHeader';
 
 function Index() {
   return (
     <View style={styles.Index}>
       <SearchHeader />
-      <ResultLists />
+      <ResultList />
     </View>
   );
 }
