@@ -11,7 +11,7 @@ import headers from './common/headers';
 import InstrumentDetail from './PortfolioContainer/InstrumentDetail';
 
 const InvestmentMain = () => {
-  return <TabbedComponents components={[Watchlist, Portfolio]} />;
+  return <TabbedComponents components={[Portfolio, Watchlist]} />;
 };
 headers.addListHeader(InvestmentMain, 'Investments');
 
@@ -23,7 +23,7 @@ const Investment = createStackNavigator(
     Search
   },
   {
-    initialRouteName: 'InvestmentMain',
+    initialRouteName: 'MainEntry',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: 'rgb(77,119,245)'

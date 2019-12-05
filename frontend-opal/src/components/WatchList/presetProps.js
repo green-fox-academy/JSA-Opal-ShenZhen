@@ -25,7 +25,7 @@ const quoteTypes = PropTypes.shape({
   divYield: PropTypes.string,
   chartData: PropTypes.arrayOf(
     PropTypes.shape({
-      x: PropTypes.number,
+      x: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       y: PropTypes.number
     })
   )

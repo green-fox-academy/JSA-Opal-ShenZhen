@@ -6,8 +6,9 @@ import { Accordion } from 'native-base';
 
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
+import actions from 'actions/watchlists';
 
-const WatchList = ({ watchlists, getLists }) => {
+const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   useEffect(() => {
     getLists();
   }, [getLists]);
@@ -25,6 +26,11 @@ const WatchList = ({ watchlists, getLists }) => {
             dataArray={dataArray}
             renderContent={WatchListItem}
             headerStyle={{ backgroundColor: 'white', fontWeight: 'bold' }}
+            onAccordionClose={() => {
+              watchlists.forEach(list => {
+                closeInstrumentsInList(list.index);
+              });
+            }}
           />
         </View>
       </ScrollView>
@@ -34,13 +40,15 @@ const WatchList = ({ watchlists, getLists }) => {
 
 WatchList.propTypes = {
   watchlists: PropTypes.arrayOf(PropTypes.object).isRequired,
-  getLists: PropTypes.func.isRequired
+  getLists: PropTypes.func.isRequired,
+  closeInstrumentsInList: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ watchlists = [] }) => ({ watchlists });
 
 const mapDispatchToProps = dispatch => ({
-  getLists: () => dispatch(thunks.getWatchlistData())
+  getLists: () => dispatch(thunks.getWatchlistData()),
+  closeInstrumentsInList: index => dispatch(actions.closeInstrumentsInList(index))
 });
 
 WatchList.title = 'WATCHLIST';

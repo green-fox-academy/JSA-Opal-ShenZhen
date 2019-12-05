@@ -15,6 +15,17 @@ const pairs = {
       }
     });
     return copy;
+  },
+  CLOSE_INSTRUMENT_IN_LIST: (state, action) => {
+    const copy = _.cloneDeep(state);
+    copy.forEach((list, index) => {
+      if (list.index === action.payload.index) {
+        list.data.forEach((item, itemIndex) => {
+          copy[index].data[itemIndex].foldStatus = false;
+        });
+      }
+    });
+    return copy;
   }
 };
 

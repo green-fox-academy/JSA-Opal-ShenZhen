@@ -29,6 +29,7 @@ exports[`<WatchList /> renders correctly 1`] = `
           keyExtractor={[Function]}
           maxToRenderPerBatch={10}
           numColumns={1}
+          onAccordionClose={[Function]}
           onContentSizeChange={[Function]}
           onEndReachedThreshold={2}
           onLayout={[Function]}

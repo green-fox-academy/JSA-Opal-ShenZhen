@@ -12,7 +12,14 @@ exports[`<ChartDetail /> renders correctly 1`] = `
     }
   }
 >
-  <View>
+  <View
+    style={
+      Object {
+        "marginLeft": -40,
+        "width": "64%",
+      }
+    }
+  >
     <View
       className="VictoryContainer"
       onMoveShouldSetResponder={[Function]}
@@ -36,9 +43,9 @@ exports[`<ChartDetail /> renders correctly 1`] = `
     >
       <RNSVGSvgView
         align="xMidYMid"
-        bbHeight={200}
-        bbWidth={250}
-        height={200}
+        bbHeight={190}
+        bbWidth={280}
+        height={190}
         meetOrSlice={0}
         minX={0}
         minY={0}
@@ -58,14 +65,14 @@ exports[`<ChartDetail /> renders correctly 1`] = `
             },
             Object {
               "flex": 0,
-              "height": 200,
-              "width": 250,
+              "height": 190,
+              "width": 280,
             },
           ]
         }
-        vbHeight={200}
-        vbWidth={250}
-        width={250}
+        vbHeight={190}
+        vbWidth={280}
+        width={280}
       >
         <RNSVGGroup
           fill={
@@ -108,6 +115,234 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           x={0}
           y={0}
         >
+          <RNSVGGroup
+            clipPath="victory-clip-2"
+            fill={
+              Array [
+                0,
+                4278190080,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            font={Object {}}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={Array []}
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGDefs>
+                <RNSVGClipPath
+                  name="victory-clip-2"
+                >
+                  <RNSVGRect
+                    fill={
+                      Array [
+                        0,
+                        4278190080,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    height={90}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={Array []}
+                    rotation={0}
+                    rx={0}
+                    ry={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth={1}
+                    vectorEffect={1}
+                    width={180}
+                    x={50}
+                    y={50}
+                  />
+                </RNSVGClipPath>
+              </RNSVGDefs>
+            </RNSVGGroup>
+            <RNSVGPath
+              d={null}
+              fill={
+                Array [
+                  0,
+                  0,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={
+                Array [
+                  0,
+                  4294602299,
+                ]
+              }
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={2}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            />
+          </RNSVGGroup>
+          <RNSVGGroup
+            fill={
+              Array [
+                0,
+                4278190080,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            font={Object {}}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={Array []}
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
           <RNSVGGroup
             fill={
               Array [
@@ -174,10 +409,6 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               propList={
                 Array [
                   "fill",
-                  "stroke",
-                  "strokeWidth",
-                  "strokeLinecap",
-                  "strokeLinejoin",
                 ]
               }
               rotation={0}
@@ -185,26 +416,21 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               scaleY={1}
               skewX={0}
               skewY={0}
-              stroke={
-                Array [
-                  0,
-                  4287669422,
-                ]
-              }
+              stroke={null}
               strokeDasharray={null}
               strokeDashoffset={null}
-              strokeLinecap={1}
-              strokeLinejoin={1}
+              strokeLinecap={0}
+              strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth={2}
+              strokeWidth={1}
               vectorEffect={1}
               x={0}
               x1={50}
-              x2={200}
+              x2={230}
               y={0}
-              y1={150}
-              y2={150}
+              y1={140}
+              y2={140}
             />
             <RNSVGGroup
               fill={
@@ -298,10 +524,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={80}
-                x2={80}
+                x1={86}
+                x2={86}
                 y={0}
-                y1={150}
+                y1={140}
                 y2={50}
               />
               <RNSVGLine
@@ -355,11 +581,11 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={80}
-                x2={80}
+                x1={86}
+                x2={86}
                 y={0}
-                y1={150}
-                y2={155}
+                y1={140}
+                y2={145}
               />
               <RNSVGText
                 content={null}
@@ -392,7 +618,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-0-tickLabels-0"
+                name="chart-axis-2-tickLabels-0"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -414,12 +640,12 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    80,
+                    86,
                   ]
                 }
                 y={
                   Array [
-                    163,
+                    153,
                   ]
                 }
               >
@@ -482,7 +708,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                   vectorEffect={0}
                   x={
                     Array [
-                      80,
+                      86,
                     ]
                   }
                   y={Array []}
@@ -581,10 +807,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={110}
-                x2={110}
+                x1={122}
+                x2={122}
                 y={0}
-                y1={150}
+                y1={140}
                 y2={50}
               />
               <RNSVGLine
@@ -638,11 +864,11 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={110}
-                x2={110}
+                x1={122}
+                x2={122}
                 y={0}
-                y1={150}
-                y2={155}
+                y1={140}
+                y2={145}
               />
               <RNSVGText
                 content={null}
@@ -675,7 +901,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-0-tickLabels-1"
+                name="chart-axis-2-tickLabels-1"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -697,12 +923,12 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    110,
+                    122,
                   ]
                 }
                 y={
                   Array [
-                    163,
+                    153,
                   ]
                 }
               >
@@ -765,7 +991,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                   vectorEffect={0}
                   x={
                     Array [
-                      110,
+                      122,
                     ]
                   }
                   y={Array []}
@@ -864,10 +1090,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={140}
-                x2={140}
+                x1={158}
+                x2={158}
                 y={0}
-                y1={150}
+                y1={140}
                 y2={50}
               />
               <RNSVGLine
@@ -921,11 +1147,11 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={140}
-                x2={140}
+                x1={158}
+                x2={158}
                 y={0}
-                y1={150}
-                y2={155}
+                y1={140}
+                y2={145}
               />
               <RNSVGText
                 content={null}
@@ -958,7 +1184,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-0-tickLabels-2"
+                name="chart-axis-2-tickLabels-2"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -980,12 +1206,12 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    140,
+                    158,
                   ]
                 }
                 y={
                   Array [
-                    163,
+                    153,
                   ]
                 }
               >
@@ -1048,7 +1274,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                   vectorEffect={0}
                   x={
                     Array [
-                      140,
+                      158,
                     ]
                   }
                   y={Array []}
@@ -1147,10 +1373,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={170}
-                x2={170}
+                x1={194}
+                x2={194}
                 y={0}
-                y1={150}
+                y1={140}
                 y2={50}
               />
               <RNSVGLine
@@ -1204,11 +1430,11 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={170}
-                x2={170}
+                x1={194}
+                x2={194}
                 y={0}
-                y1={150}
-                y2={155}
+                y1={140}
+                y2={145}
               />
               <RNSVGText
                 content={null}
@@ -1241,7 +1467,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-0-tickLabels-3"
+                name="chart-axis-2-tickLabels-3"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -1263,12 +1489,12 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    170,
+                    194,
                   ]
                 }
                 y={
                   Array [
-                    163,
+                    153,
                   ]
                 }
               >
@@ -1331,7 +1557,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                   vectorEffect={0}
                   x={
                     Array [
-                      170,
+                      194,
                     ]
                   }
                   y={Array []}
@@ -1430,10 +1656,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={200}
-                x2={200}
+                x1={230}
+                x2={230}
                 y={0}
-                y1={150}
+                y1={140}
                 y2={50}
               />
               <RNSVGLine
@@ -1487,11 +1713,11 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 strokeWidth={1}
                 vectorEffect={1}
                 x={0}
-                x1={200}
-                x2={200}
+                x1={230}
+                x2={230}
                 y={0}
-                y1={150}
-                y2={155}
+                y1={140}
+                y2={145}
               />
               <RNSVGText
                 content={null}
@@ -1524,7 +1750,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-0-tickLabels-4"
+                name="chart-axis-2-tickLabels-4"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -1546,17 +1772,17 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    200,
+                    230,
                   ]
                 }
                 y={
                   Array [
-                    163,
+                    153,
                   ]
                 }
               >
                 <RNSVGTSpan
-                  content="1.0"
+                  content="1"
                   dx={
                     Array [
                       0,
@@ -1614,7 +1840,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                   vectorEffect={0}
                   x={
                     Array [
-                      200,
+                      230,
                     ]
                   }
                   y={Array []}
@@ -1688,10 +1914,6 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               propList={
                 Array [
                   "fill",
-                  "stroke",
-                  "strokeWidth",
-                  "strokeLinecap",
-                  "strokeLinejoin",
                 ]
               }
               rotation={0}
@@ -1699,26 +1921,21 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               scaleY={1}
               skewX={0}
               skewY={0}
-              stroke={
-                Array [
-                  0,
-                  4287669422,
-                ]
-              }
+              stroke={null}
               strokeDasharray={null}
               strokeDashoffset={null}
-              strokeLinecap={1}
-              strokeLinejoin={1}
+              strokeLinecap={0}
+              strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth={2}
+              strokeWidth={1}
               vectorEffect={1}
               x={0}
               x1={50}
               x2={50}
               y={0}
               y1={50}
-              y2={150}
+              y2={140}
             />
             <RNSVGGroup
               fill={
@@ -1813,10 +2030,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={1}
                 x={0}
                 x1={50}
-                x2={200}
+                x2={230}
                 y={0}
-                y1={130}
-                y2={130}
+                y1={122}
+                y2={122}
               />
               <RNSVGLine
                 fill={
@@ -1872,8 +2089,8 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 x1={50}
                 x2={45}
                 y={0}
-                y1={130}
-                y2={130}
+                y1={122}
+                y2={122}
               />
               <RNSVGText
                 content={null}
@@ -1906,7 +2123,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-1-tickLabels-0"
+                name="chart-axis-3-tickLabels-0"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -1933,7 +2150,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 }
                 y={
                   Array [
-                    130,
+                    122,
                   ]
                 }
               >
@@ -2096,10 +2313,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={1}
                 x={0}
                 x1={50}
-                x2={200}
+                x2={230}
                 y={0}
-                y1={110}
-                y2={110}
+                y1={104}
+                y2={104}
               />
               <RNSVGLine
                 fill={
@@ -2155,8 +2372,8 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 x1={50}
                 x2={45}
                 y={0}
-                y1={110}
-                y2={110}
+                y1={104}
+                y2={104}
               />
               <RNSVGText
                 content={null}
@@ -2189,7 +2406,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-1-tickLabels-1"
+                name="chart-axis-3-tickLabels-1"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -2216,7 +2433,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 }
                 y={
                   Array [
-                    110,
+                    104,
                   ]
                 }
               >
@@ -2379,10 +2596,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={1}
                 x={0}
                 x1={50}
-                x2={200}
+                x2={230}
                 y={0}
-                y1={90}
-                y2={90}
+                y1={86}
+                y2={86}
               />
               <RNSVGLine
                 fill={
@@ -2438,8 +2655,8 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 x1={50}
                 x2={45}
                 y={0}
-                y1={90}
-                y2={90}
+                y1={86}
+                y2={86}
               />
               <RNSVGText
                 content={null}
@@ -2472,7 +2689,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-1-tickLabels-2"
+                name="chart-axis-3-tickLabels-2"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -2499,7 +2716,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 }
                 y={
                   Array [
-                    90,
+                    86,
                   ]
                 }
               >
@@ -2662,10 +2879,10 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={1}
                 x={0}
                 x1={50}
-                x2={200}
+                x2={230}
                 y={0}
-                y1={70}
-                y2={70}
+                y1={68}
+                y2={68}
               />
               <RNSVGLine
                 fill={
@@ -2721,8 +2938,8 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 x1={50}
                 x2={45}
                 y={0}
-                y1={70}
-                y2={70}
+                y1={68}
+                y2={68}
               />
               <RNSVGText
                 content={null}
@@ -2755,7 +2972,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-1-tickLabels-3"
+                name="chart-axis-3-tickLabels-3"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -2782,7 +2999,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 }
                 y={
                   Array [
-                    70,
+                    68,
                   ]
                 }
               >
@@ -2945,7 +3162,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                 vectorEffect={1}
                 x={0}
                 x1={50}
-                x2={200}
+                x2={230}
                 y={0}
                 y1={50}
                 y2={50}
@@ -3038,7 +3255,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
                     0,
                   ]
                 }
-                name="chart-axis-1-tickLabels-4"
+                name="chart-axis-3-tickLabels-4"
                 opacity={1}
                 originX={0}
                 originY={0}
@@ -3136,193 +3353,6 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               </RNSVGText>
             </RNSVGGroup>
           </RNSVGGroup>
-          <RNSVGGroup
-            clipPath="victory-clip-2"
-            fill={
-              Array [
-                0,
-                4278190080,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            font={Object {}}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={Array []}
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
-          >
-            <RNSVGGroup
-              fill={
-                Array [
-                  0,
-                  4278190080,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              font={Object {}}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={Array []}
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
-            >
-              <RNSVGDefs>
-                <RNSVGClipPath
-                  name="victory-clip-2"
-                >
-                  <RNSVGRect
-                    fill={
-                      Array [
-                        0,
-                        4278190080,
-                      ]
-                    }
-                    fillOpacity={1}
-                    fillRule={1}
-                    height={100}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
-                    propList={Array []}
-                    rotation={0}
-                    rx={0}
-                    ry={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={1}
-                    width={150}
-                    x={50}
-                    y={50}
-                  />
-                </RNSVGClipPath>
-              </RNSVGDefs>
-            </RNSVGGroup>
-            <RNSVGPath
-              d={null}
-              fill={
-                Array [
-                  0,
-                  0,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                  "stroke",
-                  "strokeWidth",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={
-                Array [
-                  0,
-                  4291050033,
-                ]
-              }
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={2}
-              vectorEffect={0}
-              x={0}
-              y={0}
-            />
-          </RNSVGGroup>
         </RNSVGGroup>
       </RNSVGSvgView>
       <View
@@ -3338,9 +3368,9 @@ exports[`<ChartDetail /> renders correctly 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={200}
-          bbWidth={250}
-          height={200}
+          bbHeight={190}
+          bbWidth={280}
+          height={190}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -3360,14 +3390,14 @@ exports[`<ChartDetail /> renders correctly 1`] = `
               },
               Object {
                 "flex": 0,
-                "height": 200,
-                "width": 250,
+                "height": 190,
+                "width": 280,
               },
             ]
           }
-          vbHeight={200}
-          vbWidth={250}
-          width={250}
+          vbHeight={190}
+          vbWidth={280}
+          width={280}
         >
           <RNSVGGroup
             fill={
@@ -3419,7 +3449,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
       Object {
         "marginRight": 20,
         "marginTop": "15%",
-        "width": "38%",
+        "width": "36%",
       }
     }
   >
@@ -3437,7 +3467,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-start",
             "display": "flex",
-            "width": "50%",
+            "width": "65%",
           }
         }
       >
@@ -3452,7 +3482,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "display": "flex",
-            "width": "50%",
+            "width": "35%",
           }
         }
       >
@@ -3477,7 +3507,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-start",
             "display": "flex",
-            "width": "50%",
+            "width": "65%",
           }
         }
       >
@@ -3492,7 +3522,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "display": "flex",
-            "width": "50%",
+            "width": "35%",
           }
         }
       >
@@ -3517,7 +3547,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-start",
             "display": "flex",
-            "width": "50%",
+            "width": "65%",
           }
         }
       >
@@ -3532,7 +3562,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "display": "flex",
-            "width": "50%",
+            "width": "35%",
           }
         }
       >
@@ -3557,7 +3587,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-start",
             "display": "flex",
-            "width": "50%",
+            "width": "65%",
           }
         }
       >
@@ -3572,7 +3602,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "display": "flex",
-            "width": "50%",
+            "width": "35%",
           }
         }
       >
@@ -3597,7 +3627,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-start",
             "display": "flex",
-            "width": "50%",
+            "width": "65%",
           }
         }
       >
@@ -3612,7 +3642,7 @@ exports[`<ChartDetail /> renders correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "display": "flex",
-            "width": "50%",
+            "width": "35%",
           }
         }
       >

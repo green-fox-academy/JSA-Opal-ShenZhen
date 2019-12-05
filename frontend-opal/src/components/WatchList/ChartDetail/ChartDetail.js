@@ -1,6 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { VictoryLine, VictoryChart, VictoryTheme } from 'victory-native';
+import { View } from 'react-native';
+import {
+  VictoryLine,
+  VictoryChart,
+  VictoryTheme,
+  VictoryScatter,
+  VictoryAxis
+} from 'victory-native';
 
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText } from 'components/WatchList/commonComponents';
@@ -14,18 +20,38 @@ function ChartDetail({ data }) {
     { title: 'EPS:', content: data.eps },
     { title: 'Div. Yield', content: data.divYield }
   ];
+  const xCheck = [];
 
   return (
     <View style={styles.body} key={`${data.symbol} detail`}>
-      <View>
-        <VictoryChart theme={VictoryTheme.material} width={250} height={200}>
+      <View style={styles.chartGraph}>
+        <VictoryChart theme={VictoryTheme.material} width={280} height={190}>
           <VictoryLine
             style={{
-              data: { stroke: '#c43a31' },
+              data: { stroke: 'rgb(250,110,59)' },
               parent: { border: '1px solid #cc' }
             }}
             data={data.chartData}
           />
+
+          <VictoryScatter
+            data={data.chartData}
+            y={info => info.y}
+            size={3}
+            style={{ data: { fill: 'rgb(250,110,59)' } }}
+          />
+
+          <VictoryAxis
+            tickValues={data.chartData.map(info => info.x)}
+            tickFormat={t => {
+              const month = String(t).split(' ')[0];
+              if (xCheck.includes(month)) return '';
+              xCheck.push(month);
+              return month;
+            }}
+            style={{ axis: { stroke: 'none' } }}
+          />
+          <VictoryAxis dependentAxis style={{ axis: { stroke: 'none' } }} />
         </VictoryChart>
       </View>
       <View style={styles.chartinfo}>

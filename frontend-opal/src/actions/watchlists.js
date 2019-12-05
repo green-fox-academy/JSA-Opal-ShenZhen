@@ -13,7 +13,15 @@ const toggleOneInstrument = (index, symbol) => ({
   }
 });
 
+const closeInstrumentsInList = index => ({
+  type: 'CLOSE_INSTRUMENT_IN_LIST',
+  payload: {
+    index
+  }
+});
+
 export default {
   getWatchlistData,
-  toggleOneInstrument
+  toggleOneInstrument,
+  closeInstrumentsInList
 };

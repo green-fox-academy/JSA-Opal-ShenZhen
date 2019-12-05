@@ -10,9 +10,13 @@ export default StyleSheet.create({
     width: '100%',
     alignContent: 'center'
   },
+  chartGraph: {
+    marginLeft: tools.getPixel(-20),
+    width: '64%'
+  },
   chartinfo: {
     marginTop: '15%',
-    width: '38%',
+    width: '36%',
     marginRight: tools.getPixel(10)
   },
   lineContainer: {
@@ -21,12 +25,12 @@ export default StyleSheet.create({
     justifyContent: 'space-between'
   },
   alignRight: {
-    width: '50%',
+    width: '35%',
     display: 'flex',
     alignItems: 'flex-end'
   },
   alignLeft: {
-    width: '50%',
+    width: '65%',
     display: 'flex',
     alignItems: 'flex-start'
   }
