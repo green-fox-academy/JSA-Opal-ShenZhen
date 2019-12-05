@@ -1,7 +1,8 @@
-import actions from 'actions/userPortfolioInfo';
 import { API_TOKEN } from 'react-native-dotenv';
+import actions from 'actions/portfolio';
+import baseUrl from './stockApi';
 
-const fetchPortfolioEndpoint = () => {
+const fetchPortfolio = () => {
   return dispatch => {
     dispatch({
       type: 'FETCH_PORTFOLIO_ENDPOINT'
@@ -17,7 +18,7 @@ const fetchPortfolioEndpoint = () => {
         dispatch(actions.fetchPortfolio(endpointRes.portfolio));
         const symbols = endpointRes.portfolio.map(instrument => instrument.symbol).join(',');
         fetch(
-          `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${symbols}&types=quote,news,company&range=1m&last=5&token=${API_TOKEN}`
+          `${baseUrl}/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&range=1m&last=5&token=${API_TOKEN}`
         )
           .then(stockRes => stockRes.json())
           .then(stockRes => {
@@ -27,10 +28,7 @@ const fetchPortfolioEndpoint = () => {
                 { company: stockRes[instrument.symbol].quote.companyName },
                 { stockExchange: stockRes[instrument.symbol].quote.primaryExchange },
                 { marketValue: stockRes[instrument.symbol].quote.latestPrice },
-                {
-                  /* eslint-disable-next-line */
-                  profileImg: require('components/PortfolioContainer/Instruments/images/avatarPlaceholder.png')
-                },
+                { profileImg: stockRes[instrument.symbol].logo.url },
                 { sector: stockRes[instrument.symbol].company.sector }
               )
             );
@@ -45,5 +43,5 @@ const fetchPortfolioEndpoint = () => {
 };
 
 export default {
-  fetchPortfolioEndpoint
+  fetchPortfolio
 };

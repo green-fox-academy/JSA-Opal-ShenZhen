@@ -15,8 +15,7 @@ export default StyleSheet.create({
   },
   profileImgContainer: {
     width: 40,
-    height: 40,
-    borderRadius: 40 / 2
+    height: 40
   },
   profileImg: {
     width: '100%',

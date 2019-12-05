@@ -12,7 +12,7 @@ function InstrumentsItem({ instrumentItem }) {
       <Card>
         <View style={styles.header}>
           <View style={styles.profileImgContainer}>
-            <Image style={styles.profileImg} source={profileImg} />
+            <Image style={styles.profileImg} source={{ uri: profileImg }} />
           </View>
           <View style={styles.profileText}>
             <Text>{company}</Text>
@@ -28,18 +28,6 @@ function InstrumentsItem({ instrumentItem }) {
           <View style={styles.instrumentDetail}>
             <Text style={styles.instrumentDetailText}>Market Value:</Text>
             <Text style={styles.instrumentDetailText}>{marketValue}</Text>
-          </View>
-          <View style={styles.instrumentDetail}>
-            <Text style={styles.instrumentDetailText}>Unrlzd P/L %:</Text>
-            {/* <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
-              {unrlzedPLPercentage}
-            </Text> */}
-          </View>
-          <View style={styles.instrumentDetail}>
-            <Text style={styles.instrumentDetailText}>Unrlzd P/L:</Text>
-            {/* <Text style={[styles.instrumentDetailText, styles.instrumentDetailTextGreen]}>
-              {unrlzedPL}
-            </Text> */}
           </View>
         </View>
 

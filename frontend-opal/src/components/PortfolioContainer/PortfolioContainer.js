@@ -2,31 +2,25 @@ import React, { useEffect } from 'react';
 import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Card, CardItem } from 'native-base';
-import thunksUserPortfolioInfo from 'thunks/userPortfolioInfo';
+import { Card } from 'native-base';
+import thunk from 'thunks/portfolio';
 
 import styles from './styles';
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
 
-const PortfolioContainer = ({ onfetchPortfolioEndpoint }) => {
-  useEffect(() => onfetchPortfolioEndpoint(), [onfetchPortfolioEndpoint]);
+const PortfolioContainer = ({ fetchPortfolio }) => {
+  useEffect(() => fetchPortfolio(), [fetchPortfolio]);
 
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={styles.portfolioArea}>
           <Card transparent>
-            <CardItem>
-              <ValueInfo />
-            </CardItem>
-            <CardItem>
-              <AllocationInfo />
-            </CardItem>
-            <CardItem>
-              <Instruments />
-            </CardItem>
+            <ValueInfo />
+            <AllocationInfo />
+            <Instruments />
           </Card>
         </View>
       </ScrollView>
@@ -38,12 +32,12 @@ PortfolioContainer.title = 'PORTFOLIO';
 
 const mapDispatchToProps = dispatch => {
   return {
-    onfetchPortfolioEndpoint: () => dispatch(thunksUserPortfolioInfo.fetchPortfolioEndpoint())
+    fetchPortfolio: () => dispatch(thunk.fetchPortfolio())
   };
 };
 
 export default connect(null, mapDispatchToProps)(PortfolioContainer);
 
 PortfolioContainer.propTypes = {
-  onfetchPortfolioEndpoint: PropTypes.func.isRequired
+  fetchPortfolio: PropTypes.func.isRequired
 };

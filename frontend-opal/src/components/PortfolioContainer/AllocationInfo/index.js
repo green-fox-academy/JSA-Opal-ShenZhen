@@ -1,3 +1,3 @@
-import AllocationInfo from './AllocationInfo';
+import AllocationInfo from './AllocationInfoContainer';
 
 export default AllocationInfo;

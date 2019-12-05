@@ -2,37 +2,39 @@ import React from 'react';
 import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Card } from 'native-base';
+import { Card, CardItem } from 'native-base';
 import InstrumentsItem from './InstrumentsItem';
 import styles from './styles';
 
-const Instruments = ({ fetchPortfolio }) => {
+const Instruments = ({ portfolio }) => {
   return (
-    <SafeAreaView style={styles.instrumentsArea}>
-      <Card transparent>
-        <Text style={styles.title}>Instruments</Text>
-      </Card>
-      <FlatList
-        data={fetchPortfolio}
-        renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
-        keyExtractor={item => `${item.id}`}
-      />
-    </SafeAreaView>
+    <CardItem>
+      <SafeAreaView style={styles.instrumentsArea}>
+        <Card transparent>
+          <Text style={styles.title}>Instruments</Text>
+        </Card>
+        <FlatList
+          data={portfolio}
+          renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
+          keyExtractor={item => `${item.id}`}
+        />
+      </SafeAreaView>
+    </CardItem>
   );
 };
 
 const mapStateToProps = state => ({
-  fetchPortfolio: state.fetchPortfolio.instruments
+  portfolio: state.portfolio.instruments
 });
 
 export default connect(mapStateToProps, null)(Instruments);
 
 Instruments.defaultProps = {
-  fetchPortfolio: []
+  portfolio: []
 };
 
 Instruments.propTypes = {
-  fetchPortfolio: PropTypes.arrayOf(
+  portfolio: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
       user_id: PropTypes.number,
