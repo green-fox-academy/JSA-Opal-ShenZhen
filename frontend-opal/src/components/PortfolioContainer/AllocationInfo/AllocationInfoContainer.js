@@ -1,28 +1,12 @@
 import { connect } from 'react-redux';
-import palette from 'google-palette';
 import getTotalInvestment from 'components/common/getTotalInvestment';
 import presenter from './AllocationInfoPresenter';
+import groupBySectors from './groupBySectors';
+import createPieData from './createPieData';
 
 const mapStateToProps = ({ portfolio }) => {
-  let sectors = {};
-  let totalInvestment = '';
-  if (portfolio[0]) {
-    totalInvestment = getTotalInvestment(portfolio);
-    sectors = portfolio.reduce((sectorsList, instrument) => {
-      const result = sectorsList;
-      if (result[instrument.sector]) {
-        result[instrument.sector].list.push(instrument);
-      } else {
-        result[instrument.sector] = { list: [instrument] };
-      }
-      return result;
-    }, {});
-  }
-
-  const legendData = Object.keys(sectors).map(sector => ({
-    name: sector,
-    symbol: { type: 'square' }
-  }));
+  const totalInvestment = getTotalInvestment(portfolio);
+  const sectors = groupBySectors(portfolio);
 
   Object.keys(sectors).forEach(sector => {
     sectors[sector].value =
@@ -35,14 +19,11 @@ const mapStateToProps = ({ portfolio }) => {
       ).toFixed(2) * 100;
   });
 
-  const pieData = Object.keys(sectors).map(sector => ({
-    x: sector,
-    y: sectors[sector].value,
-    label: `${sectors[sector].value}%`
-  }));
+  const legendData = createPieData.createLegendData(sectors);
 
-  let pieColor = palette('tol-sq', Object.keys(sectors).length + 2);
-  pieColor = pieColor.slice(2).map(color => `#${color}`);
+  const pieData = createPieData.createPieData(sectors);
+
+  const pieColor = createPieData.createPieColor(sectors);
 
   return { pieData, pieColor, legendData };
 };

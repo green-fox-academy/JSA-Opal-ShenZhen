@@ -76,19 +76,17 @@ exports[`<ValueInfo /> renders correctly 1`] = `
         >
           Total Investment
         </Text>
-        <Text
+        <ActivityIndicator
+          animating={true}
+          color="#e17055"
+          hidesWhenStopped={true}
+          size="large"
           style={
             Object {
-              "color": "#e17055",
-              "fontSize": 50,
-              "padding": 10,
-              "textAlign": "right",
-              "width": "100%",
+              "height": 80,
             }
           }
-        >
-          $ 
-        </Text>
+        />
       </View>
       <View
         style={

@@ -15,7 +15,6 @@ const fetchPortfolio = () => {
     })
       .then(endpointRes => endpointRes.json())
       .then(endpointRes => {
-        dispatch(actions.fetchPortfolio(endpointRes.portfolio));
         const symbols = endpointRes.portfolio.map(instrument => instrument.symbol).join(',');
         fetch(
           `${baseUrl}/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&range=1m&last=5&token=${API_TOKEN}`

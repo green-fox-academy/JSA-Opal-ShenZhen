@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Card, CardItem } from 'native-base';
+import { Card, CardItem, Spinner } from 'native-base';
 import InstrumentsItem from './InstrumentsItem';
 import styles from './styles';
 
@@ -13,11 +13,15 @@ const Instruments = ({ portfolio }) => {
         <Card transparent>
           <Text style={styles.title}>Instruments</Text>
         </Card>
-        <FlatList
-          data={portfolio}
-          renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
-          keyExtractor={item => `${item.id}`}
-        />
+        {!portfolio[0] ? (
+          <Spinner color="#e17055" />
+        ) : (
+          <FlatList
+            data={portfolio}
+            renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
+            keyExtractor={item => `${item.id}`}
+          />
+        )}
       </SafeAreaView>
     </CardItem>
   );

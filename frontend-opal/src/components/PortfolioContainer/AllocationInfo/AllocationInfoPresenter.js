@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import { Card, CardItem, Button } from 'native-base';
+import { Card, CardItem, Button, Spinner } from 'native-base';
 import styles from './styles';
 
 import PieChart from '../PieChart';
@@ -16,7 +16,11 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => {
 
         <Card>
           <View style={styles.pie}>
-            <PieChart data={pieData} color={pieColor} legendData={legendData} />
+            {!pieData[0] ? (
+              <Spinner color="#e17055" />
+            ) : (
+              <PieChart data={pieData} color={pieColor} legendData={legendData} />
+            )}
           </View>
 
           <View style={styles.allocationButtons}>
