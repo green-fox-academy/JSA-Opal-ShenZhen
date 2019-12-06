@@ -53,9 +53,7 @@ AllocationInfo.propTypes = {
   legendData: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      symbol: PropTypes.objectOf(
-        PropTypes.string
-      )
+      symbol: PropTypes.objectOf(PropTypes.string)
     })
   )
 };

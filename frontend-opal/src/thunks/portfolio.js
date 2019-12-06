@@ -33,7 +33,7 @@ const fetchPortfolio = () => {
               )
             );
 
-            dispatch(actions.fetchPortfolio({ instruments }));
+            dispatch(actions.fetchPortfolio([...instruments]));
           });
       })
       .catch(error => {

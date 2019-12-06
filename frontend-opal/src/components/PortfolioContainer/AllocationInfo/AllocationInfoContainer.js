@@ -3,15 +3,12 @@ import palette from 'google-palette';
 import getTotalInvestment from 'components/common/getTotalInvestment';
 import presenter from './AllocationInfoPresenter';
 
-const mapStateToProps = ({ portfolio: { instruments } }) => {
+const mapStateToProps = ({ portfolio }) => {
   let sectors = {};
   let totalInvestment = '';
-  if (instruments) {
-    totalInvestment = getTotalInvestment(instruments);
-  }
-
-  if (instruments) {
-    sectors = instruments.reduce((sectorsList, instrument) => {
+  if (portfolio[0]) {
+    totalInvestment = getTotalInvestment(portfolio);
+    sectors = portfolio.reduce((sectorsList, instrument) => {
       const result = sectorsList;
       if (result[instrument.sector]) {
         result[instrument.sector].list.push(instrument);
@@ -27,18 +24,16 @@ const mapStateToProps = ({ portfolio: { instruments } }) => {
     symbol: { type: 'square' }
   }));
 
-  if (Object.keys(sectors).length !== 0) {
-    Object.keys(sectors).forEach(sector => {
-      sectors[sector].value =
-        (
-          sectors[sector].list.reduce((accumulativeValue, instrument) => {
-            let result = accumulativeValue;
-            result += instrument.amount * instrument.marketValue;
-            return result;
-          }, 0) / totalInvestment
-        ).toFixed(2) * 100;
-    });
-  }
+  Object.keys(sectors).forEach(sector => {
+    sectors[sector].value =
+      (
+        sectors[sector].list.reduce((accumulativeValue, instrument) => {
+          let result = accumulativeValue;
+          result += instrument.amount * instrument.marketValue;
+          return result;
+        }, 0) / totalInvestment
+      ).toFixed(2) * 100;
+  });
 
   const pieData = Object.keys(sectors).map(sector => ({
     x: sector,

@@ -37,7 +37,7 @@ const ValueInfo = ({ portfolio }) => {
 };
 
 const mapStateToProps = state => ({
-  portfolio: state.portfolio.instruments
+  portfolio: state.portfolio
 });
 
 export default connect(mapStateToProps, null)(ValueInfo);
