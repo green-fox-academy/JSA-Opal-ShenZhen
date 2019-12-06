@@ -8,20 +8,9 @@ const mapStateToProps = ({ portfolio }) => {
   const totalInvestment = getTotalInvestment(portfolio);
   const sectors = groupBySectors(portfolio);
 
-  Object.keys(sectors).forEach(sector => {
-    sectors[sector].value =
-      (
-        sectors[sector].list.reduce((accumulativeValue, instrument) => {
-          let result = accumulativeValue;
-          result += instrument.amount * instrument.marketValue;
-          return result;
-        }, 0) / totalInvestment
-      ).toFixed(2) * 100;
-  });
-
   const legendData = createPieData.createLegendData(sectors);
 
-  const pieData = createPieData.createPieData(sectors);
+  const pieData = createPieData.createPieData(sectors, totalInvestment);
 
   const pieColor = createPieData.createPieColor(sectors);
 

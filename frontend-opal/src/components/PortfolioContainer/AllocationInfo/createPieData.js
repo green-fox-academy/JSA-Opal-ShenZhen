@@ -7,12 +7,23 @@ function createLegendData(sectors) {
   }));
 }
 
-function createPieData(sectors) {
-  return Object.keys(sectors).map(sector => ({
-    x: sector,
-    y: sectors[sector].value,
-    label: `${sectors[sector].value}%`
-  }));
+function createPieData(sectors, totalInvestment) {
+  return Object.keys(sectors).map(sector => {
+    const value =
+      (
+        sectors[sector].list.reduce((accumulativeValue, instrument) => {
+          let result = accumulativeValue;
+          result += instrument.amount * instrument.marketValue;
+          return result;
+        }, 0) / totalInvestment
+      ).toFixed(2) * 100;
+
+    return {
+      x: sector,
+      y: value,
+      label: `${value}%`
+    };
+  });
 }
 
 function createPieColor(sectors) {
