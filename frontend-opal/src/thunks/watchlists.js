@@ -23,7 +23,7 @@ async function getDataFromDB(url) {
 
 async function requestApiOnce(request) {
   try {
-    const apiResponse = await fetch(request);
+    const apiResponse = await fetch(request); 
     const apiData = await apiResponse.json();
     return apiData;
   } catch (error) {
@@ -82,7 +82,7 @@ function generateInfo(symbolList, list) {
     return {
       symbol,
       latestPrice,
-      changePercent: (changePercent * 100).toFixed(2),
+      changePercent: changePercent,
       marketCap: changeUnit(marketCap),
       week52High,
       week52Low,

@@ -11,6 +11,7 @@ import {
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText } from 'components/WatchList/commonComponents';
 import styles from './styles';
+import tools from 'components/common/tools';
 
 function ChartDetail({ data }) {
   const infoPairs = [
@@ -25,7 +26,7 @@ function ChartDetail({ data }) {
   return (
     <View style={styles.body} key={`${data.symbol} detail`}>
       <View style={styles.chartGraph}>
-        <VictoryChart theme={VictoryTheme.material} width={280} height={190}>
+        <VictoryChart theme={VictoryTheme.material} width={tools.getPixel(250)} height={tools.getPixel(170)}>
           <VictoryLine
             style={{
               data: { stroke: 'rgb(250,110,59)' },
