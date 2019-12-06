@@ -52,15 +52,15 @@ function mapTitle(data) {
 
 function search(input) {
   return async dispatch => {
-    const initRes = {
+    const data = {
       results: []
     };
     if (input !== '') {
       const searchRes = await searchData(input);
-      initRes.results = mapTitle(searchRes);
+      data.results = mapTitle(searchRes);
     }
 
-    dispatch(actions.search(initRes));
+    dispatch(actions.search(data));
   };
 }
 
