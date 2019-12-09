@@ -1,7 +1,7 @@
 import actions from 'actions/searchResult';
 
 import symbolData from './symbolData';
-import stockAPI from './stockAPI';
+import stockAPI from './stock_API';
 
 async function extractTopNResult({ first, second }, num) {
   return [...first, ...second].slice(0, num);

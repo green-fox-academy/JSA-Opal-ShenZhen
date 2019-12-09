@@ -1,5 +1,5 @@
 import actions from 'actions/portfolio';
-import stockAPI from './stockAPI';
+import stockAPI from './stock_API';
 
 async function getInstrument(endpointRes, stockRes) {
   return endpointRes.portfolio.map(instrument =>
