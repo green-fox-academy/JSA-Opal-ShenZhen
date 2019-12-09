@@ -23,7 +23,7 @@ async function getDataFromDB(url) {
 
 async function requestApiOnce(request) {
   try {
-    const apiResponse = await fetch(request); 
+    const apiResponse = await fetch(request);
     const apiData = await apiResponse.json();
     return apiData;
   } catch (error) {
@@ -37,7 +37,8 @@ function getDataFromApi(symbolsList) {
     const watchlists = [];
     symbolsList.forEach(async ({ symbols }, index) => {
       const apiData = await requestApiOnce(
-        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
+        // `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
+        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote`
       );
       watchlists.push({
         index,
@@ -82,14 +83,19 @@ function generateInfo(symbolList, list) {
     return {
       symbol,
       latestPrice,
-      changePercent: changePercent,
+      changePercent,
       marketCap: changeUnit(marketCap),
       week52High,
       week52Low,
       peRatio,
       eps: '1.2',
       divYield: '2%',
-      chartData: generateCharData(list[symbol].chart),
+      chartData: [
+        { x: 1, y: 1 },
+        { x: 2, y: 2 },
+        { x: 5, y: 3 }
+      ],
+      // chartData: generateCharData(list[symbol].chart),
       foldStatus: false
     };
   });

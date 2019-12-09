@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 
 import SingleInstrument from 'components/WatchList/SingleInstrument/SingleInstrument';
 import presetProps from 'components/WatchList/presetProps';
+import animations from 'components/common/animations';
 import styles from './styles';
 
 const WatchListItem = ({ data, index }) => {
   return (
     <View style={styles.container}>
-      {data.map(info => (
-        <View key={`${info.symbol} item`}>
-          <SingleInstrument data={info} index={index} />
-        </View>
-      ))}
+      <animations.FlyInInstruments data={data} index={index} Child={SingleInstrument} />
     </View>
   );
 };

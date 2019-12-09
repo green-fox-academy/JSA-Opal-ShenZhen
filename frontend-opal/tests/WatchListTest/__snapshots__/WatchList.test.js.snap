@@ -4,59 +4,56 @@ exports[`<WatchList /> renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
 >
-  <RCTScrollView>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        colors={
+          Array [
+            "rgb(77,119,245)",
+          ]
+        }
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  >
+    <RCTRefreshControl />
     <View>
-      <View>
-        <RCTScrollView
-          data={Array []}
-          dataArray={Array []}
-          disableVirtualization={false}
-          extraData={
-            Object {
-              "selected": undefined,
-            }
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
           }
-          getItem={[Function]}
-          getItemCount={[Function]}
-          headerStyle={
-            Object {
-              "backgroundColor": "white",
-              "fontWeight": "bold",
-            }
-          }
-          horizontal={false}
-          initialNumToRender={10}
-          keyExtractor={[Function]}
-          maxToRenderPerBatch={10}
-          numColumns={1}
-          onAccordionClose={[Function]}
-          onContentSizeChange={[Function]}
-          onEndReachedThreshold={2}
-          onLayout={[Function]}
-          onMomentumScrollEnd={[Function]}
-          onScroll={[Function]}
-          onScrollBeginDrag={[Function]}
-          onScrollEndDrag={[Function]}
-          removeClippedSubviews={false}
-          renderContent={[Function]}
-          renderItem={[Function]}
-          scrollEventThrottle={50}
-          stickyHeaderIndices={Array []}
+        }
+      >
+        <ActivityIndicator
+          animating={true}
+          color="rgb(77,119,245)"
+          hidesWhenStopped={true}
+          size="large"
           style={
-            Array [
-              Object {
-                "borderColor": "#d3d3d3",
-                "borderWidth": 0.5,
-              },
-              undefined,
-            ]
+            Object {
+              "height": 80,
+            }
           }
-          updateCellsBatchingPeriod={50}
-          viewabilityConfigCallbackPairs={Array []}
-          windowSize={21}
+        />
+        <Text
+          style={
+            Object {
+              "color": "rgb(77,119,245)",
+              "fontSize": 32,
+            }
+          }
         >
-          <View />
-        </RCTScrollView>
+          Loading
+        </Text>
       </View>
     </View>
   </RCTScrollView>

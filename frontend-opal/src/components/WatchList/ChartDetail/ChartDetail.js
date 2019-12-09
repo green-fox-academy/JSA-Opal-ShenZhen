@@ -10,8 +10,9 @@ import {
 
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText } from 'components/WatchList/commonComponents';
-import styles from './styles';
 import tools from 'components/common/tools';
+import animations from 'components/common/animations';
+import styles from './styles';
 
 function ChartDetail({ data }) {
   const infoPairs = [
@@ -24,9 +25,13 @@ function ChartDetail({ data }) {
   const xCheck = [];
 
   return (
-    <View style={styles.body} key={`${data.symbol} detail`}>
+    <animations.FlyInView style={styles.body} position={{ x: 0, y: -tools.getPixel(30) }}>
       <View style={styles.chartGraph}>
-        <VictoryChart theme={VictoryTheme.material} width={tools.getPixel(250)} height={tools.getPixel(170)}>
+        <VictoryChart
+          theme={VictoryTheme.material}
+          width={tools.getPixel(250)}
+          height={tools.getPixel(170)}
+        >
           <VictoryLine
             style={{
               data: { stroke: 'rgb(250,110,59)' },
@@ -63,7 +68,7 @@ function ChartDetail({ data }) {
           </View>
         ))}
       </View>
-    </View>
+    </animations.FlyInView>
   );
 }
 

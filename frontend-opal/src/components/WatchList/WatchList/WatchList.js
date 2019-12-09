@@ -8,6 +8,7 @@ import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
 import actions from 'actions/watchlists';
 import tools from 'components/common/tools';
+import animations from '../../common/animations';
 
 const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -29,14 +30,24 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView style={{width: '100%' ,height: '100%'}} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={['rgb(77,119,245)']}/>}>
+      <ScrollView
+        style={{ width: '100%', height: '100%' }}
+        refreshControl={
+          /* eslint-disable-next-line */
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={['rgb(77,119,245)']}
+          />
+        }
+      >
         {watchlists.length === 0 ? (
           <View style={{ display: 'flex', alignItems: 'center' }}>
-            <Spinner color='rgb(77,119,245)' />
+            <Spinner color="rgb(77,119,245)" />
             <Text style={{ color: 'rgb(77,119,245)', fontSize: tools.getPixel(16) }}>Loading</Text>
           </View>
         ) : (
-          <View>
+          <animations.FadeInView>
             <Accordion
               dataArray={dataArray}
               renderContent={WatchListItem}
@@ -47,7 +58,7 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
                 });
               }}
             />
-          </View>
+          </animations.FadeInView>
         )}
       </ScrollView>
     </SafeAreaView>
