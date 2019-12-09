@@ -6,10 +6,10 @@ import transIcon from 'assets/transformation-icon.jpg';
 import infoIcon from 'assets/icons-info.png';
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText, FormatTouchIcon } from 'components/WatchList/commonComponents';
-import styles from './styles';
 import { connect } from 'react-redux';
+import styles from './styles';
 
-function InstrumentRow({ data, tradeName}) {
+function InstrumentRow({ data, tradeName }) {
   const navigation = useContext(NavigationContext);
 
   return (
@@ -27,7 +27,7 @@ function InstrumentRow({ data, tradeName}) {
           iconStyle={styles.icon}
           iconSource={transIcon}
           blockStyle={styles.iconContainer}
-          func = {() => {
+          func={() => {
             tradeName(data.symbol);
             navigation.navigate('TradeContainer');
           }}

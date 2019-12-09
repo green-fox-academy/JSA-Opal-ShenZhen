@@ -22,7 +22,7 @@ const Investment = createStackNavigator(
     InvestmentMain,
     Search,
     TradeContainer,
-    InstrumentDetail,
+    InstrumentDetail
   },
   {
     initialRouteName: 'MainEntry',
