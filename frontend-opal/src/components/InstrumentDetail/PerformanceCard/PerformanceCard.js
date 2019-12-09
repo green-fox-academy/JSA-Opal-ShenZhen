@@ -1,7 +1,7 @@
 import React from 'react';
 import { Content, Text, Card, CardItem } from 'native-base';
 
-import LineChart from '../../LineChart';
+import LineChart from 'components/PortfolioContainer/LineChart';
 import PerformanceFooter from './PerformanceFooter';
 import styles from '../styles';
 

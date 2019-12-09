@@ -8,7 +8,7 @@ import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
 import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
-import InstrumentDetail from './PortfolioContainer/InstrumentDetail';
+import InstrumentDetail from './InstrumentDetail';
 
 const InvestmentMain = () => {
   return <TabbedComponents components={[Portfolio, Watchlist]} />;

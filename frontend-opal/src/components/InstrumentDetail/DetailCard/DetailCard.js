@@ -1,14 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Content, Container, Card, CardItem, Text } from 'native-base';
+import { Content, Card, Text, Spinner } from 'native-base';
 
 import StatisticDetail from './StatisticDetail';
 import DetailFooter from './DetailFooter';
 import styles from '../styles';
 
-import dataSample from '../dataSample';
-
-const DetailCard = () => {
+const DetailCard = ({ apiData }) => {
   const getDataGroup = (data, groupNum) => data.filter(item => item.group === groupNum);
 
   return (
@@ -19,8 +17,16 @@ const DetailCard = () => {
 
       <Card>
         <View style={styles.detail}>
-          <StatisticDetail data={getDataGroup(dataSample, 1)} />
-          <StatisticDetail data={getDataGroup(dataSample, 2)} />
+          {apiData.length === 0 ? (
+            <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Spinner color="#e17055" />
+            </View>
+          ) : (
+            <>
+              <StatisticDetail data={getDataGroup(apiData, 1)} />
+              <StatisticDetail data={getDataGroup(apiData, 2)} />
+            </>
+          )}
         </View>
 
         <DetailFooter />

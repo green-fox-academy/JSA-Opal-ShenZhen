@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import InstrumentDetail from 'components/PortfolioContainer/InstrumentDetail';
+import InstrumentDetail from 'components/InstrumentDetail';
 
 describe('InstrumentDetail component', () => {
   it('renders correctly', () => {
