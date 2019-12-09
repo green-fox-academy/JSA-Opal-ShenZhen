@@ -15,6 +15,8 @@ import WatchListContainer from 'components/WatchList/';
 import Investment from './src/components/investment';
 
 import InstrumentDetail from './src/components/PortfolioContainer/InstrumentDetail';
+import LineChart from './src/components/PortfolioContainer/LineChart'
+import TradeContainer from './src/components/trade/TradeContainer'
 
 export default function App() {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

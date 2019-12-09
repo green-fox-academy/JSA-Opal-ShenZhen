@@ -8,6 +8,7 @@ import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
 import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
+import TradeContainer from 'components/trade/TradeContainer'
 
 const InvestmentMain = () => {
   return <TabbedComponents components={[Portfolio, Watchlist]} />;
@@ -18,7 +19,8 @@ const Investment = createStackNavigator(
   {
     MainEntry,
     InvestmentMain,
-    Search
+    Search,
+    TradeContainer
   },
   {
     initialRouteName: 'MainEntry',
