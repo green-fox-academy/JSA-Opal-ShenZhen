@@ -1,11 +1,21 @@
-import React from 'react';
-import { Container, Header } from 'native-base';
+import React, { useEffect } from 'react';
+import { Container } from 'native-base';
 
 import headers from 'components/common/headers';
 import PerformanceCard from './PerformanceCard';
 import DetailCard from './DetailCard/DetailCard';
+import thunks from 'thunks/stock_API';
 
-const InstrumentDetail = () => {
+const InstrumentDetail = ({ navigation }) => {
+  let detailData = [];
+
+  useEffect(async () => {
+    const apiData = await thunks.fetchInstrumentDetailData(navigation.getParam('detailTitle'));
+    const { week52High, week52Low, peRatio  } = apiData; 
+  });
+
+
+
   return (
     <Container>
       <PerformanceCard />
