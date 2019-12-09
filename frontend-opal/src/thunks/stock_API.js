@@ -10,7 +10,7 @@ async function fetchSearchData() {
 }
 
 async function fetchPortfolioData(symbols) {
-  const apiUrl = `${baseUrl}stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&range=1m&last=5&token=${API_TOKEN}`;
+  const apiUrl = `${baseUrl}stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&last=5&token=${API_TOKEN}`;
   const res = await fetch(apiUrl);
   const data = await res.json();
   return data;
