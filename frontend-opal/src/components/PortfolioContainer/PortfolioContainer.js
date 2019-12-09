@@ -10,23 +10,18 @@ import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
 
-function wait(timeout) {
-  return new Promise(resolve => {
-    setTimeout(resolve, timeout);
-  });
-}
-
 const PortfolioContainer = ({ fetchPortfolio }) => {
   useEffect(() => {
     fetchPortfolio();
   }, [fetchPortfolio]);
+
   const [refreshing, setRefreshing] = React.useState(false);
 
-  const onRefresh = React.useCallback(() => {
+  const onRefresh = React.useCallback(async () => {
     setRefreshing(true);
-
-    wait(2000).then(() => setRefreshing(false));
-  }, [refreshing]);
+    await fetchPortfolio();
+    setRefreshing(false);
+  }, [fetchPortfolio]);
 
   return (
     <SafeAreaView>
