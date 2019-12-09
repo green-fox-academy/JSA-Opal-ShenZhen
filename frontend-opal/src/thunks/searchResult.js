@@ -10,7 +10,7 @@ async function extractTopNResult({ first, second }, num) {
 async function searchData(input) {
   const target = String(input).toUpperCase();
   // use real api fetch data of instrument
-  // const apiData = await stockAPI.fetchData();
+  // const apiData = await stockAPI.fetchSearchData();
 
   // use local data of instrument
   const apiData = symbolData;
