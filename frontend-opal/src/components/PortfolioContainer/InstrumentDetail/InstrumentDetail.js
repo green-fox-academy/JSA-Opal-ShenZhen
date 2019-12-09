@@ -14,6 +14,6 @@ const InstrumentDetail = () => {
   );
 };
 
-headers.addDetailHeader(InstrumentDetail, 'MSFT');
+headers.addDetailHeader(InstrumentDetail);
 
 export default InstrumentDetail;

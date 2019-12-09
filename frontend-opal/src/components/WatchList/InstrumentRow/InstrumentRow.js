@@ -31,7 +31,10 @@ function InstrumentRow({ data }) {
           iconStyle={styles.icon}
           iconSource={infoIcon}
           blockStyle={styles.iconContainer}
-          func={() => navigation.navigate('InstrumentDetail')}
+          func={() =>
+            navigation.navigate('InstrumentDetail', {
+              detailTitle: data.symbol
+            })}
         />
       </View>
     </View>

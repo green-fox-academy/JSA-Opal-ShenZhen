@@ -1,9 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import styles from './styles/index';
-
 import ResultList from 'container/SearchResult/ResultList';
+import styles from './styles/index';
 
 function Index() {
   return (
