@@ -1,21 +1,24 @@
 import { API_TOKEN } from 'react-native-dotenv';
 
+const baseUrl = 'https://cloud.iexapis.com/';
+
 async function fetchSearchData() {
-  const symbols = `https://cloud.iexapis.com/stable/ref-data/symbols?token=${API_TOKEN}`;
+  const symbols = `${baseUrl}stable/ref-data/symbols?token=${API_TOKEN}`;
   const res = await fetch(symbols);
   const data = await res.json();
   return data;
 }
 
 async function fetchPortfolioData(symbols) {
-  const apiUrl = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&range=1m&last=5&token=${API_TOKEN}`;
+  const apiUrl = `${baseUrl}stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&range=1m&last=5&token=${API_TOKEN}`;
   const res = await fetch(apiUrl);
   const data = await res.json();
   return data;
 }
 
 const stockAPI = {
-  fetchSearchData, fetchPortfolioData
+  fetchSearchData,
+  fetchPortfolioData
 };
 
 export default stockAPI;

@@ -11,10 +11,8 @@ async function getInstrument(endpointRes, stockRes) {
       { profileImg: stockRes[instrument.symbol].logo.url },
       { sector: stockRes[instrument.symbol].company.sector }
     )
-  )
+  );
 }
-
-
 
 const fetchPortfolio = () => {
   return async dispatch => {
@@ -27,7 +25,7 @@ const fetchPortfolio = () => {
         'Content-type': 'application/json',
         Authorization: 'Bearer token'
       }
-    })
+    });
 
     const endpointRes = await response.json();
     const symbols = await endpointRes.portfolio.map(instrument => instrument.symbol).join(',');

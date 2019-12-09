@@ -17,7 +17,9 @@ function wait(timeout) {
 }
 
 const PortfolioContainer = ({ fetchPortfolio }) => {
-  useEffect(() => {fetchPortfolio()}, [fetchPortfolio]);
+  useEffect(() => {
+    fetchPortfolio();
+  }, [fetchPortfolio]);
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -26,12 +28,9 @@ const PortfolioContainer = ({ fetchPortfolio }) => {
     wait(2000).then(() => setRefreshing(false));
   }, [refreshing]);
 
-
   return (
     <SafeAreaView>
-      <ScrollView refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }>
+      <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         <View style={styles.portfolioArea}>
           <Card transparent>
             <ValueInfo />
