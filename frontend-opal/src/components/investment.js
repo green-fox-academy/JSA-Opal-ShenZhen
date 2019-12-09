@@ -4,11 +4,12 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import TradeContainer from 'components/trade/TradeContainer';
 import MainEntry from './MainEntry';
-import Search from './SearchResult/Result';
+import Search from '../container/SearchResult/ResultList';
 import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
 import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
+import InstrumentDetail from './PortfolioContainer/InstrumentDetail';
 
 const InvestmentMain = () => {
   return <TabbedComponents components={[Portfolio, Watchlist]} />;
@@ -20,7 +21,8 @@ const Investment = createStackNavigator(
     MainEntry,
     InvestmentMain,
     Search,
-    TradeContainer
+    TradeContainer,
+    InstrumentDetail,
   },
   {
     initialRouteName: 'MainEntry',

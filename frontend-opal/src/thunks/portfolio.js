@@ -1,38 +1,40 @@
 import actions from 'actions/portfolio';
+import stockAPI from './stock_API';
 
-const investment = {
-  totalInvestment: '3400',
-  pieData: [
-    { x: 'IT', y: 40, label: '40%' },
-    { x: 'Finance', y: 30, label: '30%' },
-    { x: 'Energy', y: 30, label: '30%' }
-  ],
-  legendData: [
-    { name: 'IT', symbol: { type: 'square' } },
-    { name: 'Finance', symbol: { type: 'square' } },
-    { name: 'Energy', symbol: { type: 'square' } }
-  ],
-  pieColor: ['#711702', '#A91600', '#E12C00'],
-  instrumentList: [
-    {
-      company: 'FB - Facebook Inc.',
-      stockExchange: 'NASDAQ',
-      /* eslint-disable-next-line */
-      profileImg: require('components/PortfolioContainer/Instruments/images/avatarPlaceholder.png'),
-      positions: 136,
-      marketValue: 11863.28,
-      unrlzedPLPercentage: '4.5%',
-      unrlzedPL: 510.86
-    }
-  ]
-};
-
-function getPortfolioData() {
-  return dispatch => {
-    dispatch(actions.getPortfolioData(investment));
-  };
+async function getInstrument(endpointRes, stockRes) {
+  return endpointRes.portfolio.map(instrument =>
+    Object.assign(
+      instrument,
+      { company: stockRes[instrument.symbol].quote.companyName },
+      { stockExchange: stockRes[instrument.symbol].quote.primaryExchange },
+      { marketValue: stockRes[instrument.symbol].quote.latestPrice },
+      { profileImg: stockRes[instrument.symbol].logo.url },
+      { sector: stockRes[instrument.symbol].company.sector }
+    )
+  );
 }
 
+const fetchPortfolio = () => {
+  return async dispatch => {
+    dispatch({
+      type: 'FETCH_PORTFOLIO_ENDPOINT'
+    });
+
+    const response = await fetch('http://10.22.19.55:3001/portfolio', {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: 'Bearer token'
+      }
+    });
+
+    const endpointRes = await response.json();
+    const symbols = await endpointRes.portfolio.map(instrument => instrument.symbol).join(',');
+    const stockRes = await stockAPI.fetchPortfolioData(symbols);
+    const instruments = await getInstrument(endpointRes, stockRes);
+    dispatch(actions.fetchPortfolio([...instruments]));
+  };
+};
+
 export default {
-  getPortfolioData
+  fetchPortfolio
 };

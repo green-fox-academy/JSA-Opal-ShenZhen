@@ -36,9 +36,4 @@ Result.propTypes = {
   input: PropTypes.string
 };
 
-const mapStateToProps = state => ({
-  results: state.searchResult.results,
-  input: state.searchResult.input
-});
-
-export default connect(mapStateToProps, null)(Result);
+export default Result;

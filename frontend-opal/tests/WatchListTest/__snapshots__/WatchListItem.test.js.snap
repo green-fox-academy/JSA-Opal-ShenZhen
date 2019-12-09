@@ -1,55 +1,179 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<WatchListItem /> renders correctly 1`] = `
-<View>
-  <View
-    style={
-      Object {
-        "borderColor": "black",
-        "borderStyle": "solid",
-        "borderWidth": 2,
-        "display": "flex",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-      }
+<View
+  style={
+    Object {
+      "marginBottom": 40,
     }
-  >
-    <Text />
+  }
+>
+  <View>
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#007aff",
-          "borderBottomWidth": null,
-          "borderColor": "#007aff",
-          "borderLeftWidth": null,
-          "borderRadius": 5,
-          "borderRightWidth": null,
-          "borderTopWidth": null,
-          "borderWidth": undefined,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 45,
-          "justifyContent": "space-between",
-          "opacity": 1,
-          "paddingBottom": 6,
-          "paddingTop": 6,
-          "shadowColor": undefined,
-          "shadowOffset": undefined,
-          "shadowOpacity": undefined,
-          "shadowRadius": undefined,
+          "marginLeft": 40,
+          "marginRight": 20,
+          "marginTop": 40,
         }
       }
     >
-      <Text />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "width": "20%",
+              }
+            }
+          >
+            <Text
+              style={Object {}}
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "width": "80%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "display": "flex",
+                  "width": "20%",
+                }
+              }
+            >
+              <Text
+                style={Object {}}
+              >
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "display": "flex",
+                  "width": "20%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "green",
+                  }
+                }
+              >
+                %
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "display": "flex",
+                  "width": "20%",
+                }
+              }
+            >
+              <Text
+                style={Object {}}
+              >
+                
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "display": "flex",
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "width": "20%",
+                }
+              }
+            >
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 14,
+                    "width": 14,
+                  }
+                }
+              />
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "display": "flex",
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "width": "20%",
+                }
+              }
+            >
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 14,
+                    "width": 14,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   </View>
 </View>

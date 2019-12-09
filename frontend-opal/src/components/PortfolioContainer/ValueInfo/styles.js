@@ -2,9 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   valueArea: {
-    width: '92%',
-    height: 280,
-    margin: 15
+    width: '100%'
   },
   title: {
     fontSize: 16
@@ -20,16 +18,20 @@ export default StyleSheet.create({
   },
   amount: {
     width: '100%',
-    height: 110,
     padding: 10,
     textAlign: 'right',
-    fontSize: 80,
+    fontSize: 50,
     color: '#e17055'
   },
+  valueButton: {
+    alignItems: 'flex-start',
+    padding: 10
+  },
   button: {
-    height: 40,
-    padding: 12,
-    textAlign: 'left',
-    fontSize: 16
+    marginLeft: 10,
+    marginRight: 10,
+    backgroundColor: 'white',
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });

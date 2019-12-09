@@ -10,33 +10,6 @@ exports[`InstrumentDetail component renders correctly 1`] = `
     }
   }
 >
-  <View
-    onLayout={[Function]}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#F8F8F8",
-          "borderBottomColor": "#a7a6ab",
-          "borderBottomWidth": 0.5,
-          "elevation": 3,
-          "flexDirection": "row",
-          "height": 64,
-          "justifyContent": "center",
-          "left": 0,
-          "paddingLeft": 6,
-          "paddingRight": 10,
-          "paddingTop": 18,
-          "right": 0,
-          "shadowColor": undefined,
-          "shadowOffset": undefined,
-          "shadowOpacity": undefined,
-          "shadowRadius": undefined,
-          "top": 0,
-        }
-      }
-    />
-  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -1035,7 +1008,7 @@ exports[`InstrumentDetail component renders correctly 1`] = `
                         }
                       >
                         <RNSVGTSpan
-                          content="Jun"
+                          content="5"
                           dx={
                             Array [
                               0,
@@ -1204,7 +1177,7 @@ exports[`InstrumentDetail component renders correctly 1`] = `
                         }
                       >
                         <RNSVGTSpan
-                          content="Sep"
+                          content="8"
                           dx={
                             Array [
                               0,
@@ -1373,7 +1346,7 @@ exports[`InstrumentDetail component renders correctly 1`] = `
                         }
                       >
                         <RNSVGTSpan
-                          content="Dec"
+                          content="11"
                           dx={
                             Array [
                               0,

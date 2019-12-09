@@ -1,52 +1,31 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import { AntDesign } from 'react-native-vector-icons';
-import { Button } from 'native-base';
+import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
+import SingleInstrument from 'components/WatchList/SingleInstrument/SingleInstrument';
+import presetProps from 'components/WatchList/presetProps';
 import styles from './styles';
-import InstrumentItems from '../InstrumentItems/instrumentItems';
-import ChartDetail from '../ChartDetail/ChartDetail';
 
-const WatchListItem = ({ item, info, stockData, chartData }) => {
-  const [showDetails, setShowDetails] = useState(false);
-
-  const changeShowWatchListItem = () => setShowDetails(!showDetails);
+const WatchListItem = ({ data, index }) => {
   return (
-    <View>
-      <View style={styles.border}>
-        <Text>{item}</Text>
-        <Button onPress={changeShowWatchListItem}>
-          <AntDesign name="caretdown" size={15} color="black" />
-        </Button>
-      </View>
-      {showDetails && (
-        <View>
-          <InstrumentItems infos={info} />
-          <ChartDetail stockData={stockData} chartData={chartData} />
+    <View style={styles.container}>
+      {data.map(info => (
+        <View key={`${info.symbol} item`}>
+          <SingleInstrument data={info} index={index} />
         </View>
-      )}
+      ))}
     </View>
   );
 };
 
+WatchListItem.defaultProps = {
+  data: [presetProps.defaultQuote],
+  index: 0
+};
+
 WatchListItem.propTypes = {
-  item: PropTypes.string.isRequired,
-  info: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      num: PropTypes.string,
-      increase: PropTypes.string,
-      whole: PropTypes.string
-    })
-  ).isRequired,
-  chartData: PropTypes.arrayOf(
-    PropTypes.shape({
-      x: PropTypes.number,
-      y: PropTypes.number
-    })
-  ).isRequired,
-  stockData: PropTypes.arrayOf(PropTypes.any).isRequired
+  data: PropTypes.arrayOf(presetProps.quoteTypes),
+  index: PropTypes.number
 };
 
 export default WatchListItem;

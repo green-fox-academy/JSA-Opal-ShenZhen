@@ -13,6 +13,6 @@ function setReducer(state, action, pairs) {
 export default combineReducers({
   watchlists: (state = [], action) => setReducer(state, action, watchListsPairs),
   searchResult: (state = {}, action) => setReducer(state, action, searchResultPairs),
-  portfolio: (state = {}, action) => setReducer(state, action, portfolioPairs),
-  trade: (state = {}, action) => setReducer(state, action, tradePairs)
+  trade: (state = {}, action) => setReducer(state, action, tradePairs),
+  portfolio: (state = [], action) => setReducer(state, action, portfolioPairs)
 });

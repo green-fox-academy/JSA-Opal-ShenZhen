@@ -1,10 +1,10 @@
-const getPortfolioData = data => ({
-  type: 'GET_PORTFOLIO_DATA',
-  payload: {
-    data
-  }
-});
+const fetchPortfolio = data => {
+  return {
+    type: 'FETCH_PORTFOLIO_DONE',
+    portfolio: data
+  };
+};
 
 export default {
-  getPortfolioData
+  fetchPortfolio
 };

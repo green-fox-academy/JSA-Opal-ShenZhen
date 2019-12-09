@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import tools from 'components/common/tools';
+
 export default StyleSheet.create({
   body: {
     display: 'flex',
@@ -8,39 +10,28 @@ export default StyleSheet.create({
     width: '100%',
     alignContent: 'center'
   },
-  linechart: {
-    width: 200
+  chartGraph: {
+    marginLeft: tools.getPixel(-20),
+    width: '64%'
   },
   chartinfo: {
-    marginTop: '15%'
+    marginTop: '15%',
+    width: '36%',
+    marginRight: tools.getPixel(10)
   },
-  info: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    paddingTop: 20
-  },
-  greenfont: {
-    color: 'green',
-    flex: 1
-  },
-  redfont: {
-    color: 'red',
-    flex: 1
-  },
-  icon: {
-    width: 14,
-    height: 14
-  },
-  border: {
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: 'black',
+  lineContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  text: {
-    flex: 1
+  alignRight: {
+    width: '35%',
+    display: 'flex',
+    alignItems: 'flex-end'
+  },
+  alignLeft: {
+    width: '65%',
+    display: 'flex',
+    alignItems: 'flex-start'
   }
 });

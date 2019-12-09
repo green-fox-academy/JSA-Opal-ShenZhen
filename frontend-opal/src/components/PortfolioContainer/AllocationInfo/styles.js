@@ -2,14 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   allocationArea: {
-    width: '92%',
-    height: 280,
-    marginTop: 10
+    width: '100%'
   },
   pie: {
-    width: '100%',
-    height: 220,
-
     backgroundColor: '#DFF1FD'
   },
   allocationButtons: {
@@ -18,10 +13,12 @@ export default StyleSheet.create({
     justifyContent: 'flex-start'
   },
   button: {
-    height: 40,
-    padding: 12,
-    textAlign: 'left',
-
-    fontSize: 16
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: 'white',
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });

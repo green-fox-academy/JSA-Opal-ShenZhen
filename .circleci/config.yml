@@ -83,6 +83,14 @@ jobs:
           key: frontend-dependencies-{{ checksum "./frontend-opal/package-lock.json" }}
 
       - run:
+          name: create .env file
+          command: |
+            echo 'API_TOKEN='$API_TOKEN >> ./frontend-opal/.env
+            echo 'DATABASE_URL='$DATABASE_URL >> ./frontend-opal/.env
+            echo 'DATABASE_PORT='$DATABASE_PORT >> ./frontend-opal/.env 
+            cat ./frontend-opal/.env
+
+      - run:
           name: frontend test
           command: 'cd frontend-opal && npm test'
 

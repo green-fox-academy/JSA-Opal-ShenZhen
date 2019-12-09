@@ -2,9 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   instrumentsArea: {
-    width: '92%',
-    height: 280,
-    margin: 15
+    width: '100%'
   },
   title: {
     fontSize: 16
@@ -17,8 +15,7 @@ export default StyleSheet.create({
   },
   profileImgContainer: {
     width: 40,
-    height: 40,
-    borderRadius: 40 / 2
+    height: 40
   },
   profileImg: {
     width: '100%',
@@ -33,12 +30,14 @@ export default StyleSheet.create({
   instruments: {
     backgroundColor: '#DFF1FD',
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
+    paddingTop: 10
   },
   instrumentDetail: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: 10
   },
   instrumentDetailText: {
     fontSize: 16
