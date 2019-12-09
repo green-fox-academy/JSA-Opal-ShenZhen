@@ -1,12 +1,11 @@
-import actions from 'actions/showTrade'
+import actions from 'actions/showTrade';
 
-
-function showTradeName(input){
+function showTradeName(input) {
   return dispatch => {
-    dispatch(actions.show(input))
-  }
+    dispatch(actions.show(input));
+  };
 }
 
-export default{
+export default {
   showTradeName
-}
+};

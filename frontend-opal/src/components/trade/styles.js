@@ -36,11 +36,11 @@ export default StyleSheet.create({
     color: 'grey',
     fontSize: 20
   },
-  itemData:{
+  itemData: {
     color: 'black',
     fontSize: 20,
-    height:30,
-    width:200,
+    height: 30,
+    width: 200
   },
   itemText: {
     color: 'grey',

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Tab, Tabs } from 'native-base';
 import { StyleSheet } from 'react-native';
-import BuyContainer from 'components/trade/BuyContainer'
-import SellContainer from 'components/trade/SellContainer'
+import BuyContainer from 'components/trade/BuyContainer';
+import SellContainer from 'components/trade/SellContainer';
 
 const styles = StyleSheet.create({
   tabs: {
@@ -25,30 +25,29 @@ const styles = StyleSheet.create({
 function TabbedComponents() {
   return (
     <Tabs style={styles.tabs} tabBarUnderlineStyle={styles.tabBarUnderlineStyle}>
-        <Tab
-          heading='buy'
-          key='1'
-          tabStyle={styles.tabStyle}
-          textStyle={styles.textStyle}
-          activeTabStyle={styles.activeTabStyle}
-          activeTextStyle={styles.textStyle}
-        >
-          <BuyContainer/>
-        </Tab>
+      <Tab
+        heading="buy"
+        key="1"
+        tabStyle={styles.tabStyle}
+        textStyle={styles.textStyle}
+        activeTabStyle={styles.activeTabStyle}
+        activeTextStyle={styles.textStyle}
+      >
+        <BuyContainer />
+      </Tab>
 
-        <Tab
-          heading='sell'
-          key='sell'
-          tabStyle={styles.tabStyle}
-          textStyle={styles.textStyle}
-          activeTabStyle={styles.activeTabStyle}
-          activeTextStyle={styles.textStyle}
-        >
-          <SellContainer/>
-        </Tab>
+      <Tab
+        heading="sell"
+        key="sell"
+        tabStyle={styles.tabStyle}
+        textStyle={styles.textStyle}
+        activeTabStyle={styles.activeTabStyle}
+        activeTextStyle={styles.textStyle}
+      >
+        <SellContainer />
+      </Tab>
     </Tabs>
   );
 }
-
 
 export default TabbedComponents;

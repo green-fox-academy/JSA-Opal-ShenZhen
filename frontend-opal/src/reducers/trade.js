@@ -1,7 +1,7 @@
 const pairs = {
   CHANGE_NAME: (state, action) => ({
     ...state,
-    name: action.payload.name,
+    name: action.payload.name
   })
 };
 

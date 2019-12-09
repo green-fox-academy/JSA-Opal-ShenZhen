@@ -1,7 +1,7 @@
-const show = (name) => ({
+const show = name => ({
   type: 'CHANGE_NAME',
   payload: {
-    name: name
+    name
   }
 });
 

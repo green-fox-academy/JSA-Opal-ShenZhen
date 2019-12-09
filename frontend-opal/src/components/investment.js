@@ -2,13 +2,13 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+import TradeContainer from 'components/trade/TradeContainer';
 import MainEntry from './MainEntry';
 import Search from './SearchResult/Result';
 import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
 import TabbedComponents from './common/TabbedComponents';
 import headers from './common/headers';
-import TradeContainer from 'components/trade/TradeContainer'
 
 const InvestmentMain = () => {
   return <TabbedComponents components={[Portfolio, Watchlist]} />;
