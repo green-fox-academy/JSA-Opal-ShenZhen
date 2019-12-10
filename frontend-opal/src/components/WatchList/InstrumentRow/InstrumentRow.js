@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { NavigationContext } from 'react-navigation';
-import thunks from 'thunks/showtrade';
+import actions from 'actions/showTrade';
 import transIcon from 'assets/transformation-icon.jpg';
 import infoIcon from 'assets/icons-info.png';
 import presetProps from 'components/WatchList/presetProps';
@@ -9,7 +9,7 @@ import { FormatText, FormatTouchIcon } from 'components/WatchList/commonComponen
 import { connect } from 'react-redux';
 import styles from './styles';
 
-function InstrumentRow({ data, tradeName }) {
+function InstrumentRow({ data, showTradeName }) {
   const navigation = useContext(NavigationContext);
 
   return (
@@ -27,8 +27,8 @@ function InstrumentRow({ data, tradeName }) {
           iconStyle={styles.icon}
           iconSource={transIcon}
           blockStyle={styles.iconContainer}
-          func={() => {
-            tradeName(data.symbol);
+          pressFunc={() => {
+            showTradeName(data.symbol);
             navigation.navigate('TradeContainer');
           }}
         />
@@ -36,7 +36,7 @@ function InstrumentRow({ data, tradeName }) {
           iconStyle={styles.icon}
           iconSource={infoIcon}
           blockStyle={styles.iconContainer}
-          func={() => navigation.navigate('InstrumentDetail')}
+          pressFunc={() => navigation.navigate('InstrumentDetail')}
         />
       </View>
     </View>
@@ -53,7 +53,7 @@ InstrumentRow.propTypes = {
 
 const mapDispatchToProps = dispatch => {
   return {
-    tradeName: name => dispatch(thunks.showTradeName(name))
+    showTradeName: name => dispatch(actions.show(name))
   };
 };
 

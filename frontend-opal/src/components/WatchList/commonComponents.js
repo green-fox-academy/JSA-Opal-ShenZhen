@@ -24,9 +24,9 @@ FormatText.propTypes = {
   /* eslint-disable react/forbid-prop-types */
 };
 
-export function FormatTouchIcon({ iconStyle, iconSource, blockStyle, func = null }) {
+export function FormatTouchIcon({ iconStyle, iconSource, blockStyle, pressFunc = null }) {
   return (
-    <TouchableOpacity style={blockStyle} onPress={func}>
+    <TouchableOpacity style={blockStyle} onPress={pressFunc}>
       <Image style={iconStyle} source={iconSource} />
     </TouchableOpacity>
   );
@@ -36,12 +36,12 @@ FormatTouchIcon.defaultProps = {
   iconStyle: {},
   iconSource: '',
   blockStyle: {},
-  func: null
+  pressFunc: PropTypes.func
 };
 
 FormatTouchIcon.propTypes = {
   iconStyle: PropTypes.object,
   iconSource: PropTypes.number,
   blockStyle: PropTypes.object,
-  func: PropTypes.func
+  pressFunc: PropTypes.func
 };

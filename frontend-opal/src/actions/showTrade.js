@@ -1,5 +1,5 @@
 const show = name => ({
-  type: 'CHANGE_NAME',
+  type: 'CHANGE_CURRENT_TRADE_ITEM',
   payload: {
     name
   }
