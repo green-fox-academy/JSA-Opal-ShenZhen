@@ -117,72 +117,19 @@ exports[`<WatchList /> renders correctly 1`] = `
       </View>
     </View>
   </View>
-  <Modal
-    animationType="none"
-    hardwareAccelerated={false}
-    hideModalContentWhileAnimating={false}
-    onModalHide={[Function]}
-    onModalWillHide={[Function]}
-    onModalWillShow={[Function]}
-    onRequestClose={[Function]}
-    scrollHorizontal={false}
-    scrollOffset={0}
-    scrollOffsetMax={0}
-    scrollTo={null}
-    supportedOrientations={
-      Array [
-        "portrait",
-        "landscape",
-      ]
-    }
-    swipeThreshold={100}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      accessible={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "backgroundColor": "black",
-          "bottom": 0,
-          "height": 1334,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "width": 750,
-        }
-      }
-    />
-    <View
+  <View>
+    <Modal
+      animationType="none"
+      hardwareAccelerated={false}
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
       onModalWillShow={[Function]}
-      pointerEvents="box-none"
+      onRequestClose={[Function]}
       scrollHorizontal={false}
       scrollOffset={0}
       scrollOffsetMax={0}
       scrollTo={null}
-      style={
-        Object {
-          "flex": 1,
-          "justifyContent": "center",
-          "margin": 37.5,
-          "transform": Array [
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
       supportedOrientations={
         Array [
           "portrait",
@@ -190,81 +137,226 @@ exports[`<WatchList /> renders correctly 1`] = `
         ]
       }
       swipeThreshold={100}
+      transparent={true}
+      visible={false}
     >
-      <View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#fff",
-              "borderBottomWidth": 0.5,
-              "borderColor": "#ccc",
-              "borderLeftWidth": 0.5,
-              "borderRadius": 2,
-              "borderRightWidth": 0.5,
-              "borderTopWidth": 0.5,
-              "elevation": 3,
-              "flexWrap": "nowrap",
-              "marginBottom": 5,
-              "marginLeft": 2,
-              "marginRight": 2,
-              "marginTop": 5,
-              "shadowColor": "#000",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
-              },
-              "shadowOpacity": 0.1,
-              "shadowRadius": 1.5,
-            }
+      <View
+        accessible={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "bottom": 0,
+            "height": 1334,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 750,
           }
-        >
+        }
+      />
+      <View
+        hideModalContentWhileAnimating={false}
+        onModalHide={[Function]}
+        onModalWillHide={[Function]}
+        onModalWillShow={[Function]}
+        pointerEvents="box-none"
+        scrollHorizontal={false}
+        scrollOffset={0}
+        scrollOffsetMax={0}
+        scrollTo={null}
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "center",
+            "margin": 37.5,
+            "transform": Array [
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+        supportedOrientations={
+          Array [
+            "portrait",
+            "landscape",
+          ]
+        }
+        swipeThreshold={100}
+      >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#fff",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#ccc",
+                "borderLeftWidth": 0.5,
                 "borderRadius": 2,
-                "flexDirection": "row",
-                "paddingBottom": 10,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-                "paddingTop": 10,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000",
-                  "fontFamily": "System",
-                  "fontSize": 16,
-                }
-              }
-              uppercase={false}
-            >
-              Add a new watchlist
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fff",
-                "borderRadius": 2,
-                "flexDirection": "row",
-                "paddingBottom": 10,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-                "paddingTop": 10,
+                "borderRightWidth": 0.5,
+                "borderTopWidth": 0.5,
+                "elevation": 3,
+                "flexWrap": "nowrap",
+                "marginBottom": 5,
+                "marginLeft": 2,
+                "marginRight": 2,
+                "marginTop": 5,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.1,
+                "shadowRadius": 1.5,
               }
             }
           >
             <View
               style={
-                Array [
-                  Object {},
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fff",
+                  "borderRadius": 2,
+                  "flexDirection": "row",
+                  "paddingBottom": 10,
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <Text
+                style={
                   Object {
-                    "width": "100%",
+                    "color": "#000",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                  }
+                }
+                uppercase={false}
+              >
+                Add a new watchlist
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fff",
+                  "borderRadius": 2,
+                  "flexDirection": "row",
+                  "paddingBottom": 10,
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "width": "100%",
+                    },
+                  ]
+                }
+              >
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderBottomWidth": 1,
+                      "borderColor": "#D9D5DC",
+                      "borderLeftWidth": 0,
+                      "borderRadius": undefined,
+                      "borderRightWidth": 0,
+                      "borderTopWidth": 0,
+                      "borderWidth": undefined,
+                      "flexDirection": null,
+                      "marginLeft": 15,
+                      "minHeight": 65,
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "alignSelf": "flex-start",
+                        "color": "#575757",
+                        "fontSize": 15,
+                        "left": null,
+                        "paddingLeft": null,
+                        "paddingRight": 5,
+                        "paddingTop": 5,
+                        "position": null,
+                        "right": null,
+                        "top": 5,
+                      }
+                    }
+                  >
+                    Name of the watchlist
+                  </Text>
+                  <TextInput
+                    allowFontScaling={true}
+                    editable={true}
+                    placeholderTextColor="#575757"
+                    rejectResponderTermination={true}
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "color": "#000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "height": 50,
+                        "left": -15,
+                        "lineHeight": 18,
+                        "marginLeft": null,
+                        "paddingLeft": null,
+                        "paddingRight": 5,
+                        "top": 1.5,
+                        "width": null,
+                      }
+                    }
+                    underlineColorAndroid="rgba(0,0,0,0)"
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#fff",
+                    "borderRadius": 2,
+                    "flexDirection": "row",
+                    "paddingBottom": 10,
+                    "paddingLeft": 15,
+                    "paddingRight": 15,
+                    "paddingTop": 10,
+                  },
+                  Object {
+                    "display": "flex",
+                    "justifyContent": "flex-end",
                   },
                 ]
               }
@@ -281,146 +373,56 @@ exports[`<WatchList /> renders correctly 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRadius": undefined,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
+                    "backgroundColor": "rgb(77,119,245)",
+                    "borderBottomWidth": null,
+                    "borderColor": "#007aff",
+                    "borderLeftWidth": null,
+                    "borderRadius": 5,
+                    "borderRightWidth": null,
+                    "borderTopWidth": null,
                     "borderWidth": undefined,
-                    "flexDirection": null,
-                    "marginLeft": 15,
-                    "minHeight": 65,
+                    "elevation": 2,
+                    "flexDirection": "row",
+                    "height": 45,
+                    "justifyContent": "space-between",
                     "opacity": 1,
+                    "paddingBottom": 6,
+                    "paddingTop": 6,
+                    "shadowColor": undefined,
+                    "shadowOffset": undefined,
+                    "shadowOpacity": undefined,
+                    "shadowRadius": undefined,
                   }
                 }
               >
                 <Text
                   style={
-                    Object {
-                      "alignSelf": "flex-start",
-                      "color": "#575757",
-                      "fontSize": 15,
-                      "left": null,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "paddingTop": 5,
-                      "position": null,
-                      "right": null,
-                      "top": 5,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#fff",
+                        "fontFamily": "System",
+                        "fontSize": 16.5,
+                        "marginLeft": 0,
+                        "marginRight": 0,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                      },
+                      Object {
+                        "color": "white",
+                      },
+                    ]
                   }
+                  uppercase={false}
                 >
-                  Name of the watchlist
+                  OK
                 </Text>
-                <TextInput
-                  allowFontScaling={true}
-                  editable={true}
-                  placeholderTextColor="#575757"
-                  rejectResponderTermination={true}
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "color": "#000",
-                      "flex": 1,
-                      "fontSize": 17,
-                      "height": 50,
-                      "left": -15,
-                      "lineHeight": 18,
-                      "marginLeft": null,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "top": 1.5,
-                      "width": null,
-                    }
-                  }
-                  underlineColorAndroid="rgba(0,0,0,0)"
-                />
               </View>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#fff",
-                  "borderRadius": 2,
-                  "flexDirection": "row",
-                  "paddingBottom": 10,
-                  "paddingLeft": 15,
-                  "paddingRight": 15,
-                  "paddingTop": 10,
-                },
-                Object {
-                  "display": "flex",
-                  "justifyContent": "flex-end",
-                },
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgb(77,119,245)",
-                  "borderBottomWidth": null,
-                  "borderColor": "#007aff",
-                  "borderLeftWidth": null,
-                  "borderRadius": 5,
-                  "borderRightWidth": null,
-                  "borderTopWidth": null,
-                  "borderWidth": undefined,
-                  "elevation": 2,
-                  "flexDirection": "row",
-                  "height": 45,
-                  "justifyContent": "space-between",
-                  "opacity": 1,
-                  "paddingBottom": 6,
-                  "paddingTop": 6,
-                  "shadowColor": undefined,
-                  "shadowOffset": undefined,
-                  "shadowOpacity": undefined,
-                  "shadowRadius": undefined,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#fff",
-                      "fontFamily": "System",
-                      "fontSize": 16.5,
-                      "marginLeft": 0,
-                      "marginRight": 0,
-                      "paddingLeft": 16,
-                      "paddingRight": 16,
-                    },
-                    Object {
-                      "color": "white",
-                    },
-                  ]
-                }
-                uppercase={false}
-              >
-                OK
-              </Text>
             </View>
           </View>
         </View>
       </View>
-    </View>
-  </Modal>
+    </Modal>
+  </View>
 </RCTSafeAreaView>
 `;

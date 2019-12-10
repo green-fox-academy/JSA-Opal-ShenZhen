@@ -2,25 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  Accordion,
-  Fab,
-  Icon,
-  Text,
-  Card,
-  CardItem,
-  Item,
-  Input,
-  Label,
-  Button,
-  Form
-} from 'native-base';
-import Modal from 'react-native-modal';
+import { Accordion, Fab, Icon } from 'native-base';
 
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
 import actions from 'actions/watchlists';
-import styles from './styles';
+import NewWatchlistModal from './NewWatchlistModal';
 
 const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   useEffect(() => {
@@ -55,32 +42,7 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
           <Icon type="FontAwesome" name="plus" />
         </Fab>
       </View>
-      <Modal
-        isVisible={isModalVisible}
-        onBackdropPress={() => toggleModal(false)}
-        backdropTransitionOutTiming={0}
-      >
-        <View>
-          <Card>
-            <CardItem>
-              <Text>Add a new watchlist</Text>
-            </CardItem>
-            <CardItem>
-              <Form style={{ width: '100%' }}>
-                <Item underline stackedLabel>
-                  <Label>Name of the watchlist</Label>
-                  <Input />
-                </Item>
-              </Form>
-            </CardItem>
-            <CardItem style={styles.buttonContainer}>
-              <Button style={styles.buttonOK} onPress={() => toggleModal(!isModalVisible)}>
-                <Text style={styles.buttonText}>OK</Text>
-              </Button>
-            </CardItem>
-          </Card>
-        </View>
-      </Modal>
+      <NewWatchlistModal isModalVisible={isModalVisible} toggleModal={toggleModal} />
     </SafeAreaView>
   );
 };

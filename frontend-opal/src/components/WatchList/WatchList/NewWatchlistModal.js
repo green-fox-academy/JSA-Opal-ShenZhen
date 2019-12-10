@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
-import { View, SafeAreaView } from 'react-native';
-import { Fab, Icon, Text, Card, CardItem, Item, Input, Label, Button, Form } from 'native-base';
+import React from 'react';
+import { View } from 'react-native';
+import { Text, Card, CardItem, Item, Input, Label, Button, Form } from 'native-base';
+import PropTypes from 'prop-types';
 import Modal from 'react-native-modal';
-
 import styles from './styles';
 
-const NewWatchlistModal = () => {
-  const [isModalVisible, toggleModal] = useState(false);
-
+const NewWatchlistModal = ({ isModalVisible, toggleModal }) => {
   return (
-    <SafeAreaView style={{ width: '100%', height: '100%' }}>
-      <View>
-        <Fab onPress={() => toggleModal(!isModalVisible)} style={{ backgroundColor: '#e17055' }}>
-          <Icon type="FontAwesome" name="plus" />
-        </Fab>
-      </View>
+    <View>
       <Modal
         isVisible={isModalVisible}
         onBackdropPress={() => toggleModal(false)}
@@ -41,8 +34,13 @@ const NewWatchlistModal = () => {
           </Card>
         </View>
       </Modal>
-    </SafeAreaView>
+    </View>
   );
 };
 
 export default NewWatchlistModal;
+
+NewWatchlistModal.propTypes = {
+  isModalVisible: PropTypes.bool.isRequired,
+  toggleModal: PropTypes.func.isRequired
+};
