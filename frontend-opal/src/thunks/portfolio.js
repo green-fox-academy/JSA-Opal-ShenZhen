@@ -9,7 +9,16 @@ async function getInstrument(endpointRes, stockRes) {
       { stockExchange: stockRes[instrument.symbol].quote.primaryExchange },
       { marketValue: stockRes[instrument.symbol].quote.latestPrice },
       { profileImg: stockRes[instrument.symbol].logo.url },
-      { sector: stockRes[instrument.symbol].company.sector }
+      { sector: stockRes[instrument.symbol].company.sector },
+      { news: stockRes[instrument.symbol].news.forEach(news => 
+        Object.assign(
+          {datetime: news.datetime},
+          {headline: news.headline},
+          {image: news.image},
+          {source: news.source},
+          {url: news.url}
+        )
+      )}
     )
   );
 }

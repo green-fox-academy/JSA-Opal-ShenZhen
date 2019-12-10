@@ -3,13 +3,12 @@ import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Card, CardItem, Spinner } from 'native-base';
-import InstrumentsItem from './InstrumentsItem';
-import styles from './styles';
 
 const Instruments = ({ portfolio }) => {
+  console.log(portfolio);
   return (
     <CardItem>
-      <SafeAreaView style={styles.instrumentsArea}>
+      {/* <SafeAreaView style={styles.instrumentsArea}>
         <Card transparent>
           <Text style={styles.title}>Instruments</Text>
         </Card>
@@ -22,7 +21,7 @@ const Instruments = ({ portfolio }) => {
             keyExtractor={item => `${item.id}`}
           />
         )}
-      </SafeAreaView>
+      </SafeAreaView> */}
     </CardItem>
   );
 };
