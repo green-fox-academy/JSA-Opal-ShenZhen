@@ -34,6 +34,7 @@ function InstrumentRow({ data }) {
           func={() =>
             navigation.navigate('InstrumentDetail', {
               detailTitle: data.symbol
+              /* eslint-disable-next-line */
             })}
         />
       </View>

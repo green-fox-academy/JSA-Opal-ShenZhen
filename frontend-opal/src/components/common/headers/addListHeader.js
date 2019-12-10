@@ -3,6 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
 import { NavigationContext } from 'react-navigation';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import tools from 'components/common/tools';
 import actions from 'actions/searchResult';
@@ -27,11 +28,26 @@ function SearchIcon({ clearSearchResults }) {
   const navigation = useContext(NavigationContext);
 
   return (
-    <Icon name="search" style={styles.searchButton} onPress={() => {clearSearchResults();navigation.navigate('Search')}} />
+    <Icon
+      name="search"
+      style={styles.searchButton}
+      onPress={() => {
+        clearSearchResults();
+        navigation.navigate('Search');
+      }}
+    />
   );
 }
 
-const ReduxSearchIcon = connect(null, (dispatch) => ({
+SearchIcon.defaultProps = {
+  clearSearchResults: null
+};
+
+SearchIcon.propTypes = {
+  clearSearchResults: PropTypes.func
+};
+
+const ReduxSearchIcon = connect(null, dispatch => ({
   clearSearchResults: () => dispatch(actions.clearSearchResults())
 }))(SearchIcon);
 

@@ -37,8 +37,7 @@ function getDataFromApi(symbolsList) {
     const watchlists = [];
     symbolsList.forEach(async ({ symbols }, index) => {
       const apiData = await requestApiOnce(
-        // `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
-        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote`
+        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
       );
       watchlists.push({
         index,
@@ -64,7 +63,7 @@ function changeUnit(number) {
   return `${(stringNumber / units[index].base).toFixed(1)}${units[index].unit}`;
 }
 
-function generateCharData(charts) {
+function generateChartData(charts) {
   const points = [];
   for (let i = charts.length - 1; i >= 0; i -= 6) {
     points.unshift({
@@ -90,12 +89,7 @@ function generateInfo(symbolList, list) {
       peRatio,
       eps: '1.2',
       divYield: '2%',
-      chartData: [
-        { x: 0, y: 0 },
-        { x: 1, y: 1 },
-        { x: 5, y: 3 }
-      ],
-      // chartData: generateCharData(list[symbol].chart),
+      chartData: generateChartData(list[symbol].chart),
       foldStatus: false
     };
   });

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Content, Text, Card, CardItem } from 'native-base';
+import { Content, Text, Card, CardItem, Spinner } from 'native-base';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import LineChart from 'components/PortfolioContainer/LineChart';
 import PerformanceFooter from './PerformanceFooter';
 import styles from '../styles';
 
-const PerformanceCard = () => {
+const PerformanceCard = ({ apiData }) => {
   const intervals = [
     { id: 1, val: '1D' },
     { id: 2, val: '2D' },
@@ -24,14 +25,33 @@ const PerformanceCard = () => {
       </Card>
 
       <Card>
-        <CardItem cardBody style={styles.chart}>
-          <LineChart />
-        </CardItem>
+        <View cardBody style={styles.detail}>
+          {apiData.length === 0 ? (
+            <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Spinner color="#e17055" />
+            </View>
+          ) : (
+            <LineChart data={apiData} />
+          )}
+        </View>
 
         <PerformanceFooter intervals={intervals} />
       </Card>
     </Content>
   );
+};
+
+PerformanceCard.defaultProps = {
+  apiData: []
+};
+
+PerformanceCard.propTypes = {
+  apiData: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.string,
+      y: PropTypes.number
+    })
+  )
 };
 
 export default PerformanceCard;

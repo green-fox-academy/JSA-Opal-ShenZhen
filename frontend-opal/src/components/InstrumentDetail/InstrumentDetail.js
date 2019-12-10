@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import headers from 'components/common/headers';
 import thunks from 'thunks/instrumentDetail';
 import actions from 'actions/instrumentDetail';
 import PerformanceCard from './PerformanceCard';
 import DetailCard from './DetailCard/DetailCard';
+import presetProps from './presetProps';
 
-const InstrumentDetail = ({ navigation, instrumentDetail, fetchData, clearData }) => {
+const InstrumentDetail = ({ navigation, detailData, fetchData, clearData, chartData }) => {
   useEffect(() => {
     fetchData(navigation.getParam('detailTitle'));
     return () => {
@@ -19,8 +20,8 @@ const InstrumentDetail = ({ navigation, instrumentDetail, fetchData, clearData }
 
   return (
     <Container>
-        <PerformanceCard />
-        <DetailCard apiData={instrumentDetail} />
+      <PerformanceCard apiData={chartData} />
+      <DetailCard apiData={detailData} />
     </Container>
   );
 };
@@ -28,12 +29,30 @@ const InstrumentDetail = ({ navigation, instrumentDetail, fetchData, clearData }
 headers.addDetailHeader(InstrumentDetail);
 
 const mapStateToProps = ({ instrumentDetail }) => ({
-  instrumentDetail
+  detailData: instrumentDetail.detailData,
+  chartData: instrumentDetail.chartData
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchData: symbol => dispatch(thunks.getInstrumentDetailData(symbol)),
   clearData: () => dispatch(actions.clearDetailData())
 });
+
+InstrumentDetail.defaultProps = {
+  navigation: {},
+  detailData: [],
+  fetchData: null,
+  clearData: null,
+  chartData: []
+};
+
+InstrumentDetail.propTypes = {
+  /* eslint-disable-next-line */
+  navigation: PropTypes.object,
+  detailData: presetProps.detailDataTypes,
+  fetchData: PropTypes.func,
+  clearData: PropTypes.func,
+  chartData: presetProps.chartDataTypes
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(InstrumentDetail);

@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { Content, Card, Text, Spinner } from 'native-base';
 
+import presetProps from 'components/InstrumentDetail/presetProps';
 import StatisticDetail from './StatisticDetail';
 import DetailFooter from './DetailFooter';
 import styles from '../styles';
@@ -33,6 +34,14 @@ const DetailCard = ({ apiData }) => {
       </Card>
     </Content>
   );
+};
+
+DetailCard.defaultProps = {
+  apiData: []
+};
+
+DetailCard.propTypes = {
+  apiData: presetProps.detailDataTypes
 };
 
 export default DetailCard;

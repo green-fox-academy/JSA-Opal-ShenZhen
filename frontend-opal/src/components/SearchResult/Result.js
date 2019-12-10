@@ -7,8 +7,6 @@ import Item from 'components/SearchResult/Item';
 import headers from 'components/common/headers';
 
 function Result({ results, input }) {
-
-
   return (
     <FlatList
       data={results}

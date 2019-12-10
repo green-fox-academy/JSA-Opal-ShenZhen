@@ -27,6 +27,7 @@ function Item({ result, input }) {
             onPress={() =>
               navigation.navigate('InstrumentDetail', {
                 detailTitle: name
+                /* eslint-disable-next-line */
               })}
           >
             <Image source={infoIcon} style={styles.infoIcon} />
