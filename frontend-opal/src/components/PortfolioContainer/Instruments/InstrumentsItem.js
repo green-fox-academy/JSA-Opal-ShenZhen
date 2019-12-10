@@ -34,7 +34,14 @@ function InstrumentsItem({ instrumentItem }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => {
+              navigation.navigate('TradeContainer', {
+                detailTitle: symbol
+              });
+            }}
+          >
             <Text>TRADE</Text>
           </Button>
           <Button

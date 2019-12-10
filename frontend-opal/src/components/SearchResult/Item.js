@@ -22,7 +22,15 @@ function Item({ result, input }) {
           <Text style={styles.name}>{name.substr(inputIndex + inputLength)}</Text>
         </View>
         <View style={styles.iconContainer}>
-          <Image source={tradeIcon} style={styles.tradeIcon} />
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('TradeContainer', {
+                detailTitle: name
+                /* eslint-disable-next-line */
+              })}
+          >
+            <Image source={tradeIcon} style={styles.tradeIcon} />
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() =>
               navigation.navigate('InstrumentDetail', {

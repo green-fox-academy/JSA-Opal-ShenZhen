@@ -27,7 +27,11 @@ TradeContainer.propTypes = {
 TradeContainer.navigationOptions = ({ navigation }) => {
   return {
     headerTitle: () => (
-      <Text style={{ color: 'white' }}>{`Trade(${navigation.getParam(null, outname)})`}</Text>
+      <Text style={{ color: 'white' }}>
+        {navigation.getParam('detailTitle') !== ''
+          ? `Trade(${navigation.getParam('detailTitle')})`
+          : `Trade(${navigation.getParam(null, outname)})`}
+      </Text>
     ),
     headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
   };
