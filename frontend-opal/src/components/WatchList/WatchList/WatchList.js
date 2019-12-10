@@ -68,7 +68,7 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
             <CardItem>
               <Form style={{ width: '100%' }}>
                 <Item underline stackedLabel>
-                  <Label>watchlist</Label>
+                  <Label>Name of the watchlist</Label>
                   <Input />
                 </Item>
               </Form>

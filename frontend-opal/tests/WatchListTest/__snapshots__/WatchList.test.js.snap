@@ -312,7 +312,7 @@ exports[`<WatchList /> renders correctly 1`] = `
                     }
                   }
                 >
-                  watchlist
+                  Name of the watchlist
                 </Text>
                 <TextInput
                   allowFontScaling={true}
