@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
-import ReactPropTypes from 'prop-types';
-import { NavigationProp } from 'react-navigation';
+import PropTypes from 'prop-types';
 
 import headers from 'components/common/headers';
 import thunks from 'thunks/instrumentDetail';
@@ -48,10 +47,13 @@ InstrumentDetail.defaultProps = {
 };
 
 InstrumentDetail.propTypes = {
-  navigation: NavigationProp,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+    getParam: PropTypes.func
+  }),
   detailData: presetProps.detailDataTypes,
-  fetchData: ReactPropTypes.func,
-  clearData: ReactPropTypes.func,
+  fetchData: PropTypes.func,
+  clearData: PropTypes.func,
   chartData: presetProps.chartDataTypes
 };
 
