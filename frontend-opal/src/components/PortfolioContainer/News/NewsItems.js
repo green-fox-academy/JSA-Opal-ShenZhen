@@ -1,18 +1,31 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { Card, Button } from 'native-base';
+import { Card, CardItem } from 'native-base';
+import { Linking } from 'expo';
 import styles from './styles';
 
 function NewsItems({ NewsItem }) {
   const { datetime, headline, image, source, url } = NewsItem;
+  let datetimeConvert = new Date(datetime).toDateString();
 
   return (
-    <View>
+    <TouchableOpacity onPress={() => Linking.openURL(url)}>
       <Card>
-        <Text>{datetime}</Text>
+        <CardItem cardBody>
+          <View style={styles.ImgContainer}>
+            <Image style={styles.Img} source={{ uri: image }} />
+          </View>
+          <View style={styles.ImgTextContainer}>
+            <Text style={styles.ImgText}>{datetimeConvert}</Text>
+            <Text style={styles.ImgText}>Source: {source}</Text>
+          </View>
+        </CardItem>
+        <CardItem>
+          <Text>{headline}</Text>
+        </CardItem>
       </Card>
-    </View>
+    </TouchableOpacity>
   );
 }
 
