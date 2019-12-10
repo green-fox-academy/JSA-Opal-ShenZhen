@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
+import { View } from 'react-native';
 
 import headers from 'components/common/headers';
 import thunks from 'thunks/instrumentDetail';
@@ -18,8 +19,8 @@ const InstrumentDetail = ({ navigation, instrumentDetail, fetchData, clearData }
 
   return (
     <Container>
-      <PerformanceCard />
-      <DetailCard apiData={instrumentDetail} />
+        <PerformanceCard />
+        <DetailCard apiData={instrumentDetail} />
     </Container>
   );
 };

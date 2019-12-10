@@ -9,7 +9,7 @@ const InstrumentDetail = () => {
     <View>
       <VictoryChart
         padding={{ top: 10, left: 50, right: 50, bottom: 30 }}
-        height={200}
+        height={180}
         scale={{ x: 'time' }}
       >
         <VictoryLine

@@ -20,7 +20,7 @@ export default StyleSheet.create({
   },
   detail: {
     ...doFlexDisplay('row', 'space-evenly'),
-    height: 200,
+    height: 180,
 
     backgroundColor: '#DFF1FD'
   },
@@ -40,12 +40,14 @@ export default StyleSheet.create({
     fontSize: 15
   },
   chartFooter: {
-    ...doFlexDisplay('row', 'space-around')
+    ...doFlexDisplay('row', 'space-around'),
+    height: 45
   },
   footerText: {
     color: 'black'
   },
   detailFooter: {
-    ...doFlexDisplay('row', 'space-around')
+    ...doFlexDisplay('row', 'flex-end'),
+    height: 45
   }
 });

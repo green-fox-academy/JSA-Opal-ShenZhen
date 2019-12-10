@@ -1,5 +1,6 @@
 import React from 'react';
 import { Content, Text, Card, CardItem } from 'native-base';
+import { View } from 'react-native';
 
 import LineChart from 'components/PortfolioContainer/LineChart';
 import PerformanceFooter from './PerformanceFooter';
