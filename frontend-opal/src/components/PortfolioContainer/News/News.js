@@ -3,25 +3,28 @@ import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Card, CardItem, Spinner } from 'native-base';
+import GetLatestNews from './GetLatestNews';
+import NewsItems from './NewsItems';
+import styles from './styles';
 
-const Instruments = ({ portfolio }) => {
-  console.log(portfolio);
+const News = ({ portfolio }) => {
+  const displayedNews = GetLatestNews(portfolio);
   return (
     <CardItem>
-      {/* <SafeAreaView style={styles.instrumentsArea}>
+      <SafeAreaView style={styles.newsArea}>
         <Card transparent>
-          <Text style={styles.title}>Instruments</Text>
+          <Text style={styles.title}>News</Text>
         </Card>
         {!portfolio[0] ? (
           <Spinner color="#e17055" />
         ) : (
           <FlatList
-            data={portfolio}
-            renderItem={({ item }) => <InstrumentsItem instrumentItem={item} />}
-            keyExtractor={item => `${item.id}`}
+            data={displayedNews}
+            renderItem={({ item }) => <NewsItems NewsItem={item} />}
+            keyExtractor={item => `${item.headline}`}
           />
         )}
-      </SafeAreaView> */}
+      </SafeAreaView>
     </CardItem>
   );
 };
@@ -30,13 +33,13 @@ const mapStateToProps = state => ({
   portfolio: state.portfolio
 });
 
-export default connect(mapStateToProps, null)(Instruments);
+export default connect(mapStateToProps, null)(News);
 
-Instruments.defaultProps = {
+News.defaultProps = {
   portfolio: []
 };
 
-Instruments.propTypes = {
+News.propTypes = {
   portfolio: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
