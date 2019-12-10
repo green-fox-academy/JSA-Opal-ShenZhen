@@ -17,7 +17,16 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => {
         <Card>
           <View style={styles.pie}>
             {!pieData[0] ? (
-              <Spinner color="#e17055" />
+              <View
+                style={{
+                  height: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <Spinner color="#e17055" />
+              </View>
             ) : (
               <PieChart data={pieData} color={pieColor} legendData={legendData} />
             )}
