@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView, ScrollView } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import { Fab, Icon, Text, Card, CardItem, Item, Input, Label, Button, Form } from 'native-base';
 import Modal from 'react-native-modal';
 
