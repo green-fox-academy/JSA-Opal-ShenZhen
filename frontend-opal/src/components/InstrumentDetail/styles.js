@@ -10,7 +10,9 @@ function doFlexDisplay(direction, justify) {
 
 export default StyleSheet.create({
   firstCard: {},
-  secondCard: {},
+  secondCard: {
+    marginTop: -30
+  },
   title: {
     color: 'grey',
     fontSize: 24

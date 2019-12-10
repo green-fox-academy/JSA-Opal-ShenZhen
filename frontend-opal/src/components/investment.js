@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import MainEntry from './MainEntry';
-import Search from '../container/SearchResult/ResultList';
+import Search from 'container/SearchResult/ResultList';
 import Portfolio from './PortfolioContainer';
 import Watchlist from './WatchList';
 import TabbedComponents from './common/TabbedComponents';
