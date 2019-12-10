@@ -2,6 +2,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+import TradeContainer from 'components/trade/TradeContainer';
 import MainEntry from './MainEntry';
 import Search from '../container/SearchResult/ResultList';
 import Portfolio from './PortfolioContainer';
@@ -19,8 +20,9 @@ const Investment = createStackNavigator(
   {
     MainEntry,
     InvestmentMain,
-    InstrumentDetail,
-    Search
+    Search,
+    TradeContainer,
+    InstrumentDetail
   },
   {
     initialRouteName: 'MainEntry',
