@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Text, View, Icon } from 'native-base';
+import { Content, Text, Icon } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -16,6 +16,10 @@ const TradeContainer = ({ name }) => {
   );
 };
 
+TradeContainer.defaultProps = {
+  name: ''
+};
+
 TradeContainer.propTypes = {
   name: PropTypes.string
 };
@@ -23,7 +27,11 @@ TradeContainer.propTypes = {
 TradeContainer.navigationOptions = ({ navigation }) => {
   return {
     headerTitle: () => (
-      <Text style={{ color: 'white' }}>{`Trade(${navigation.getParam(null, outname)})`}</Text>
+      <Text style={{ color: 'white' }}>
+        {navigation.getParam('detailTitle') !== ''
+          ? `Trade(${navigation.getParam('detailTitle')})`
+          : `Trade(${navigation.getParam(null, outname)})`}
+      </Text>
     ),
     headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
   };

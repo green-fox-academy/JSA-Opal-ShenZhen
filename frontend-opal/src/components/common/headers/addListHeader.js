@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
 import { NavigationContext } from 'react-navigation';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import tools from 'components/common/tools';
+import actions from 'actions/searchResult';
 
 const styles = StyleSheet.create({
   listIcon: {
@@ -21,13 +24,32 @@ const styles = StyleSheet.create({
   }
 });
 
-function SearchIcon() {
+function SearchIcon({ clearSearchResults }) {
   const navigation = useContext(NavigationContext);
 
   return (
-    <Icon name="search" style={styles.searchButton} onPress={() => navigation.navigate('Search')} />
+    <Icon
+      name="search"
+      style={styles.searchButton}
+      onPress={() => {
+        clearSearchResults();
+        navigation.navigate('Search');
+      }}
+    />
   );
 }
+
+SearchIcon.defaultProps = {
+  clearSearchResults: null
+};
+
+SearchIcon.propTypes = {
+  clearSearchResults: PropTypes.func
+};
+
+const ReduxSearchIcon = connect(null, dispatch => ({
+  clearSearchResults: () => dispatch(actions.clearSearchResults())
+}))(SearchIcon);
 
 function ListIcon() {
   const navigation = useContext(NavigationContext);
@@ -42,7 +64,7 @@ const addListHeader = (component, title = 'Investments') => {
   component.navigationOptions = {
     headerTitle: () => <Text style={styles.title}>{title}</Text>,
     headerLeft: () => <ListIcon />,
-    headerRight: () => <SearchIcon />
+    headerRight: () => <ReduxSearchIcon />
   };
 };
 

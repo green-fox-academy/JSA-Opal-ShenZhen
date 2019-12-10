@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import DetailCard from 'components/PortfolioContainer/InstrumentDetail/DetailCard';
+import DetailCard from 'components/InstrumentDetail/DetailCard';
 
 describe('DetailCard component', () => {
   it('renders correctly', () => {

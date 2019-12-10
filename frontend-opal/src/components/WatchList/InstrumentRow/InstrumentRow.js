@@ -7,6 +7,7 @@ import infoIcon from 'assets/icons-info.png';
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText, FormatTouchIcon } from 'components/WatchList/commonComponents';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './styles';
 
 function InstrumentRow({ data, showTradeName }) {
@@ -29,14 +30,20 @@ function InstrumentRow({ data, showTradeName }) {
           blockStyle={styles.iconContainer}
           handlePress={() => {
             showTradeName(data.symbol);
-            navigation.navigate('TradeContainer');
+            navigation.navigate('TradeContainer', {
+              detailTitle: data.symbol
+            });
           }}
         />
         <FormatTouchIcon
           iconStyle={styles.icon}
           iconSource={infoIcon}
           blockStyle={styles.iconContainer}
-          handlePress={() => navigation.navigate('InstrumentDetail')}
+          handlePress={() =>
+            navigation.navigate('InstrumentDetail', {
+              detailTitle: data.symbol
+              /* eslint-disable-next-line */
+          })}
         />
       </View>
     </View>
@@ -44,11 +51,13 @@ function InstrumentRow({ data, showTradeName }) {
 }
 
 InstrumentRow.defaultProps = {
-  data: presetProps.defaultQuote
+  data: presetProps.defaultQuote,
+  showTradeName: null
 };
 
 InstrumentRow.propTypes = {
-  data: presetProps.quoteTypes
+  data: presetProps.quoteTypes,
+  showTradeName: PropTypes.func
 };
 
 const mapDispatchToProps = dispatch => {

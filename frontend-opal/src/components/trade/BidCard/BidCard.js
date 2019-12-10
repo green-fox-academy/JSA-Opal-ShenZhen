@@ -25,6 +25,10 @@ const BidCard = ({ title }) => {
   );
 };
 
+BidCard.defaultProps = {
+  title: ''
+};
+
 BidCard.propTypes = {
   title: PropTypes.string
 };

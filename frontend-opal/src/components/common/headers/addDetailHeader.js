@@ -24,12 +24,14 @@ function AddWatchList() {
   return <Icon name="md-add" style={styles.addButton} />;
 }
 
-const addDetailHeader = (component, title) => {
+const addDetailHeader = component => {
   /* eslint-disable-next-line */
-  component.navigationOptions = {
-    headerTitle: () => <Text style={styles.title}>{title}</Text>,
-    headerRight: () => <AddWatchList />,
-    headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
+  component.navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: () => <Text style={styles.title}>{navigation.getParam('detailTitle')}</Text>,
+      headerRight: () => <AddWatchList />,
+      headerBackImage: () => <Icon name="md-arrow-back" style={{ color: 'white' }} />
+    };
   };
 };
 

@@ -1,3 +1,5 @@
+import { DATABASE_URL, DATABASE_PORT } from 'react-native-dotenv';
+
 import actions from 'actions/portfolio';
 import stockAPI from './stock_API';
 
@@ -20,7 +22,7 @@ const fetchPortfolio = () => {
       type: 'FETCH_PORTFOLIO_ENDPOINT'
     });
 
-    const response = await fetch('http://10.22.19.55:3001/portfolio', {
+    const response = await fetch(`http://${DATABASE_URL}:${DATABASE_PORT}/portfolio`, {
       headers: {
         'Content-type': 'application/json',
         Authorization: 'Bearer token'

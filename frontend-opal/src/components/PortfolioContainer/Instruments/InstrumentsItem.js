@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'native-base';
+import { NavigationContext } from 'react-navigation';
 import styles from './styles';
 
 function InstrumentsItem({ instrumentItem }) {
-  const { company, stockExchange, profileImg, amount, marketValue } = instrumentItem;
+  const navigation = useContext(NavigationContext);
+  const { company, stockExchange, profileImg, amount, marketValue, symbol } = instrumentItem;
 
   return (
     <View>
@@ -32,10 +34,24 @@ function InstrumentsItem({ instrumentItem }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => {
+              navigation.navigate('TradeContainer', {
+                detailTitle: symbol
+              });
+            }}
+          >
             <Text>TRADE</Text>
           </Button>
-          <Button style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => {
+              navigation.navigate('InstrumentDetail', {
+                detailTitle: symbol
+              });
+            }}
+          >
             <Text>DETAILS</Text>
           </Button>
         </View>
@@ -50,7 +66,8 @@ InstrumentsItem.propTypes = {
     stockExchange: PropTypes.string,
     profileImg: PropTypes.any,
     amount: PropTypes.number,
-    marketValue: PropTypes.number
+    marketValue: PropTypes.number,
+    symbol: PropTypes.string
     // unrlzedPLPercentage: PropTypes.string,
     // unrlzedPL: PropTypes.number
   }).isRequired
