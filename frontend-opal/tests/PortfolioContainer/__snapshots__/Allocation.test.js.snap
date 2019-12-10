@@ -80,20 +80,32 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#DFF1FD",
+            "height": 200,
           }
         }
       >
-        <ActivityIndicator
-          animating={true}
-          color="#e17055"
-          hidesWhenStopped={true}
-          size="large"
+        <View
           style={
             Object {
-              "height": 80,
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
             }
           }
-        />
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#e17055"
+            hidesWhenStopped={true}
+            size="large"
+            style={
+              Object {
+                "height": 80,
+              }
+            }
+          />
+        </View>
       </View>
       <View
         style={

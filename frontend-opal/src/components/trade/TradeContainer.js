@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Text, View, Icon } from 'native-base';
+import { Content, Text, Icon } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -14,6 +14,10 @@ const TradeContainer = ({ name }) => {
       <TabbedComponents />
     </Content>
   );
+};
+
+TradeContainer.defaultProps = {
+  name: ''
 };
 
 TradeContainer.propTypes = {

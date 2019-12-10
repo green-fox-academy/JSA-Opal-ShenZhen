@@ -5,6 +5,11 @@ const search = results => ({
   }
 });
 
+const clearSearchResults = () => ({
+  type: 'CLEAR_SEARCH_RESULT'
+});
+
 export default {
-  search
+  search,
+  clearSearchResults
 };

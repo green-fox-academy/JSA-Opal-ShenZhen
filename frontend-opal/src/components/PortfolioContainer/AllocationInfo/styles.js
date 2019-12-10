@@ -5,6 +5,7 @@ export default StyleSheet.create({
     width: '100%'
   },
   pie: {
+    height: 200,
     backgroundColor: '#DFF1FD'
   },
   allocationButtons: {
