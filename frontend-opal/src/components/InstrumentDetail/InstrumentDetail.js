@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import ReactPropTypes from 'prop-types';
+import { NavigationProp } from 'react-navigation';
 
 import headers from 'components/common/headers';
 import thunks from 'thunks/instrumentDetail';
@@ -47,11 +48,10 @@ InstrumentDetail.defaultProps = {
 };
 
 InstrumentDetail.propTypes = {
-  /* eslint-disable-next-line */
-  navigation: PropTypes.object,
+  navigation: NavigationProp,
   detailData: presetProps.detailDataTypes,
-  fetchData: PropTypes.func,
-  clearData: PropTypes.func,
+  fetchData: ReactPropTypes.func,
+  clearData: ReactPropTypes.func,
   chartData: presetProps.chartDataTypes
 };
 
