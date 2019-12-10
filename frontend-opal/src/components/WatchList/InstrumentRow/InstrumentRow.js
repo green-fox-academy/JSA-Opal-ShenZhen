@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { NavigationContext } from 'react-navigation';
-import actions from 'actions/showTrade';
+import actions from 'actions/trade';
 import transIcon from 'assets/transformation-icon.jpg';
 import infoIcon from 'assets/icons-info.png';
 import presetProps from 'components/WatchList/presetProps';
@@ -27,7 +27,7 @@ function InstrumentRow({ data, showTradeName }) {
           iconStyle={styles.icon}
           iconSource={transIcon}
           blockStyle={styles.iconContainer}
-          pressFunc={() => {
+          handlePress={() => {
             showTradeName(data.symbol);
             navigation.navigate('TradeContainer');
           }}
@@ -36,7 +36,7 @@ function InstrumentRow({ data, showTradeName }) {
           iconStyle={styles.icon}
           iconSource={infoIcon}
           blockStyle={styles.iconContainer}
-          pressFunc={() => navigation.navigate('InstrumentDetail')}
+          handlePress={() => navigation.navigate('InstrumentDetail')}
         />
       </View>
     </View>
@@ -53,7 +53,7 @@ InstrumentRow.propTypes = {
 
 const mapDispatchToProps = dispatch => {
   return {
-    showTradeName: name => dispatch(actions.show(name))
+    showTradeName: name => dispatch(actions.changeCurrentTradItem(name))
   };
 };
 

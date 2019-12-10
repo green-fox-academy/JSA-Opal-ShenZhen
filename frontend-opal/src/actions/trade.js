@@ -1,4 +1,4 @@
-const show = name => ({
+const changeCurrentTradItem = name => ({
   type: 'CHANGE_CURRENT_TRADE_ITEM',
   payload: {
     name
@@ -6,5 +6,5 @@ const show = name => ({
 });
 
 export default {
-  show
+  changeCurrentTradItem
 };
