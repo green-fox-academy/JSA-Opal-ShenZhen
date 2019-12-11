@@ -12,15 +12,15 @@ async function getInstrument(endpointRes, stockRes) {
       { marketValue: stockRes[instrument.symbol].quote.latestPrice },
       { profileImg: stockRes[instrument.symbol].logo.url },
       { sector: stockRes[instrument.symbol].company.sector },
-      { news: stockRes[instrument.symbol].news.map(news => 
-        Object.assign(
-          {datetime: news.datetime},
-          {headline: news.headline},
-          {image: news.image},
-          {source: news.source},
-          {url: news.url}
-        )
-      )}
+      {
+        news: stockRes[instrument.symbol].news.map(news => ({
+          datetime: news.datetime,
+          headline: news.headline,
+          image: news.image,
+          source: news.source,
+          url: news.url
+        }))
+      }
     )
   );
 }

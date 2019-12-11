@@ -7,7 +7,7 @@ import styles from './styles';
 
 function NewsItems({ NewsItem }) {
   const { datetime, headline, image, source, url } = NewsItem;
-  let datetimeConvert = new Date(datetime).toDateString();
+  const datetimeConvert = new Date(datetime).toDateString();
 
   return (
     <TouchableOpacity onPress={() => Linking.openURL(url)}>
@@ -18,7 +18,10 @@ function NewsItems({ NewsItem }) {
           </View>
           <View style={styles.ImgTextContainer}>
             <Text style={styles.ImgText}>{datetimeConvert}</Text>
-            <Text style={styles.ImgText}>Source: {source}</Text>
+            <Text style={styles.ImgText}>
+              Source:
+              {source}
+            </Text>
           </View>
         </CardItem>
         <CardItem>
@@ -30,3 +33,13 @@ function NewsItems({ NewsItem }) {
 }
 
 export default NewsItems;
+
+NewsItems.propTypes = {
+  NewsItem: PropTypes.shape({
+    datetime: PropTypes.number,
+    headline: PropTypes.string,
+    image: PropTypes.string,
+    source: PropTypes.string,
+    url: PropTypes.string
+  }).isRequired
+};

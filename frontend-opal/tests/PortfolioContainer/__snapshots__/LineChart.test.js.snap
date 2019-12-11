@@ -518,7 +518,7 @@ exports[`LineChart component renders correctly 1`] = `
               }
             >
               <RNSVGTSpan
-                content="Thu Jan 01 1970 08:00:00 GMT+0800 (GMT+08:00)"
+                content="Thu Jan 01 1970 08:00:00 GMT+0800 (China Standard Time)"
                 dx={
                   Array [
                     0,

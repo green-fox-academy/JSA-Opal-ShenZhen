@@ -100,7 +100,7 @@ function generateWatchlists(symbolsList, data) {
     const symbolList = symbols.split(',');
 
     const list = data.filter(dataList => dataList.index === index)[0].apiData;
-    
+
     return {
       index,
       data: generateInfo(symbolList, list)
