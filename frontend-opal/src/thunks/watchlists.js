@@ -98,7 +98,9 @@ function generateInfo(symbolList, list) {
 function generateWatchlists(symbolsList, data) {
   return symbolsList.map(({ symbols }, index) => {
     const symbolList = symbols.split(',');
+
     const list = data.filter(dataList => dataList.index === index)[0].apiData;
+
     return {
       index,
       data: generateInfo(symbolList, list)
