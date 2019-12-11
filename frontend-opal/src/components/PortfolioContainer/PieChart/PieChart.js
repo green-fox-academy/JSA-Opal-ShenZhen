@@ -20,8 +20,8 @@ const PieChart = ({ data, color, legendData }) => (
     <View style={styles.chartArea}>
       <VictoryPie
         data={data}
-        width={180}
-        height={200}
+        width={140}
+        height={160}
         padding={10}
         colorScale={color}
         labelRadius={() => 24 + 10}

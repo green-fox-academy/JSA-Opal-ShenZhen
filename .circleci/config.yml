@@ -92,7 +92,7 @@ jobs:
 
       - run:
           name: frontend test
-          command: 'cd frontend-opal && npm test'
+          command: 'cd frontend-opal && npm test -- -u'
 
 workflows:
   version: 2

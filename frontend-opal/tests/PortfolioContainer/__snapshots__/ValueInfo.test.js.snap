@@ -68,7 +68,7 @@ exports[`<ValueInfo /> renders correctly 1`] = `
           style={
             Object {
               "fontSize": 35,
-              "height": 110,
+              "height": 90,
               "padding": 20,
               "width": "100%",
             }
