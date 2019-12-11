@@ -7,7 +7,40 @@ import styles from './styles';
 
 function InstrumentsItem({ instrumentItem }) {
   const navigation = useContext(NavigationContext);
-  const { company, stockExchange, profileImg, amount, marketValue, symbol } = instrumentItem;
+  const {
+    company,
+    stockExchange,
+    profileImg,
+    amount,
+    marketValue,
+    symbol,
+    originalPrice
+  } = instrumentItem;
+  const change = (marketValue - originalPrice) * amount;
+  const changePercent = ((marketValue - originalPrice) / originalPrice) * 100;
+  const changeColor = marketValue - originalPrice > 0 ? styles.positive : styles.negative;
+  const infoPairs = [
+    {
+      title: 'Positions:',
+      content: amount,
+      style: ''
+    },
+    {
+      title: 'Market Value:',
+      content: marketValue,
+      styles: ''
+    },
+    {
+      title: 'Unrlzd P/L %:',
+      content: changePercent.toFixed(2),
+      style: changeColor
+    },
+    {
+      title: 'Unrlzd P/L:',
+      content: change.toFixed(0),
+      style: changeColor
+    }
+  ];
 
   return (
     <View>
@@ -23,14 +56,12 @@ function InstrumentsItem({ instrumentItem }) {
         </View>
 
         <View style={styles.instruments}>
-          <View style={styles.instrumentDetail}>
-            <Text style={styles.instrumentDetailText}>Positions:</Text>
-            <Text style={styles.instrumentDetailText}>{amount}</Text>
-          </View>
-          <View style={styles.instrumentDetail}>
-            <Text style={styles.instrumentDetailText}>Market Value:</Text>
-            <Text style={styles.instrumentDetailText}>{marketValue}</Text>
-          </View>
+          {infoPairs.map(info => (
+            <View style={styles.instrumentDetail} key={`infoPair ${symbol} ${info.title}`}>
+              <Text style={styles.instrumentDetailText}>{info.title}</Text>
+              <Text style={[styles.instrumentDetailText, info.style]}>{info.content}</Text>
+            </View>
+          ))}
         </View>
 
         <View style={styles.buttonContainer}>
@@ -67,7 +98,8 @@ InstrumentsItem.propTypes = {
     profileImg: PropTypes.any,
     amount: PropTypes.number,
     marketValue: PropTypes.number,
-    symbol: PropTypes.string
+    symbol: PropTypes.string,
+    originalPrice: PropTypes.number
     // unrlzedPLPercentage: PropTypes.string,
     // unrlzedPL: PropTypes.number
   }).isRequired

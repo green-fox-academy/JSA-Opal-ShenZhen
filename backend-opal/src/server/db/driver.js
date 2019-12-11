@@ -38,7 +38,7 @@ function executeQuery(conn, query) {
 
 function getStockByUserId(id) {
   let query = `SELECT ?? FROM Stock ${queryFilter({ user_id: id })};`;
-  const columns = ['id', 'user_id', 'symbol', 'amount'];
+  const columns = ['id', 'user_id', 'symbol', 'amount', 'originalPrice'];
 
   query = mysql.format(query, [columns]);
   console.log(query);
