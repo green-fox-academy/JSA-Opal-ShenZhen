@@ -1,6 +1,7 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { NavigationContext } from 'react-navigation';
 
 import styles from 'components/SearchResult/styles/result';
 import tradeIcon from 'components/SearchResult/icons/trade.png';
@@ -10,6 +11,7 @@ function Item({ result, input }) {
   const name = String(result.name);
   const inputIndex = name.indexOf(input);
   const inputLength = input.length;
+  const navigation = useContext(NavigationContext);
 
   return (
     <View style={styles.itemContainer}>
@@ -20,8 +22,24 @@ function Item({ result, input }) {
           <Text style={styles.name}>{name.substr(inputIndex + inputLength)}</Text>
         </View>
         <View style={styles.iconContainer}>
-          <Image source={tradeIcon} style={styles.tradeIcon} />
-          <Image source={infoIcon} style={styles.infoIcon} />
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('TradeContainer', {
+                detailTitle: name
+                /* eslint-disable-next-line */
+              })}
+          >
+            <Image source={tradeIcon} style={styles.tradeIcon} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('InstrumentDetail', {
+                detailTitle: name
+                /* eslint-disable-next-line */
+              })}
+          >
+            <Image source={infoIcon} style={styles.infoIcon} />
+          </TouchableOpacity>
         </View>
       </View>
       <View>

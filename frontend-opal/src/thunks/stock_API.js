@@ -10,7 +10,14 @@ async function fetchSearchData() {
 }
 
 async function fetchPortfolioData(symbols) {
-  const apiUrl = `${baseUrl}stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&last=5&token=${API_TOKEN}`; 
+  const apiUrl = `${baseUrl}stable/stock/market/batch?symbols=${symbols}&types=quote,news,company,logo&last=5&token=${API_TOKEN}`;
+  const res = await fetch(apiUrl);
+  const data = await res.json();
+  return data;
+}
+
+async function fetchInstrumentDetailData(symbol) {
+  const apiUrl = `${baseUrl}stable/stock/${symbol}/batch?types=quote,chart&token=${API_TOKEN}`;
   const res = await fetch(apiUrl);
   const data = await res.json();
   return data;
@@ -18,7 +25,8 @@ async function fetchPortfolioData(symbols) {
 
 const stockAPI = {
   fetchSearchData,
-  fetchPortfolioData
+  fetchPortfolioData,
+  fetchInstrumentDetailData
 };
 
 export default stockAPI;

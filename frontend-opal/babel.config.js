@@ -34,6 +34,10 @@ module.exports = function(api) {
             {
               rootPathSuffix: './src/thunks',
               rootPathPrefix: 'thunks/'
+            },
+            {
+              rootPathSuffix: './src/container',
+              rootPathPrefix: 'container/'
             }
           ]
         }

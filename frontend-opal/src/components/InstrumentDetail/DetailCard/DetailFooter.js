@@ -5,7 +5,7 @@ import styles from '../styles';
 
 const DetailFooter = () => {
   return (
-    <CardItem style={styles.DetailFooter}>
+    <CardItem style={styles.detailFooter}>
       <Icon name="heart" />
       <Icon name="share" />
       <Icon name="bookmark" />

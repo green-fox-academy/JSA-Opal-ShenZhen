@@ -63,7 +63,7 @@ function changeUnit(number) {
   return `${(stringNumber / units[index].base).toFixed(1)}${units[index].unit}`;
 }
 
-function generateCharData(charts) {
+function generateChartData(charts) {
   const points = [];
   for (let i = charts.length - 1; i >= 0; i -= 6) {
     points.unshift({
@@ -89,7 +89,7 @@ function generateInfo(symbolList, list) {
       peRatio,
       eps: '1.2',
       divYield: '2%',
-      chartData: generateCharData(list[symbol].chart),
+      chartData: generateChartData(list[symbol].chart),
       foldStatus: false
     };
   });

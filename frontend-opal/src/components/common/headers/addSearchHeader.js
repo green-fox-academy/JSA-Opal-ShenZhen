@@ -23,6 +23,7 @@ function SearchInput({ search }) {
         placeholder="Search"
         style={{ color: 'white' }}
         onChange={e => search(e.nativeEvent.text)}
+        autoFocus
       />
     </Item>
   );

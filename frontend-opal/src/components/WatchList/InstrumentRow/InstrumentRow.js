@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { NavigationContext } from 'react-navigation';
-
+import actions from 'actions/trade';
 import transIcon from 'assets/transformation-icon.jpg';
 import infoIcon from 'assets/icons-info.png';
 import presetProps from 'components/WatchList/presetProps';
 import { FormatText, FormatTouchIcon } from 'components/WatchList/commonComponents';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './styles';
 
-function InstrumentRow({ data }) {
+function InstrumentRow({ data, showTradeName }) {
   const navigation = useContext(NavigationContext);
 
   return (
@@ -26,12 +28,22 @@ function InstrumentRow({ data }) {
           iconStyle={styles.icon}
           iconSource={transIcon}
           blockStyle={styles.iconContainer}
+          handlePress={() => {
+            showTradeName(data.symbol);
+            navigation.navigate('TradeContainer', {
+              detailTitle: data.symbol
+            });
+          }}
         />
         <FormatTouchIcon
           iconStyle={styles.icon}
           iconSource={infoIcon}
           blockStyle={styles.iconContainer}
-          func={() => navigation.navigate('InstrumentDetail')}
+          handlePress={() =>
+            navigation.navigate('InstrumentDetail', {
+              detailTitle: data.symbol
+              /* eslint-disable-next-line */
+          })}
         />
       </View>
     </View>
@@ -39,11 +51,19 @@ function InstrumentRow({ data }) {
 }
 
 InstrumentRow.defaultProps = {
-  data: presetProps.defaultQuote
+  data: presetProps.defaultQuote,
+  showTradeName: null
 };
 
 InstrumentRow.propTypes = {
-  data: presetProps.quoteTypes
+  data: presetProps.quoteTypes,
+  showTradeName: PropTypes.func
 };
 
-export default InstrumentRow;
+const mapDispatchToProps = dispatch => {
+  return {
+    showTradeName: name => dispatch(actions.changeCurrentTradItem(name))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(InstrumentRow);

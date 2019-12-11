@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PerformanceCard from 'components/PortfolioContainer/InstrumentDetail/PerformanceCard';
+import PerformanceCard from 'components/InstrumentDetail/PerformanceCard';
 
 describe('PerformanceCard Component', () => {
   it('renders correctly', () => {

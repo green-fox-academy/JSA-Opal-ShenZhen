@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, SafeAreaView, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Accordion } from 'native-base';
+import { Accordion, Fab, Icon } from 'native-base';
 
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
 import actions from 'actions/watchlists';
+import NewWatchlistModal from './NewWatchlistModal';
 
 const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   useEffect(() => {
@@ -18,8 +19,10 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
     title: `Watchlist ${list.index + 1}`
   }));
 
+  const [isModalVisible, toggleModal] = useState(false);
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ width: '100%', height: '100%' }}>
       <ScrollView>
         <View>
           <Accordion
@@ -34,6 +37,12 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
           />
         </View>
       </ScrollView>
+      <View>
+        <Fab onPress={() => toggleModal(!isModalVisible)} style={{ backgroundColor: '#e17055' }}>
+          <Icon type="FontAwesome" name="plus" />
+        </Fab>
+      </View>
+      <NewWatchlistModal isModalVisible={isModalVisible} toggleModal={toggleModal} />
     </SafeAreaView>
   );
 };

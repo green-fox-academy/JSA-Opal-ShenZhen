@@ -11,7 +11,7 @@ const dataSample = [
   { id: 10, name: 'Total Debt', value: '85.57B', group: 2 },
   { id: 11, name: 'Operation Cash F', value: '52.25B', group: 2 },
   { id: 12, name: 'Free Cash f', value: '33.81B', group: 2 },
-  { id: 3, name: 'Revenue', value: '129.81B', group: 2 },
+  { id: 13, name: 'Revenue', value: '129.81B', group: 2 },
   { id: 14, name: 'Rev/Share', value: '19.64', group: 2 },
   { id: 15, name: 'EBITDA', value: '57.42B', group: 2 }
 ];
