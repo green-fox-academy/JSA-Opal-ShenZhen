@@ -100,8 +100,6 @@ InstrumentsItem.propTypes = {
     marketValue: PropTypes.number,
     symbol: PropTypes.string,
     originalPrice: PropTypes.number
-    // unrlzedPLPercentage: PropTypes.string,
-    // unrlzedPL: PropTypes.number
   }).isRequired
 };
 
