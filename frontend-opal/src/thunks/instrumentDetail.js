@@ -68,7 +68,8 @@ function getInstrumentDetailData(symbol) {
     dispatch(
       actions.getInstrumentDetailData({
         detailData: dataSample,
-        chartData: generatePointsForDetailChart(apiData.chart)
+        chartData: generatePointsForDetailChart(apiData.chart),
+        newsData: apiData.news
       })
     );
   };

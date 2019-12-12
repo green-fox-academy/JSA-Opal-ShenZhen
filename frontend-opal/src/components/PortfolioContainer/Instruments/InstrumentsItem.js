@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'native-base';
 import { NavigationContext } from 'react-navigation';
@@ -31,13 +31,13 @@ function InstrumentsItem({ instrumentItem }) {
       styles: ''
     },
     {
-      title: 'Unrlzd P/L %:',
-      content: changePercent.toFixed(2),
+      title: 'Unrlzd P/L:',
+      content: change.toFixed(0),
       style: changeColor
     },
     {
-      title: 'Unrlzd P/L:',
-      content: change.toFixed(0),
+      title: 'Unrlzd P/L %:',
+      content: changePercent.toFixed(2),
       style: changeColor
     }
   ];

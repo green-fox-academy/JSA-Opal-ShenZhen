@@ -224,8 +224,8 @@ exports[`LineChart component renders correctly 1`] = `
                   strokeOpacity={1}
                   strokeWidth={1}
                   vectorEffect={1}
-                  width={650}
-                  x={50}
+                  width={0}
+                  x={70}
                   y={10}
                 />
               </RNSVGClipPath>
@@ -408,7 +408,7 @@ exports[`LineChart component renders correctly 1`] = `
             strokeWidth={1}
             vectorEffect={1}
             x={0}
-            x1={50}
+            x1={70}
             x2={700}
             y={0}
             y1={150}
@@ -508,7 +508,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  50,
+                  70,
                 ]
               }
               y={
@@ -518,7 +518,7 @@ exports[`LineChart component renders correctly 1`] = `
               }
             >
               <RNSVGTSpan
-                content="Thu Jan 01 1970 08:00:00 GMT+0800 (China Standard Time)"
+                content="Thu Jan 01 1970 08:00:00 GMT+0800 (GMT+08:00)"
                 dx={
                   Array [
                     0,
@@ -576,7 +576,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    50,
+                    70,
                   ]
                 }
                 y={Array []}
@@ -708,8 +708,8 @@ exports[`LineChart component renders correctly 1`] = `
             strokeWidth={1}
             vectorEffect={1}
             x={0}
-            x1={50}
-            x2={50}
+            x1={70}
+            x2={70}
             y={0}
             y1={10}
             y2={150}
@@ -808,7 +808,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  39,
+                  59,
                 ]
               }
               y={
@@ -876,7 +876,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    39,
+                    59,
                   ]
                 }
                 y={Array []}
@@ -977,7 +977,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  39,
+                  59,
                 ]
               }
               y={
@@ -1045,7 +1045,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    39,
+                    59,
                   ]
                 }
                 y={Array []}
@@ -1146,7 +1146,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  39,
+                  59,
                 ]
               }
               y={
@@ -1214,7 +1214,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    39,
+                    59,
                   ]
                 }
                 y={Array []}
@@ -1315,7 +1315,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  39,
+                  59,
                 ]
               }
               y={
@@ -1383,7 +1383,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    39,
+                    59,
                   ]
                 }
                 y={Array []}
@@ -1484,7 +1484,7 @@ exports[`LineChart component renders correctly 1`] = `
               vectorEffect={0}
               x={
                 Array [
-                  39,
+                  59,
                 ]
               }
               y={
@@ -1552,7 +1552,7 @@ exports[`LineChart component renders correctly 1`] = `
                 vectorEffect={0}
                 x={
                   Array [
-                    39,
+                    59,
                   ]
                 }
                 y={Array []}

@@ -1,17 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { View, SafeAreaView, ScrollView } from 'react-native';
+import React, { useEffect, useState, useCallback } from 'react';
+import { View, SafeAreaView, ScrollView, Text, RefreshControl } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Accordion, Fab, Icon } from 'native-base';
+import { Accordion, Fab, Icon, Spinner } from 'native-base';
 
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
 import actions from 'actions/watchlists';
+import tools from 'components/common/tools';
 import NewWatchlistModal from './NewWatchlistModal';
+import animations from '../../common/animations';
 
 const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
+  const [refreshing, setRefreshing] = useState(false);
+
   useEffect(() => {
     getLists();
+  }, [getLists]);
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await getLists();
+    setRefreshing(false);
   }, [getLists]);
 
   const dataArray = watchlists.map(list => ({
@@ -22,20 +32,37 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   const [isModalVisible, toggleModal] = useState(false);
 
   return (
-    <SafeAreaView style={{ width: '100%', height: '100%' }}>
-      <ScrollView>
-        <View>
-          <Accordion
-            dataArray={dataArray}
-            renderContent={WatchListItem}
-            headerStyle={{ backgroundColor: 'white', fontWeight: 'bold' }}
-            onAccordionClose={() => {
-              watchlists.forEach(list => {
-                closeInstrumentsInList(list.index);
-              });
-            }}
+    <SafeAreaView>
+      <ScrollView
+        style={{ width: '100%', height: '100%' }}
+        refreshControl={
+          /* eslint-disable-next-line */
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={['rgb(250,110,59)']}
           />
-        </View>
+        }
+      >
+        {watchlists.length === 0 ? (
+          <View style={{ display: 'flex', alignItems: 'center' }}>
+            <Spinner color="rgb(250,110,59)" />
+            <Text style={{ color: 'rgb(250,110,59)', fontSize: tools.getPixel(16) }}>Loading</Text>
+          </View>
+        ) : (
+          <animations.FadeInView>
+            <Accordion
+              dataArray={dataArray}
+              renderContent={WatchListItem}
+              headerStyle={{ backgroundColor: 'white', fontWeight: 'bold' }}
+              onAccordionClose={() => {
+                watchlists.forEach(list => {
+                  closeInstrumentsInList(list.index);
+                });
+              }}
+            />
+          </animations.FadeInView>
+        )}
       </ScrollView>
       <View>
         <Fab onPress={() => toggleModal(!isModalVisible)} style={{ backgroundColor: '#e17055' }}>

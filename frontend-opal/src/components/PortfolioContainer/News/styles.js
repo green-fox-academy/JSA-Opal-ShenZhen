@@ -4,6 +4,9 @@ export default StyleSheet.create({
   newsArea: {
     width: '100%'
   },
+  title: {
+    fontSize: 24
+  },
   ImgContainer: {
     width: '100%',
     height: 200

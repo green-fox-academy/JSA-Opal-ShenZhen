@@ -1,16 +1,25 @@
 import React, { useEffect } from 'react';
-import { Container } from 'native-base';
+import { Container, Card } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { View, SafeAreaView, ScrollView } from 'react-native';
 
 import headers from 'components/common/headers';
 import thunks from 'thunks/instrumentDetail';
 import actions from 'actions/instrumentDetail';
+import NewsCard from 'components/PortfolioContainer/News/News';
 import PerformanceCard from './PerformanceCard';
 import DetailCard from './DetailCard/DetailCard';
 import presetProps from './presetProps';
 
-const InstrumentDetail = ({ navigation, detailData, fetchData, clearData, chartData }) => {
+const InstrumentDetail = ({
+  navigation,
+  detailData,
+  fetchData,
+  clearData,
+  chartData,
+  newsData
+}) => {
   useEffect(() => {
     fetchData(navigation.getParam('detailTitle'));
     return () => {
@@ -19,10 +28,19 @@ const InstrumentDetail = ({ navigation, detailData, fetchData, clearData, chartD
   }, [fetchData]);
 
   return (
-    <Container>
-      <PerformanceCard apiData={chartData} />
-      <DetailCard apiData={detailData} />
-    </Container>
+    <SafeAreaView>
+      <ScrollView>
+        <Card transparent>
+          <PerformanceCard apiData={chartData} />
+        </Card>
+        <Card transparent>
+          <DetailCard apiData={detailData} />
+        </Card>
+        <Card transparent>
+          <NewsCard getLatestNews={newsData} />
+        </Card>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -30,7 +48,8 @@ headers.addDetailHeader(InstrumentDetail);
 
 const mapStateToProps = ({ instrumentDetail }) => ({
   detailData: instrumentDetail.detailData,
-  chartData: instrumentDetail.chartData
+  chartData: instrumentDetail.chartData,
+  newsData: instrumentDetail.newsData
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -43,7 +62,8 @@ InstrumentDetail.defaultProps = {
   detailData: [],
   fetchData: null,
   clearData: null,
-  chartData: []
+  chartData: [],
+  newsData: []
 };
 
 InstrumentDetail.propTypes = {
@@ -54,7 +74,8 @@ InstrumentDetail.propTypes = {
   detailData: presetProps.detailDataTypes,
   fetchData: PropTypes.func,
   clearData: PropTypes.func,
-  chartData: presetProps.chartDataTypes
+  chartData: presetProps.chartDataTypes,
+  newsData: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InstrumentDetail);

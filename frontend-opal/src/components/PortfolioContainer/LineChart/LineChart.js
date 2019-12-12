@@ -7,11 +7,12 @@ const LineChart = ({ data }) => {
   return (
     <View>
       <VictoryChart
-        padding={{ top: 10, left: 50, right: 50, bottom: 30 }}
+        padding={{ top: 10, left: 70, right: 50, bottom: 30 }}
         height={180}
         scale={{ x: 'time' }}
       >
         <VictoryLine
+          animate={{ duration: 2000, onLoad: { duration: 2000 } }}
           style={{
             data: { stroke: 'tomato' }
           }}

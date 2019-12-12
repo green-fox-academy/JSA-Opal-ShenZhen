@@ -12,7 +12,7 @@ const BuyContainer = ({ chartData }) => {
     <Content>
       <KeyboardAvoidingView>
         <PerformanceCard apiData={chartData} />
-        <BidCard title="bid" />
+        <BidCard title="Bid" />
         <View style={{ height: 200 }} />
       </KeyboardAvoidingView>
     </Content>

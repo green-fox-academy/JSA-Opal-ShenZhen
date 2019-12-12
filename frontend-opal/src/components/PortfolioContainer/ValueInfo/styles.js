@@ -5,7 +5,7 @@ export default StyleSheet.create({
     width: '100%'
   },
   title: {
-    fontSize: 16
+    fontSize: 24
   },
   investment: {
     backgroundColor: '#DFF1FD'
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     width: '100%',
     height: 90,
     padding: 20,
-    fontSize: 35
+    fontSize: 28
   },
   amount: {
     width: '100%',

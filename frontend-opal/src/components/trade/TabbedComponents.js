@@ -42,7 +42,7 @@ function TabbedComponents({ fetchData, clearData, chartData }) {
   return (
     <Tabs style={styles.tabs} tabBarUnderlineStyle={styles.tabBarUnderlineStyle}>
       <Tab
-        heading="buy"
+        heading="BUY"
         key="1"
         tabStyle={styles.tabStyle}
         textStyle={styles.textStyle}
@@ -53,7 +53,7 @@ function TabbedComponents({ fetchData, clearData, chartData }) {
       </Tab>
 
       <Tab
-        heading="sell"
+        heading="SELL"
         key="sell"
         tabStyle={styles.tabStyle}
         textStyle={styles.textStyle}

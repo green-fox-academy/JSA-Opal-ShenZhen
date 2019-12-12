@@ -50,7 +50,7 @@ exports[`<Instruments /> renders correctly 1`] = `
       <Text
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 24,
           }
         }
       >
