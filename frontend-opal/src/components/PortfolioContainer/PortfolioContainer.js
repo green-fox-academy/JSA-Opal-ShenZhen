@@ -26,7 +26,16 @@ const PortfolioContainer = ({ fetchPortfolio }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={['rgb(250,110,59)']}/>}>
+      <ScrollView
+        refreshControl={
+          /* eslint-disable-next-line */
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={['rgb(250,110,59)']}
+          />
+        }
+      >
         <View style={styles.portfolioArea}>
           <Card transparent>
             <ValueInfo />

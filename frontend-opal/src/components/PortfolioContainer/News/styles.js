@@ -5,7 +5,7 @@ export default StyleSheet.create({
     width: '100%'
   },
   title: {
-    fontSize: 24,
+    fontSize: 24
   },
   ImgContainer: {
     width: '100%',

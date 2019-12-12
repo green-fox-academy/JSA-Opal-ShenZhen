@@ -50,7 +50,7 @@ exports[`DetailCard component renders correctly 1`] = `
         "flex": 1,
       },
       Object {
-        "marginTop": -30,
+        "marginTop": -70,
       },
     ]
   }
@@ -133,7 +133,7 @@ exports[`DetailCard component renders correctly 1`] = `
             "backgroundColor": "#DFF1FD",
             "display": "flex",
             "flexDirection": "row",
-            "height": 180,
+            "height": 200,
             "justifyContent": "space-evenly",
           }
         }

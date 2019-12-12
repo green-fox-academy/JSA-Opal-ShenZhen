@@ -6,7 +6,6 @@ import presetProps from 'components/WatchList/presetProps';
 const databaseUrl = `http://${DATABASE_URL}:${DATABASE_PORT}`;
 const apiUrl = 'https://cloud.iexapis.com/stable';
 
-
 async function getDataFromDB(url) {
   const dbResponse = await fetch(url, {
     method: 'get',
@@ -38,8 +37,8 @@ function getDataFromApi(symbolsList) {
     const watchlists = [];
     symbolsList.forEach(async ({ symbols }, index) => {
       const apiData = await requestApiOnce(
-        
-        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
+        // `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
+        `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote`
       );
       watchlists.push({
         index,
@@ -84,14 +83,19 @@ function generateInfo(symbolList, list) {
     return {
       symbol,
       latestPrice,
-      changePercent: (changePercent * 100).toFixed(2),
+      changePercent,
       marketCap: changeUnit(marketCap),
       week52High,
       week52Low,
       peRatio,
       eps: '1.2',
       divYield: '2%',
-      chartData: generateChartData(list[symbol].chart),
+      chartData: [
+        { x: 1, y: 1 },
+        { x: 2, y: 2 },
+        { x: 5, y: 3 }
+      ],
+      // chartData: generateCharData(list[symbol].chart),
       foldStatus: false
     };
   });

@@ -8,7 +8,21 @@ exports[`<WatchListItem /> renders correctly 1`] = `
     }
   }
 >
-  <View>
+  <View
+    style={
+      Object {
+        "opacity": 0,
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": -40,
+          },
+        ],
+      }
+    }
+  >
     <View
       style={
         Object {
@@ -95,7 +109,7 @@ exports[`<WatchListItem /> renders correctly 1`] = `
                   }
                 }
               >
-                %
+                0.00%
               </Text>
             </View>
             <View

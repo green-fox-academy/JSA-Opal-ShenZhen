@@ -14,12 +14,10 @@ async function fetchPortfolioData(symbols) {
   const res = await fetch(apiUrl);
   const data = await res.json();
   return data;
-  
 }
 
 async function fetchInstrumentDetailData(symbol) {
-
-  const apiUrl = `${baseUrl}stable/stock/${symbol}/batch?types=quote,chart&token=${API_TOKEN}`;
+  const apiUrl = `${baseUrl}stable/stock/${symbol}/batch?types=quote,chart,news&range=1m&last=5&token=${API_TOKEN}`;
   const res = await fetch(apiUrl);
   const data = await res.json();
   return data;

@@ -46,7 +46,13 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
       }
       transparent={true}
     >
-      <Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
         Allocation
       </Text>
     </View>
@@ -80,7 +86,7 @@ exports[`<AllocationInfo /> renders correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#DFF1FD",
-            "height": 200,
+            "height": 160,
           }
         }
       >

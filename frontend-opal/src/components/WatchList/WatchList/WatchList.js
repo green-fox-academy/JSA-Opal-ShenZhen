@@ -7,8 +7,9 @@ import { Accordion, Fab, Icon, Spinner } from 'native-base';
 import WatchListItem from 'components/WatchList/WatchListItem/WatchListItem';
 import thunks from 'thunks/watchlists';
 import actions from 'actions/watchlists';
-import NewWatchlistModal from './NewWatchlistModal';
 import tools from 'components/common/tools';
+import NewWatchlistModal from './NewWatchlistModal';
+import animations from '../../common/animations';
 
 const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -31,7 +32,7 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
   const [isModalVisible, toggleModal] = useState(false);
 
   return (
-    <SafeAreaView style={{ width: '100%', height: '100%' }}>
+    <SafeAreaView>
       <ScrollView
         style={{ width: '100%', height: '100%' }}
         refreshControl={
@@ -39,17 +40,17 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={['#e17055']}
+            colors={['rgb(250,110,59)']}
           />
         }
       >
         {watchlists.length === 0 ? (
           <View style={{ display: 'flex', alignItems: 'center' }}>
-            <Spinner color="#e17055" />
-            <Text style={{ color: '#e17055', fontSize: tools.getPixel(16) }}>Loading</Text>
+            <Spinner color="rgb(250,110,59)" />
+            <Text style={{ color: 'rgb(250,110,59)', fontSize: tools.getPixel(16) }}>Loading</Text>
           </View>
         ) : (
-          <View>
+          <animations.FadeInView>
             <Accordion
               dataArray={dataArray}
               renderContent={WatchListItem}
@@ -60,7 +61,7 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
                 });
               }}
             />
-          </View>
+          </animations.FadeInView>
         )}
       </ScrollView>
       <View>

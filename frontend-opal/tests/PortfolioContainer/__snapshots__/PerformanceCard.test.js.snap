@@ -132,7 +132,7 @@ exports[`PerformanceCard Component renders correctly 1`] = `
             "backgroundColor": "#DFF1FD",
             "display": "flex",
             "flexDirection": "row",
-            "height": 180,
+            "height": 200,
             "justifyContent": "space-evenly",
           }
         }

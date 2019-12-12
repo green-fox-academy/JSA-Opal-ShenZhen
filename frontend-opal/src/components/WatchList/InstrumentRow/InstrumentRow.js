@@ -19,7 +19,7 @@ function InstrumentRow({ data, showTradeName }) {
       <View style={styles.rightContainer}>
         <FormatText content={data.latestPrice} blockStyle={styles.alignRight} />
         <FormatText
-          content={`${data.changePercent}%`}
+          content={`${(Math.abs(data.changePercent) * 100).toFixed(2)}%`}
           blockStyle={styles.alignRight}
           textStyle={Number(data.changePercent) >= 0 ? styles.greenfont : styles.redfont}
         />

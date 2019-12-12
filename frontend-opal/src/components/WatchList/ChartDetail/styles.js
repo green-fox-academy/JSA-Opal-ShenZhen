@@ -12,12 +12,11 @@ export default StyleSheet.create({
   },
   chartGraph: {
     marginLeft: tools.getPixel(-20),
-    width: '64%'
+    width: '60%'
   },
   chartinfo: {
-    marginTop: '15%',
-    width: '36%',
-    marginRight: tools.getPixel(10)
+    marginTop: '11%',
+    width: '40%'
   },
   lineContainer: {
     display: 'flex',

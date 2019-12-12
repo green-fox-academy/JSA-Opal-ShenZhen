@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import * as Font from 'expo-font';
@@ -11,7 +11,6 @@ import RobotoFont from 'native-base/Fonts/Roboto.ttf';
 import RobotoMediumFont from 'native-base/Fonts/Roboto_medium.ttf';
 
 import reducers from 'reducers/root';
-import WatchListContainer from 'components/WatchList/';
 import Investment from './src/components/investment';
 
 export default function App() {

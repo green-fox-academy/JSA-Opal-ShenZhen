@@ -87,7 +87,7 @@ exports[`<SingleInstrument /> renders correctly 1`] = `
               }
             }
           >
-            %
+            0.00%
           </Text>
         </View>
         <View

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const defaultQuote = {
   symbol: '',
   latestPrice: 0,
-  changePercent: '',
+  changePercent: 0,
   marketCap: '',
   week52High: 0,
   week52Low: 0,
@@ -16,7 +16,7 @@ const defaultQuote = {
 const quoteTypes = PropTypes.shape({
   symbol: PropTypes.string,
   latestPrice: PropTypes.number,
-  changePercent: PropTypes.string,
+  changePercent: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   marketCap: PropTypes.string,
   week52High: PropTypes.number,
   week52Low: PropTypes.number,

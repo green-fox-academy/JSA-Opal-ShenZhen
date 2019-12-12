@@ -5,7 +5,6 @@ import { View, Text } from 'react-native';
 import { Card, CardItem, Button, Spinner } from 'native-base';
 import getTotalInvestment from 'components/common/getTotalInvestment';
 import styles from './styles';
-import presetProps from '../../WatchList/presetProps';
 
 const ValueInfo = ({ portfolio }) => {
   const totalInvestment = getTotalInvestment(portfolio)
@@ -27,11 +26,11 @@ const ValueInfo = ({ portfolio }) => {
             )}
           </View>
 
-          {/* <View style={styles.valueButton}>
+          <View style={styles.valueButton}>
             <Button style={styles.button}>
               <Text>INVESTMENT ACCOUNT</Text>
             </Button>
-          </View> */}
+          </View>
         </Card>
       </View>
     </CardItem>
