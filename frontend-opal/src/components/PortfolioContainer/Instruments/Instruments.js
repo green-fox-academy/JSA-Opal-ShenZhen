@@ -48,7 +48,8 @@ Instruments.propTypes = {
       stockExchange: PropTypes.string,
       marketValue: PropTypes.number,
       profileImg: PropTypes.any,
-      sector: PropTypes.string
+      sector: PropTypes.string,
+      news: PropTypes.any
     })
   )
 };

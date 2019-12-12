@@ -9,6 +9,7 @@ import styles from './styles';
 import ValueInfo from './ValueInfo';
 import AllocationInfo from './AllocationInfo';
 import Instruments from './Instruments';
+import News from './News';
 
 const PortfolioContainer = ({ fetchPortfolio }) => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const PortfolioContainer = ({ fetchPortfolio }) => {
             <ValueInfo />
             <AllocationInfo />
             <Instruments />
+            <News />
           </Card>
         </View>
       </ScrollView>

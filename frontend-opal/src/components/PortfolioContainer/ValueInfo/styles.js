@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   name: {
     width: '100%',
-    height: 110,
+    height: 90,
     padding: 20,
     fontSize: 35
   },

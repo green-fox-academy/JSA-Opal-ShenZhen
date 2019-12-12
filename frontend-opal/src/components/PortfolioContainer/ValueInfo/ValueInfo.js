@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import { Card, CardItem, Button, Spinner } from 'native-base';
 import getTotalInvestment from 'components/common/getTotalInvestment';
 import styles from './styles';
+import presetProps from '../../WatchList/presetProps';
 
 const ValueInfo = ({ portfolio }) => {
   const totalInvestment = getTotalInvestment(portfolio)
@@ -58,7 +59,8 @@ ValueInfo.propTypes = {
       stockExchange: PropTypes.string,
       marketValue: PropTypes.number,
       profileImg: PropTypes.any,
-      sector: PropTypes.string
+      sector: PropTypes.string,
+      news: PropTypes.any
     })
   )
 };

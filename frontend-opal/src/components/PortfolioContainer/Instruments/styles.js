@@ -56,5 +56,11 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     paddingLeft: 10,
     paddingRight: 10
+  },
+  positive: {
+    color: 'green'
+  },
+  negative: {
+    color: 'red'
   }
 });
