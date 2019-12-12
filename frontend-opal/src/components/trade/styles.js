@@ -12,7 +12,7 @@ export default StyleSheet.create({
   firstCard: {},
   secondCard: {},
   title: {
-    color: 'grey',
+    color: 'black',
     fontSize: 24
   },
   chart: {

@@ -7,7 +7,7 @@ const LineChart = ({ data }) => {
   return (
     <View>
       <VictoryChart
-        padding={{ top: 10, left: 60, right: 50, bottom: 30 }}
+        padding={{ top: 10, left: 70, right: 50, bottom: 30 }}
         height={180}
         scale={{ x: 'time' }}
       >

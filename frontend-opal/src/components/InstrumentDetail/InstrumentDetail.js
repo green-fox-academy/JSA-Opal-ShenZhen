@@ -30,11 +30,13 @@ const InstrumentDetail = ({
   return (
     <SafeAreaView>
       <ScrollView>
-        <Container>
+        <Card transparent>
           <PerformanceCard apiData={chartData} />
+        </Card>
+        <Card transparent>
           <DetailCard apiData={detailData} />
-        </Container>
-        <Card transparent style={{ marginTop: -55 }}>
+        </Card>
+        <Card transparent>
           <NewsCard getLatestNews={newsData} />
         </Card>
       </ScrollView>

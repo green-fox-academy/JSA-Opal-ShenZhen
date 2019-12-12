@@ -11,7 +11,7 @@ const SellContainer = ({ chartData }) => {
     <Content>
       <KeyboardAvoidingView>
         <PerformanceCard apiData={chartData} />
-        <BidCard title="sell" />
+        <BidCard title="Sell" />
         <View style={{ height: 200 }} />
       </KeyboardAvoidingView>
     </Content>

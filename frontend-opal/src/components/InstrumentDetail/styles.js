@@ -14,7 +14,7 @@ export default StyleSheet.create({
     marginTop: -70
   },
   title: {
-    color: 'grey',
+    color: 'black',
     fontSize: 24
   },
   chart: {
