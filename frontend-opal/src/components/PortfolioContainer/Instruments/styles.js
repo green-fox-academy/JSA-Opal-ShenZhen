@@ -5,7 +5,7 @@ export default StyleSheet.create({
     width: '100%'
   },
   title: {
-    fontSize: 16
+    fontSize: 24
   },
   header: {
     display: 'flex',
@@ -51,11 +51,15 @@ export default StyleSheet.create({
     padding: 10
   },
   button: {
+    width: 100,
     marginLeft: 10,
     marginRight: 10,
-    backgroundColor: 'white',
+    backgroundColor: 'rgb(247,247,247)',
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   positive: {
     color: 'green'

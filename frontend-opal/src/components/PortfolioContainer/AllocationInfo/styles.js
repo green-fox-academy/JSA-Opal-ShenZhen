@@ -4,8 +4,11 @@ export default StyleSheet.create({
   allocationArea: {
     width: '100%'
   },
+  title: {
+    fontSize: 24,
+  },
   pie: {
-    height: 200,
+    height: 160,
     backgroundColor: '#DFF1FD'
   },
   allocationButtons: {

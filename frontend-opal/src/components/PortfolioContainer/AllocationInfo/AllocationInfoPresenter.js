@@ -32,14 +32,14 @@ const AllocationInfo = ({ pieData, pieColor, legendData }) => {
             )}
           </View>
 
-          <View style={styles.allocationButtons}>
+          {/* <View style={styles.allocationButtons}>
             <Button style={styles.button}>
               <Text>SECTOR</Text>
             </Button>
             <Button style={styles.button}>
               <Text>GEOGRAPHY</Text>
             </Button>
-          </View>
+          </View> */}
         </Card>
       </View>
     </CardItem>

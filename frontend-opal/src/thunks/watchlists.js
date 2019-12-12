@@ -6,6 +6,7 @@ import presetProps from 'components/WatchList/presetProps';
 const databaseUrl = `http://${DATABASE_URL}:${DATABASE_PORT}`;
 const apiUrl = 'https://cloud.iexapis.com/stable';
 
+
 async function getDataFromDB(url) {
   const dbResponse = await fetch(url, {
     method: 'get',
@@ -37,6 +38,7 @@ function getDataFromApi(symbolsList) {
     const watchlists = [];
     symbolsList.forEach(async ({ symbols }, index) => {
       const apiData = await requestApiOnce(
+        
         `${apiUrl}/stock/market/batch/?token=${API_TOKEN}&symbols=${symbols}&types=quote,chart&range=3m`
       );
       watchlists.push({
@@ -98,9 +100,7 @@ function generateInfo(symbolList, list) {
 function generateWatchlists(symbolsList, data) {
   return symbolsList.map(({ symbols }, index) => {
     const symbolList = symbols.split(',');
-
     const list = data.filter(dataList => dataList.index === index)[0].apiData;
-
     return {
       index,
       data: generateInfo(symbolList, list)

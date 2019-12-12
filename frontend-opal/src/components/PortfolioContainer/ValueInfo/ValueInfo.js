@@ -27,11 +27,11 @@ const ValueInfo = ({ portfolio }) => {
             )}
           </View>
 
-          <View style={styles.valueButton}>
+          {/* <View style={styles.valueButton}>
             <Button style={styles.button}>
               <Text>INVESTMENT ACCOUNT</Text>
             </Button>
-          </View>
+          </View> */}
         </Card>
       </View>
     </CardItem>

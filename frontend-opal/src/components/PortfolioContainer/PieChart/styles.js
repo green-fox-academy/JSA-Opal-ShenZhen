@@ -10,6 +10,10 @@ export default StyleSheet.create({
     width: '50%'
   },
   chartArea: {
-    width: '50%'
+    width: '42%',
+    height: 160,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

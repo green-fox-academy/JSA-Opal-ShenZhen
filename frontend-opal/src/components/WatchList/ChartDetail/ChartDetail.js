@@ -25,8 +25,9 @@ function ChartDetail({ data }) {
   return (
     <View style={styles.body} key={`${data.symbol} detail`}>
       <View style={styles.chartGraph}>
-        <VictoryChart theme={VictoryTheme.material} width={280} height={190}>
+        <VictoryChart theme={VictoryTheme.material} width={240} height={160}>
           <VictoryLine
+            animate={{ duration: 2000, onLoad: { duration: 2000 } }}
             style={{
               data: { stroke: 'rgb(250,110,59)' },
               parent: { border: '1px solid #cc' }
