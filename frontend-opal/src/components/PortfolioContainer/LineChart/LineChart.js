@@ -12,6 +12,7 @@ const LineChart = ({ data }) => {
         scale={{ x: 'time' }}
       >
         <VictoryLine
+          animate={{ duration: 2000, onLoad: { duration: 2000 } }}
           style={{
             data: { stroke: 'tomato' }
           }}

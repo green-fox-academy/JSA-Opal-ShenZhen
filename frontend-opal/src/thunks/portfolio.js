@@ -22,6 +22,9 @@ const fetchPortfolio = () => {
       type: 'FETCH_PORTFOLIO_ENDPOINT'
     });
 
+    console.log('DATABASE_URL', DATABASE_URL);
+    console.log('DATABASE_PORT', DATABASE_PORT);
+
     const response = await fetch(`http://${DATABASE_URL}:${DATABASE_PORT}/portfolio`, {
       headers: {
         'Content-type': 'application/json',
