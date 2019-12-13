@@ -1,28 +1,28 @@
 import React from 'react';
-import { SafeAreaView, Text, FlatList } from 'react-native';
+import { View, SafeAreaView, Text, FlatList, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
-import { Card, CardItem, Spinner } from 'native-base';
+import { Card, CardItem, Spinner, DeckSwiper, Content } from 'native-base';
 import NewsItems from './NewsItems';
 import styles from './styles';
+import Item from '../../SearchResult/Item';
+import { isTSBigIntKeyword } from '@babel/types';
 
 const News = ({ getLatestNews }) => {
+  const newsCards = items => items.map(item => <NewsItems key={item.url} newsItem={item} />);
+
   return (
-    <CardItem>
+    <Content>
       <SafeAreaView style={styles.newsArea}>
-        <Card transparent>
+        {/* <Card transparent>
           <Text style={styles.title}>News</Text>
-        </Card>
+        </Card> */}
         {!getLatestNews[0] ? (
           <Spinner color="#e17055" />
         ) : (
-          <FlatList
-            data={getLatestNews}
-            renderItem={({ item }) => <NewsItems NewsItem={item} />}
-            keyExtractor={item => `${item.headline}`}
-          />
+          <ScrollView horizontal>{newsCards(getLatestNews)}</ScrollView>
         )}
       </SafeAreaView>
-    </CardItem>
+    </Content>
   );
 };
 

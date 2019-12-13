@@ -19,25 +19,27 @@ const PerformanceCard = ({ apiData }) => {
   ];
 
   return (
-    <Content padder style={styles.firstCard}>
-      <Card transparent>
-        <Text style={styles.title}>Performance</Text>
-      </Card>
+    <View>
+      <Content padder style={styles.firstCard}>
+        <Card transparent>
+          <Text style={styles.title}>Performance</Text>
+        </Card>
 
-      <Card>
-        <View cardBody style={styles.detail}>
-          {apiData.length === 0 ? (
-            <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Spinner color="#e17055" />
-            </View>
-          ) : (
-            <LineChart data={apiData} />
-          )}
-        </View>
+        <Card>
+          <View cardBody style={styles.detail}>
+            {apiData.length === 0 ? (
+              <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Spinner color="#e17055" />
+              </View>
+            ) : (
+              <LineChart data={apiData} />
+            )}
+          </View>
 
-        <PerformanceFooter intervals={intervals} />
-      </Card>
-    </Content>
+          <PerformanceFooter intervals={intervals} />
+        </Card>
+      </Content>
+    </View>
   );
 };
 

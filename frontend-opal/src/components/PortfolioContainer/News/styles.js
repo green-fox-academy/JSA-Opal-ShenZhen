@@ -21,5 +21,10 @@ export default StyleSheet.create({
   },
   ImgText: {
     color: 'white'
+  },
+  newsCard: {
+    width: 280,
+    height: 230,
+    marginRight: 10,
   }
 });

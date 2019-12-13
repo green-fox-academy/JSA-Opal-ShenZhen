@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Card, CardItem, Spinner } from 'native-base';
+import { Card, CardItem, Spinner, DeckSwiper, Container } from 'native-base';
 import InstrumentsItem from './InstrumentsItem';
 import styles from './styles';
 

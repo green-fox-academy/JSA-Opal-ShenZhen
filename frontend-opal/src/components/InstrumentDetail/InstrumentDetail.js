@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container } from 'native-base';
+import { View, ScrollView } from 'react-native';
+import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -9,6 +10,8 @@ import actions from 'actions/instrumentDetail';
 import PerformanceCard from './PerformanceCard';
 import DetailCard from './DetailCard/DetailCard';
 import presetProps from './presetProps';
+import News from '../PortfolioContainer/News';
+
 
 const InstrumentDetail = ({ navigation, detailData, fetchData, clearData, chartData }) => {
   useEffect(() => {
@@ -19,10 +22,11 @@ const InstrumentDetail = ({ navigation, detailData, fetchData, clearData, chartD
   }, [fetchData]);
 
   return (
-    <Container>
+    <ScrollView>
       <PerformanceCard apiData={chartData} />
       <DetailCard apiData={detailData} />
-    </Container>
+      <News />
+    </ScrollView>
   );
 };
 
