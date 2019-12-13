@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
-import { Card, CardItem, Spinner } from 'native-base';
+import { Card, CardItem, Spinner, Content } from 'native-base';
 import NewsItems from './NewsItems';
 import styles from './styles';
 
