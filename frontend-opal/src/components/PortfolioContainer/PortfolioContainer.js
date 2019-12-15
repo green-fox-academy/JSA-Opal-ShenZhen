@@ -49,7 +49,7 @@ const PortfolioContainer = ({ fetchPortfolio }) => {
   );
 };
 
-PortfolioContainer.title = 'PORTFOLIO';
+PortfolioContainer.title = 'DASHBOARD';
 
 const mapDispatchToProps = dispatch => {
   return {

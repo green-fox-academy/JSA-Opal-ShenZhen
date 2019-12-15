@@ -24,9 +24,11 @@ const WatchList = ({ watchlists, getLists, closeInstrumentsInList }) => {
     setRefreshing(false);
   }, [getLists]);
 
+  const titles = ['Software', 'IT', 'Hi-Tech', 'Future'];
+
   const dataArray = watchlists.map(list => ({
     ...list,
-    title: `Watchlist ${list.index + 1}`
+    title: titles[list.index]
   }));
 
   const [isModalVisible, toggleModal] = useState(false);
